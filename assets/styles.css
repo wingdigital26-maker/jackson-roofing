@@ -28,8 +28,8 @@
   --wrap:1200px;
   /* one radius + shadow system, used everywhere */
   --r-lg:18px; --r-md:12px; --r-sm:10px; --r-pill:999px;
-  --shadow:0 18px 50px -22px rgba(11,15,20,.45);
-  --shadow-sm:0 8px 24px -14px rgba(11,15,20,.4);
+  --shadow:0 14px 34px -22px rgba(11,15,20,.34);
+  --shadow-sm:0 6px 16px -12px rgba(11,15,20,.3);
 }
 
 *{box-sizing:border-box}
@@ -49,7 +49,8 @@ p{margin:0 0 1rem}
   font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan-ink)}
 .eyebrow::before{content:"";width:26px;height:2px;background:var(--cyan);border-radius:2px}
 .eyebrow.on-dark{color:var(--cyan)}
-.section{padding:clamp(4rem,9vw,7rem) 0}
+.section{padding:clamp(2.8rem,5.5vw,4.5rem) 0}
+.section.pull{padding-top:clamp(1.6rem,3vw,2.4rem)}
 .sec-head{max-width:640px}
 .lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--slate);max-width:60ch}
 
@@ -77,7 +78,7 @@ p{margin:0 0 1rem}
   transition:opacity .8s var(--ease),visibility .8s;}
 #curtain.gone{opacity:0;visibility:hidden}
 #curtain .c-inner{text-align:center;transform:translateY(6px);opacity:0;animation:cin .9s var(--ease) .1s forwards}
-#curtain img{width:min(340px,64vw);margin:0 auto;filter:drop-shadow(0 20px 50px rgba(27,192,255,.25))}
+#curtain img{width:min(340px,64vw);margin:0 auto}
 #curtain .c-line{margin-top:1.1rem;height:2px;width:0;background:var(--cyan);border-radius:2px;margin-inline:auto;
   animation:cline 1.3s var(--ease) .45s forwards}
 #curtain .c-tag{margin-top:1rem;color:#9fb2c2;font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;
@@ -89,16 +90,19 @@ p{margin:0 0 1rem}
   #curtain .c-line{width:190px}
 }
 
-/* ---------- nav (frosted shrink-on-scroll, Commerce technique) ---------- */
-header.nav{position:fixed;inset:0 0 auto;z-index:90;transition:background .35s var(--ease),box-shadow .35s var(--ease)}
+/* ---------- nav (SOLID bar; transparent only over home hero, locks solid on scroll) ---------- */
+header.nav{position:fixed;inset:0 0 auto;z-index:90;transition:background .3s var(--ease),box-shadow .3s var(--ease)}
 header.nav .bar{display:flex;align-items:center;justify-content:space-between;gap:1.4rem;
-  height:92px;transition:height .35s var(--ease)}
+  height:88px;transition:height .3s var(--ease);border-bottom:1px solid transparent}
 header.nav .brand{display:flex;align-items:center;gap:.7rem;flex-shrink:0}
-header.nav .brand img{height:52px;width:auto;transition:height .35s var(--ease)}
-header.nav.scrolled{background:rgba(11,15,20,.82);backdrop-filter:blur(16px) saturate(1.3);
-  box-shadow:0 1px 0 rgba(255,255,255,.06),0 20px 40px -30px #000}
-header.nav.scrolled .bar{height:68px}
+header.nav .brand img{height:50px;width:auto;transition:height .3s var(--ease)}
+/* solid state: interior pages (.solid) always, home page once scrolled */
+header.nav.solid,header.nav.scrolled{background:var(--ink)}
+header.nav.solid .bar,header.nav.scrolled .bar{border-bottom-color:rgba(255,255,255,.08)}
+header.nav.scrolled .bar{height:66px}
 header.nav.scrolled .brand img{height:40px}
+/* home page: transparent header at very top, over the hero video */
+header.nav.home-top{background:transparent}
 nav.links{display:flex;align-items:center;gap:.35rem}
 nav.links a{padding:.55rem .95rem;font-size:.93rem;font-weight:600;color:#eaf2f8;border-radius:var(--r-pill);
   transition:background .2s,color .2s}
@@ -110,7 +114,7 @@ nav.links a:hover,nav.links a.active{background:rgba(27,192,255,.16);color:#fff}
 
 @media (max-width:900px){
   nav.links{position:fixed;inset:76px 0 auto;flex-direction:column;align-items:stretch;
-    background:rgba(11,15,20,.97);backdrop-filter:blur(16px);padding:1rem;gap:.2rem;
+    background:var(--ink);padding:1rem;gap:.2rem;
     transform:translateY(-140%);transition:transform .4s var(--ease);border-bottom:1px solid rgba(255,255,255,.08)}
   nav.links.open{transform:none}
   nav.links a{font-size:1.05rem;padding:.85rem 1rem;border-radius:var(--r-md)}
@@ -199,6 +203,33 @@ nav.links a:hover,nav.links a.active{background:rgba(27,192,255,.16);color:#fff}
 .svc:hover .more svg{transform:translateX(4px)}
 .svc.tall{min-height:380px}
 
+/* ---------- homes & businesses (residential + commercial) band ---------- */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:2.2rem}
+.dual .card{position:relative;border-radius:var(--r-lg);overflow:hidden;min-height:320px;display:flex;
+  flex-direction:column;justify-content:flex-end;color:#fff;isolation:isolate;box-shadow:var(--shadow-sm)}
+.dual .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s var(--ease)}
+.dual .card::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(0deg,rgba(6,10,14,.93) 10%,rgba(6,10,14,.45) 68%,rgba(6,10,14,.15) 100%)}
+.dual .card:hover img{transform:scale(1.05)}
+.dual .card .b{padding:1.7rem}
+.dual .card .tag{display:inline-block;font-family:var(--font-body);font-size:.72rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:.5rem}
+.dual .card h3{color:#fff;font-size:1.55rem}
+.dual .card p{color:#cdd8e2;margin:.5rem 0 0;font-size:.95rem;max-width:44ch}
+@media(max-width:720px){.dual{grid-template-columns:1fr}}
+
+/* ---------- assurance strip (replaces lonely 'short version') ---------- */
+.assure{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.1rem;margin-top:1.9rem}
+.assure .a{background:var(--white);border:1px solid var(--line);border-radius:var(--r-md);padding:1.25rem 1.35rem}
+.assure .a b{display:block;font-family:var(--font-head);color:var(--ink);font-size:1.05rem;margin-bottom:.3rem}
+.assure .a span{font-size:.93rem;color:var(--muted);line-height:1.5}
+
+/* ---------- Google reviews button (solid, no glow) ---------- */
+.btn-google{background:var(--white);color:var(--ink);border-color:var(--line-strong)}
+.btn-google:hover{border-color:var(--cyan-ink);color:var(--cyan-ink);filter:none}
+.btn-google svg{width:18px;height:18px}
+.reviews-foot{display:flex;justify-content:center;margin-top:2.2rem}
+
 /* ---------- steps ---------- */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem;margin-top:2.4rem}
 .step{position:relative;padding:1.6rem 1.5rem;background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg)}
@@ -265,12 +296,12 @@ nav.links a:hover,nav.links a.active{background:rgba(27,192,255,.16);color:#fff}
   display:grid;place-items:center;font-family:var(--font-head);font-weight:800;font-size:1.3rem}
 .owner b{color:var(--ink)}.owner span{font-size:.88rem;color:var(--muted)}
 
-/* ---------- CTA band ---------- */
-.cta{position:relative;background:var(--ink);color:#fff;overflow:hidden}
-.cta::before{content:"";position:absolute;inset:0;
-  background:radial-gradient(1000px 400px at 12% 0%,rgba(27,192,255,.28),transparent 60%),
-            radial-gradient(800px 400px at 100% 100%,rgba(27,192,255,.14),transparent 55%)}
-.cta .wrap{position:relative;text-align:center;padding:clamp(3.5rem,8vw,5.5rem) 1.5rem}
+/* ---------- CTA band (real roofing photo + solid dark overlay, no glow) ---------- */
+.cta{position:relative;background:var(--ink);color:#fff;overflow:hidden;border-top:3px solid var(--cyan)}
+.cta::before{content:"";position:absolute;inset:0;z-index:0;
+  background-image:linear-gradient(90deg,rgba(9,13,18,.9),rgba(9,13,18,.72)),url("img/about-hero.webp");
+  background-size:cover;background-position:center}
+.cta .wrap{position:relative;z-index:1;text-align:center;padding:clamp(3.5rem,8vw,5.5rem) 1.5rem}
 .cta h2{color:#fff;max-width:20ch;margin:0 auto}
 .cta p{color:#cdd8e2;max-width:52ch;margin:1rem auto 0}
 .cta .row{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center;margin-top:2rem}
@@ -291,7 +322,7 @@ form.enq label{display:block;font-size:.78rem;font-weight:700;letter-spacing:.05
   color:var(--slate);margin:.9rem 0 .35rem}
 form.enq input,form.enq textarea{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:var(--r-md);
   font-family:inherit;font-size:1rem;background:var(--white);color:var(--ink);transition:border-color .2s,box-shadow .2s}
-form.enq input:focus,form.enq textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 4px rgba(27,192,255,.15)}
+form.enq input:focus,form.enq textarea:focus{outline:none;border-color:var(--cyan)}
 form.enq textarea{min-height:130px;resize:vertical}
 .form-note{font-size:.82rem;color:var(--muted);margin-top:1rem}
 

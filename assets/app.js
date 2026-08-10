@@ -27,7 +27,12 @@
   /* ---- frosted shrink-on-scroll nav ---- */
   var nav = document.querySelector("header.nav");
   if (nav) {
-    var onScroll = function () { nav.classList.toggle("scrolled", window.scrollY > 24); };
+    var isHome = !nav.classList.contains("solid") && !!document.querySelector(".hero");
+    var onScroll = function () {
+      var scrolled = window.scrollY > 24;
+      nav.classList.toggle("scrolled", scrolled);
+      if (isHome) nav.classList.toggle("home-top", !scrolled);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     var toggle = nav.querySelector(".nav-toggle");
