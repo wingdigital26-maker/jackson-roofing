@@ -1,0 +1,15 @@
+{
+  "hero_video": {
+    "source": "Pexels",
+    "pexels_id": 4198810,
+    "title": "Push-in shot of a drone on the house roof",
+    "author": "K",
+    "url": "https://www.pexels.com/video/push-in-shot-of-a-drone-on-the-house-roof-4198810/",
+    "license": "Pexels License (free to use)"
+  },
+  "extra_photos": {
+    "home-commercial.jpg": {"source":"Pexels","id":27793722},
+    "svc-repair.jpg": {"source":"Pexels","id":31762405}
+  },
+  "note": "All other images are Jackson Roofing's own photos from their live site."
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wingdigital26-maker.github.io/jackson-roofing/sitemap.xml
