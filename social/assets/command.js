@@ -68,7 +68,14 @@
     calNav:    document.getElementById("calNav"),
     calPrev:   document.getElementById("calPrev"),
     calNext:   document.getElementById("calNext"),
-    calRange:  document.getElementById("calRangeLabel")
+    calRange:  document.getElementById("calRangeLabel"),
+    printBtn:  document.getElementById("printPlanBtn"),
+    printPlan: document.getElementById("printPlan"),
+    lb:        document.getElementById("lightbox"),
+    lbImg:     document.getElementById("lbImg"),
+    lbCap:     document.getElementById("lbCap"),
+    lbClose:   document.getElementById("lbClose"),
+    lbBackdrop: document.getElementById("lbBackdrop")
   };
 
   var state = {
@@ -197,6 +204,7 @@
     renderStrategy();
     renderFilters();
     setupCalViews();
+    buildPrintPlan();
     apply();
   }
 
@@ -610,7 +618,14 @@
     // placeholder always rendered as the layer behind; a broken img falls back
     // then removes itself (no fragile inline-HTML quote nesting via jrImgErr).
     var imgTag = ok ? '<img class="pc-img" loading="lazy" decoding="async" src="' + esc(primary) + '" alt="' + esc(alt) + '"' + dataFull + ' onerror="jrImgErr(this)">' : "";
-    return '<div class="pc-media' + (wide ? " wide" : "") + '">' + phMarkup(alt) + imgTag + "</div>";
+    // When a real photo is present the media is a zoomable button that opens the
+    // full-size original (src) in the lightbox. data-zoom carries the original.
+    if (ok) {
+      return '<button type="button" class="pc-media zoomable' + (wide ? " wide" : "") + '" data-zoom="' + esc(src) +
+        '" data-alt="' + esc(alt) + '" aria-label="View full photo">' + phMarkup(alt) + imgTag +
+        '<span class="pc-zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span></button>';
+    }
+    return '<div class="pc-media' + (wide ? " wide" : "") + '">' + phMarkup(alt) + "</div>";
   }
   function phMarkup(alt) {
     return '<div class="pc-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="M21 15l-5-5L5 21"/></svg><span>' + esc(alt) + "</span></div>";
@@ -793,6 +808,154 @@
       return ok;
     } catch (e) { return false; }
   }
+
+  // ---------- image lightbox ----------
+  // Clicking a card photo opens the full-size original in an accessible modal:
+  // aria-modal dialog, focus moved in and trapped, Esc / backdrop / close button
+  // dismiss it, and focus returns to the thumbnail that opened it. The image src
+  // is one of our own local asset paths and is set via setAttribute (no HTML
+  // injection); the alt/caption use textContent, so no new XSS sink is created.
+  var lbLastFocus = null;
+  function openLightbox(src, alt) {
+    if (!els.lb || !src) return;
+    lbLastFocus = document.activeElement;
+    els.lbImg.setAttribute("src", src);
+    els.lbImg.setAttribute("alt", alt || "Jackson Roofing photo");
+    els.lbCap.textContent = alt || "Jackson Roofing photo";
+    els.lb.hidden = false;
+    // next frame so the transition runs
+    requestAnimationFrame(function () { els.lb.classList.add("open"); });
+    document.body.style.overflow = "hidden";
+    if (els.lbClose && els.lbClose.focus) els.lbClose.focus();
+  }
+  function closeLightbox() {
+    if (!els.lb || els.lb.hidden) return;
+    els.lb.classList.remove("open");
+    els.lb.hidden = true;
+    els.lbImg.removeAttribute("src");
+    document.body.style.overflow = "";
+    if (lbLastFocus && lbLastFocus.focus) { try { lbLastFocus.focus(); } catch (e) {} }
+    lbLastFocus = null;
+  }
+  function initLightbox() {
+    if (!els.lb) return;
+    // open via delegation on the feed (works for cards rendered at any time)
+    if (els.feed) {
+      els.feed.addEventListener("click", function (e) {
+        var btn = e.target.closest ? e.target.closest(".zoomable") : null;
+        if (!btn) return;
+        openLightbox(btn.getAttribute("data-zoom"), btn.getAttribute("data-alt"));
+      });
+    }
+    if (els.lbClose) els.lbClose.addEventListener("click", closeLightbox);
+    if (els.lbBackdrop) els.lbBackdrop.addEventListener("click", closeLightbox);
+    document.addEventListener("keydown", function (e) {
+      if (els.lb.hidden) return;
+      if (e.key === "Escape") { e.preventDefault(); closeLightbox(); return; }
+      if (e.key === "Tab") {
+        // single focusable control -> trap focus on the close button
+        e.preventDefault();
+        if (els.lbClose && els.lbClose.focus) els.lbClose.focus();
+      }
+    });
+  }
+
+  // ---------- client print / save-as-PDF plan ----------
+  // Builds a clean, client-facing content plan into #printPlan (screen-hidden,
+  // print-only). Title block + posts grouped by calendar week as compact rows.
+  function platCounts() {
+    var c = {};
+    state.posts.forEach(function (p) { var k = platMeta(p.platform).key; c[k] = (c[k] || 0) + 1; });
+    return c;
+  }
+  function channelMixText() {
+    var c = platCounts();
+    var order = ["instagram", "facebook", "gbp", "nextdoor"];
+    Object.keys(c).forEach(function (k) { if (order.indexOf(k) < 0) order.push(k); });
+    var parts = [];
+    order.forEach(function (k) {
+      if (!c[k]) return;
+      var label = (PLATFORMS[k] && PLATFORMS[k].label) || k;
+      parts.push(c[k] + " " + label);
+    });
+    return parts.join(" · ");
+  }
+  function hashtagsText(p) {
+    if (!p.hashtags || !p.hashtags.length) return "";
+    return p.hashtags.map(function (t) { return "#" + String(t).replace(/^#+/, ""); }).join(" ");
+  }
+  function buildPrintPlan() {
+    var host = els.printPlan;
+    if (!host) return;
+    host.innerHTML = "";
+    if (!state.posts.length) {
+      host.innerHTML = '<div class="pp-title"><h1>Jackson Roofing</h1><p class="pp-kicker">Social Content Plan</p></div>' +
+        '<p class="pp-empty">No drafts are queued yet.</p>';
+      return;
+    }
+    var sp = calSpan();
+    var opt = { month: "long", day: "numeric" };
+    var rangeText = sp.start.toLocaleString("en-US", opt) + " to " + sp.last.toLocaleString("en-US", opt) + ", " + sp.last.getFullYear();
+    var n = state.posts.length;
+
+    var head =
+      '<div class="pp-title">' +
+        '<div class="pp-brandrow"><span class="pp-mark"></span><h1>Jackson Roofing</h1></div>' +
+        '<p class="pp-kicker">Social Content Plan</p>' +
+      '</div>' +
+      '<dl class="pp-meta">' +
+        '<div><dt>Date range</dt><dd>' + esc(rangeText) + '</dd></div>' +
+        '<div><dt>Total posts</dt><dd>' + n + '</dd></div>' +
+        '<div><dt>Channel mix</dt><dd>' + esc(channelMixText()) + '</dd></div>' +
+        '<div><dt>Prepared by</dt><dd>Wing Digital</dd></div>' +
+      '</dl>' +
+      '<p class="pp-note">Draft plan for review. Nothing in this document has been posted to any live account.</p>';
+
+    // group by Sunday-aligned week
+    var byDate = groupByDate(state.posts);
+    var weeks = buildWeeks();
+    var body = "";
+    weeks.forEach(function (wkStart, i) {
+      var wkEnd = new Date(wkStart.getTime() + 6 * DAY_MS);
+      var rows = "";
+      for (var d = 0; d < 7; d++) {
+        var dt = new Date(wkStart.getTime() + d * DAY_MS);
+        var key = keyOf(dt);
+        var dayPosts = byDate[key] || [];
+        dayPosts.forEach(function (p) {
+          var pm = platMeta(p.platform);
+          var dlabel = WEEKDAYS[dt.getDay()] + " " + dt.toLocaleString("en-US", { month: "short", day: "numeric" }) +
+            (p.time ? ", " + fmtTime(p.time) : "");
+          var tags = hashtagsText(p);
+          rows +=
+            '<tr>' +
+              '<td class="pp-when">' + esc(dlabel) + '</td>' +
+              '<td class="pp-plat">' + esc(pm.meta.label) + '</td>' +
+              '<td class="pp-pillar">' + esc(pillarLabel(p.pillar)) + '</td>' +
+              '<td class="pp-cap">' + esc(p.caption || "") + (tags ? '<span class="pp-tags">' + esc(tags) + '</span>' : "") + '</td>' +
+            '</tr>';
+        });
+      }
+      if (!rows) return; // skip empty weeks in the printed plan
+      var wkRange = wkStart.toLocaleString("en-US", { month: "short", day: "numeric" }) + " to " +
+        wkEnd.toLocaleString("en-US", { month: "short", day: "numeric" });
+      body +=
+        '<section class="pp-week">' +
+          '<h2>Week ' + (i + 1) + '<span class="pp-wkrange">' + esc(wkRange) + '</span></h2>' +
+          '<table class="pp-table"><thead><tr>' +
+            '<th>Date</th><th>Channel</th><th>Pillar</th><th>Post</th>' +
+          '</tr></thead><tbody>' + rows + '</tbody></table>' +
+        '</section>';
+    });
+    host.innerHTML = head + body;
+  }
+
+  function initPrint() {
+    if (els.printBtn) els.printBtn.addEventListener("click", function () { window.print(); });
+  }
+
+  initLightbox();
+  initPrint();
 
   // ---------- empty states ----------
   function emptyState(noData) {

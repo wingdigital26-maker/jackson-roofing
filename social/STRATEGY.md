@@ -377,3 +377,28 @@ job whenever possible.
 - CTAs send people to the site to Contact Us, never to a phone number in copy.
 - Consistency beats bursts: a steady 8 to 10 posts a week across platforms holds
   recall far better than a flood followed by silence.
+
+## Voice and variety
+
+The fastest way a small-business feed starts to feel automated is when every post
+opens and closes the same way. A few habits keep captions sounding handcrafted:
+
+- Vary the opening move. Rotate across a question ("does your street get more wind
+  or hail?"), a plain fact ("most storm damage is invisible from your driveway"),
+  a quick tip ("clear your valleys before the leaves trap water"), a short story
+  ("this roof looked fine from the yard"), and a seasonal cue ("right before the
+  cold sets in"). Do not lead two posts in a row the same way.
+- Ration the taglines. "Family-run since 2000" and "free inspection" are the anchor
+  facts, but they lose weight if they close every post. Let some posts carry the
+  brand only through tone, and move the fact into the middle instead of the last line.
+- Retire a phrase once it has been used. "Peace of mind," "no hard sell," "which
+  side would you rather have," "word of mouth," and "we live under these same skies"
+  are all strong once and forgettable twice. Before reusing a hook, skim the last
+  few posts of that pillar.
+- Reviews are a two-way pillar, not just self-praise. Mix social proof about how a
+  job feels (clean yard, straight answers) with direct review requests that ask real
+  customers to share their own experience. Never invent a testimonial, a star count,
+  a review total, or a customer name.
+- Invite participation. UGC prompts (tag your roof, shout out good local work) cost
+  nothing to make and pull neighbors into the feed, which is how a following actually
+  grows rather than just an audience that scrolls past.

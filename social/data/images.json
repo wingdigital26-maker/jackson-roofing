@@ -355,6 +355,30 @@
       "concept": "Crew-at-work photo backs the word-of-mouth-keeps-us-going message with real hands on real roofs. A happy-homeowners photo is a warmer swap.",
       "src": "../assets/img/crew-work.jpg",
       "source_hint": "Prefer real happy-homeowners photo; fallback Pexels: happy homeowners porch house"
+    },
+    {
+      "id": "w5-nd-neighbor-shoutout",
+      "concept": "Quiet neighborhood street suits the UGC shoutout ask, inviting neighbors to point out good local work. Swap for a recognizable Plano-area street if available.",
+      "src": "../assets/img/g-vanalstyne.jpg",
+      "source_hint": "Prefer a real local street photo; fallback Pexels: texas suburban homes street"
+    },
+    {
+      "id": "w5-ig-social-proof",
+      "concept": "Crew finishing a job stands behind the five-star-experience theme with real work. A genuine happy-homeowner photo is the stronger swap once available.",
+      "src": "../assets/img/crew-work.jpg",
+      "source_hint": "Prefer real happy-homeowner photo; fallback Pexels: satisfied homeowner new roof"
+    },
+    {
+      "id": "w5-fb-review-invite",
+      "concept": "Roofer-with-homeowner scene fits the review-invite thank-you, grounding the ask in a real interaction. Swap for a genuine homeowner handoff photo if on hand.",
+      "src": "../assets/img/home-truck.jpg",
+      "source_hint": "Prefer real roofer-with-homeowner photo; fallback Pexels: contractor homeowner conversation"
+    },
+    {
+      "id": "w5-ig-ugc-tag-roof",
+      "concept": "Wide rooftop-under-sky shot invites the tag-your-roof UGC prompt without implying a specific claim. A vibrant golden-hour swap would lift engagement.",
+      "src": "../assets/img/home-commercial.jpg",
+      "source_hint": "Prefer wide Plano rooftops at golden hour; fallback Pexels: texas suburb rooftops sky"
     }
   ]
 }

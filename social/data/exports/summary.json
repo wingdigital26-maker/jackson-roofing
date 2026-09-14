@@ -1,0 +1,48 @@
+{
+  "generated_by": "social/engine/build_summary.py",
+  "source": "../data/posts.json",
+  "draft_only": true,
+  "post_count": 63,
+  "date_range": {
+    "start": "2026-09-15",
+    "first": "2026-09-15",
+    "last": "2026-11-08"
+  },
+  "weeks": 8,
+  "posts_per_week": 7.9,
+  "per_platform": {
+    "instagram": 21,
+    "facebook": 17,
+    "gbp": 14,
+    "nextdoor": 11
+  },
+  "per_pillar": {
+    "video": 10,
+    "education": 9,
+    "seasonal": 9,
+    "before-after": 8,
+    "community": 8,
+    "trust": 7,
+    "reviews": 6,
+    "storm-response": 6
+  },
+  "video_count": 10,
+  "platforms": [
+    "facebook",
+    "gbp",
+    "instagram",
+    "nextdoor"
+  ],
+  "pillars": [
+    "before-after",
+    "community",
+    "education",
+    "reviews",
+    "seasonal",
+    "storm-response",
+    "trust",
+    "video"
+  ],
+  "cadence_slots": 10,
+  "plan_overview": "63 drafted posts across 4 platforms from 2026-09-15 to 2026-11-08 (8 weeks), about 7.9 posts per week. All figures are counts of drafted posts, not performance data."
+}

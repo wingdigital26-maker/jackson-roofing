@@ -16,16 +16,20 @@ Chris Jackson is not an active client.
 ## The pipeline at a glance
 
 ```
-draft_social.py  ->  posts.json  ->  social_qa.py (GATE)  ->  export.py  ->  data/exports/
-   (draft)          (the queue)       0 FAIL required          (handoff)     schedule.csv
-                                          |                                   calendar.ics
-                                          | any FAIL                          index.json
-                                          v
-                                    BLOCKED (exit 1, no export written)
+draft_social.py  ->  posts.json  ->  social_qa.py (GATE)  -->  [--all] make_thumbs.py  ->  assets/thumbs/
+   (draft)          (the queue)       0 FAIL required       |                             (card thumbnails)
+                                          |                  ->  export.py             ->  data/exports/
+                                          | any FAIL         |    (scheduler handoff)      schedule.csv
+                                          v                  |                             calendar.ics
+                                    BLOCKED                  ->  build_summary.py        ->  index.json
+                                    (exit 1, nothing         |    (plan stats)              summary.json
+                                     written)
 ```
 
-`run_pipeline.py` is the single command that runs the GATE then the EXPORT, **fail
-closed**: off-brand or off-spec posts never reach the scheduler files.
+`run_pipeline.py` is the single command that runs the GATE, then (only on a clean
+gate) the EXPORT and the SUMMARY refresh, **fail closed**: off-brand or off-spec
+posts never reach any output file. `--all` additionally rebuilds card thumbnails so
+one command produces everything a scheduler and a client report need.
 
 ## Layout
 
@@ -43,7 +47,8 @@ social/
     draft_social.py    The drafting engine (stdlib only by default)
     social_qa.py       The brand + platform + integrity QA gate (read-only)
     export.py          The scheduler-handoff exporter (schedule.csv + calendar.ics + index.json)
-    run_pipeline.py    One fail-closed entrypoint: gate, then export only if 0 FAIL
+    build_summary.py   Plan-stats builder -> data/exports/summary.json (counts, not metrics)
+    run_pipeline.py    One fail-closed entrypoint: gate -> export + summary (+ thumbs with --all)
   index.html + assets/ The Social Command Center UI (owned by the visual lane)
   posts/               (owned by the content/UI lane, not the engine)
 ```
@@ -51,10 +56,14 @@ social/
 ## One-command pipeline (the normal way to run it)
 
 ```bash
-# Gate the queue, then regenerate data/exports/ ONLY if 0 FAIL. Fail closed.
+# Gate the queue, then (only if 0 FAIL) regenerate data/exports/ + summary.json. Fail closed.
 python social/engine/run_pipeline.py
 
-# Machine-readable report (valid JSON on stdout; export output is silenced).
+# One-command FULL refresh: gate -> rebuild card thumbnails -> export + summary.
+# (--with-thumbs is an alias for --all.) Thumbs are optional and non-fatal.
+python social/engine/run_pipeline.py --all
+
+# Machine-readable report (valid JSON on stdout; step output is silenced).
 python social/engine/run_pipeline.py --json
 
 # Gate a specific posts file instead of data/posts.json (used for testing the gate).
@@ -67,15 +76,23 @@ Behavior:
 
 - **Step 1 - QA gate.** Loads `data/posts.json` and grades every post
   (brand / platform / integrity). Prints PASS / WARN / FAIL counts.
-- **Step 2 - export (only on 0 FAIL).** Regenerates `data/exports/` and reports
+- **Step 2 - thumbnails (only with `--all`, only on 0 FAIL).** Invokes the asset
+  lane's `assets/tools/make_thumbs.py` as a subprocess (never imported or edited).
+  Optional and non-fatal: if the tool is absent or exits nonzero it is reported and
+  the run continues. Thumbs never affect the exit code.
+- **Step 3 - export (only on 0 FAIL).** Regenerates `data/exports/` and reports
   the real row / event counts read back from `index.json`.
+- **Step 4 - summary (only on 0 FAIL).** Refreshes `data/exports/summary.json` with
+  plan stats (counts, not metrics) for the UI header and client reports. Non-fatal.
 - **Fail closed.** If any post FAILs, or the queue cannot be read/parsed, it prints
-  the exact failures and **exits nonzero without writing any export**. A queue that
-  will not load is treated as a FAIL, never as "empty and fine".
+  the exact failures and **exits nonzero without writing thumbs, exports, or the
+  summary**. A queue that will not load is treated as a FAIL, never as "empty and fine".
 - **Exit code:** `0` only when the gate is clean and the export succeeds; `1` on any
-  gate FAIL or load error; `2` on a bad `--posts` argument.
+  gate FAIL, load error, or export failure; `2` on a bad `--posts` argument. The
+  thumbnail step and summary refresh are non-fatal and do not change the exit code.
 - Importable: `from run_pipeline import run` returns `(exit_code, report_dict)`.
-- Stdlib only, no network, deterministic.
+- Stdlib only (subprocess is used only to invoke the thumb tool), no network,
+  deterministic.
 
 ## Running each piece on its own
 
@@ -93,6 +110,10 @@ python social/engine/social_qa.py --json
 
 # EXPORT: turn the queue into scheduler-ready files (writes data/exports/)
 python social/engine/export.py
+
+# SUMMARY: plan stats (counts, not metrics) -> data/exports/summary.json
+python social/engine/build_summary.py
+python social/engine/build_summary.py --json
 ```
 
 Notes on the pieces:
@@ -109,6 +130,13 @@ Notes on the pieces:
 - **export.py** writes per-platform hashtag conventions into the output (gbp and
   nextdoor get none, facebook is capped, instagram keeps all), guards against CSV
   formula injection, and produces empty-but-valid files if the queue is empty.
+- **build_summary.py** reads `posts.json` + `schedule.json` and writes
+  `data/exports/summary.json`: total posts, date range, whole weeks spanned,
+  posts-per-week, per-platform + per-pillar counts, video count, cadence-slot count,
+  and an honest one-line `plan_overview`. Every figure is a **count of drafted
+  posts**, never performance data (no reach, leads, or engagement). Runnable
+  standalone and importable (`build_summary.build()`); an empty queue yields a valid
+  zero-count file.
 
 ## Where outputs land
 
@@ -120,6 +148,7 @@ Notes on the pieces:
 | `schedule.csv` | One row per post. Import into Buffer, Later, Metricool, Hootsuite, etc. The UI "Download schedule" link points here. |
 | `calendar.ics` | One VEVENT per post. Import into Google Calendar or Apple Calendar.   |
 | `index.json`   | Manifest: counts, date range, platform mix, and the file list.        |
+| `summary.json` | Plan stats for the UI header / client reports (counts, not metrics). Written by `build_summary.py`. |
 
 These are a **handoff for a human** to load into a scheduler. Producing them is not
 posting; the system still sends nothing on its own.
