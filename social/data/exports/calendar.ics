@@ -1,0 +1,335 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wing Digital//Jackson Roofing Social//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Jackson Roofing Social (draft)
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VEVENT
+UID:w1-gbp-storm-inspection-window@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260915T100000
+DTEND;TZID=America/Chicago:20260915T101500
+SUMMARY:[Google Business Profile] storm-response
+DESCRIPTION:Booking free roof inspections across Plano this week. If a rec
+ ent North Texas storm rolled through your street\, a quick look now can ca
+ tch hail bruising before it turns into a leak. Family-run and roofing Plan
+ o homes since 2000.
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-fb-hail-season-checkin@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260915T120000
+DTEND;TZID=America/Chicago:20260915T121500
+SUMMARY:[Facebook] seasonal
+DESCRIPTION:North Texas neighbors\, hail season has a way of sneaking up o
+ n us. Even a storm that felt minor can leave dents and lifted shingles you
+  cannot spot from the ground. We have been climbing Plano roofs since 2000
+ \, and a free inspection is the easiest way to know where you stand. What 
+ part of town saw the worst of the last round?\n\n#Plano #NorthTexas
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-ig-before-after-hook@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260916T110000
+DTEND;TZID=America/Chicago:20260916T111500
+SUMMARY:[Instagram] before-after
+DESCRIPTION:From weathered to weather-ready. Swipe to see a Plano roof go 
+ from storm-worn to solid. Same house\, brand new peace of mind. Family-run
+  since 2000.\n\n#Plano #PlanoTX #PlanoRoofing #RoofReplacement #BeforeAndA
+ fter #NorthTexas #HailDamage #RoofingLife #CurbAppeal #DFW
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-nd-neighborly-tip@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260917T090000
+DTEND;TZID=America/Chicago:20260917T091500
+SUMMARY:[Nextdoor] education
+DESCRIPTION:Neighborly tip for anyone unsure whether the last storm did an
+ y harm: check your gutters for shingle granules that look like coarse blac
+ k sand. A lot of them usually means your shingles took a beating up top. H
+ appy to answer questions\, we are a family-run Plano roofer and have been 
+ at this since 2000.
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-gbp-service-area@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260918T100000
+DTEND;TZID=America/Chicago:20260918T101500
+SUMMARY:[Google Business Profile] trust
+DESCRIPTION:Proudly serving Plano\, Allen\, McKinney\, Frisco\, Wylie\, an
+ d Richardson. When you call a family-run roofer\, you get the same people 
+ every visit. That is how we have worked since 2000.
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-ig-detail-shot@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260919T170000
+DTEND;TZID=America/Chicago:20260919T171500
+SUMMARY:[Instagram] education
+DESCRIPTION:Hail does not always crack a shingle. Sometimes it just knocks
+  the protective granules loose and quietly shortens your roof's life. Know
+ ing the difference is half the job.\n\n#Plano #PlanoTX #Roofing #HailDamag
+ e #RoofRepair #NorthTexas #Shingles #HomeMaintenance #DFW #RoofCare
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-fb-family-story@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260920T180000
+DTEND;TZID=America/Chicago:20260920T181500
+SUMMARY:[Facebook] trust
+DESCRIPTION:Some roofing companies rotate through crews and phone numbers 
+ every year. We are not one of them. Jackson Roofing is family-run\, owned 
+ by Chris Jackson\, and has been putting good roofs over Plano families sin
+ ce 2000. When you reach out\, you are talking to the same people who will 
+ still be here next season. Who did your last roof\, and would you call the
+ m again?\n\n#Plano #FamilyOwned
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-nd-weekend-community@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260921T100000
+DTEND;TZID=America/Chicago:20260921T101500
+SUMMARY:[Nextdoor] community
+DESCRIPTION:Happy Sunday\, Plano. If a neighbor mentions their ceiling is 
+ showing a water stain after the recent weather\, point them our way. We ar
+ e a family-run local roofer and always glad to take a free look before a s
+ mall spot becomes a big repair.
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-gbp-frisco-focus@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260922T100000
+DTEND;TZID=America/Chicago:20260922T101500
+SUMMARY:[Google Business Profile] storm-response
+DESCRIPTION:Frisco and McKinney homeowners\, we have inspection slots open
+  this week. If wind or hail hit your area\, a free roof check tells you wh
+ ether you are fine or facing a claim. Family-run since 2000.
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-ig-before-after-two@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260923T110000
+DTEND;TZID=America/Chicago:20260923T111500
+SUMMARY:[Instagram] before-after
+DESCRIPTION:Curb appeal upgrade\, unlocked. A fresh roof does more than ke
+ ep the rain out\, it changes how the whole house reads from the street. Th
+ is one is in Allen.\n\n#Allen #AllenTX #Roofing #RoofReplacement #BeforeAn
+ dAfter #NorthTexas #CurbAppeal #PlanoRoofing #DFW #HomeUpgrade
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-fb-question-engagement@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260924T120000
+DTEND;TZID=America/Chicago:20260924T121500
+SUMMARY:[Facebook] community
+DESCRIPTION:Quick one for our North Texas neighbors: how old is your roof?
+  A lot of folks honestly are not sure\, and that is completely normal. If 
+ it has been on the house longer than you have owned it\, a free inspection
+  is a smart way to plan ahead before hail season peaks. Drop a guess below
+ .\n\n#Plano #NorthTexas
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-nd-wylie-helpful@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260925T090000
+DTEND;TZID=America/Chicago:20260925T091500
+SUMMARY:[Nextdoor] education
+DESCRIPTION:For the Wylie and Richardson neighbors: after a windy stretch\
+ , walk your yard and look for shingle pieces or exposed nail heads on the 
+ ground. Those are easy signs something shifted up top. We are a family-run
+  Plano roofer and glad to help you sort out whether it is worth a closer l
+ ook.
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-gbp-reviews-soft@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260926T100000
+DTEND;TZID=America/Chicago:20260926T101500
+SUMMARY:[Google Business Profile] reviews
+DESCRIPTION:The best part of a family-run roof job is the thank you at the
+  end. Plano homeowners keep sending us their neighbors because we show up 
+ on time\, explain the work plainly\, and stand behind it. Roofing this com
+ munity since 2000.
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-ig-process-punch@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260927T170000
+DTEND;TZID=America/Chicago:20260927T171500
+SUMMARY:[Instagram] trust
+DESCRIPTION:No pressure\, no runaround. We climb up\, take photos\, and wa
+ lk you through exactly what we see. You decide from there. That is roofing
+  done the family-run way.\n\n#Plano #PlanoTX #Roofing #FamilyOwned #RoofIn
+ spection #NorthTexas #HonestWork #DFW #Shingles #HomeCare
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-fb-before-after-story@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260928T180000
+DTEND;TZID=America/Chicago:20260928T181500
+SUMMARY:[Facebook] before-after
+DESCRIPTION:This McKinney roof had quietly taken years of North Texas sun 
+ and hail. The homeowners were not sure it was time yet\, so we walked them
+  through the photos and let them decide. A week later\, here is the result
+ . Which look do you prefer\, the before or the after?\n\n#McKinney #Roofin
+ g
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-gbp-fall-prep@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260929T100000
+DTEND;TZID=America/Chicago:20260929T101500
+SUMMARY:[Google Business Profile] seasonal
+DESCRIPTION:Fall is the smart time to get ahead of roof issues in Plano. C
+ ooler days make for clean inspections\, and any repair is easier before wi
+ nter weather arrives. Book a free check with a family-run team that has ro
+ ofed here since 2000.
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-ig-hook-attic@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260930T110000
+DTEND;TZID=America/Chicago:20260930T111500
+SUMMARY:[Instagram] education
+DESCRIPTION:Your attic tells on your roof. Daylight through the boards or 
+ a musty smell after rain usually means water is finding a way in. Catch it
+  early and the fix stays small.\n\n#Plano #PlanoTX #Roofing #RoofLeak #Hom
+ eMaintenance #NorthTexas #RoofRepair #DFW #AtticCheck #Homeowner
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-nd-richardson-seasonal@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261001T090000
+DTEND;TZID=America/Chicago:20261001T091500
+SUMMARY:[Nextdoor] seasonal
+DESCRIPTION:Richardson neighbors\, now is a good stretch to clear leaves a
+ nd debris off the roof valleys before they trap water. If you would rather
+  not climb up there\, we are a family-run local roofer and happy to take a
+  look while we are at it. No hard sell.
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-fb-storm-response@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261002T120000
+DTEND;TZID=America/Chicago:20261002T121500
+SUMMARY:[Facebook] storm-response
+DESCRIPTION:When a storm blows through North Texas\, the phone lines fill 
+ up fast with out-of-town crews. We are the opposite of that. Jackson Roofi
+ ng lives here\, works here\, and has since 2000. If your Plano area home t
+ ook a hit\, reach out and we will get you on the schedule for a free inspe
+ ction. Anyone still cleaning up branches from the last one?\n\n#Plano #Nor
+ thTexas
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-gbp-before-after-local@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261003T100000
+DTEND;TZID=America/Chicago:20261003T101500
+SUMMARY:[Google Business Profile] before-after
+DESCRIPTION:Another Plano roof brought back to life this week. Storm-worn 
+ shingles out\, clean new roof on. Family-run craftsmanship since 2000.
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-ig-community-punch@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261004T170000
+DTEND;TZID=America/Chicago:20261004T171500
+SUMMARY:[Instagram] community
+DESCRIPTION:We do not just roof houses in Plano\, we live under these same
+  skies. When your roof holds through the next storm\, that is a win for th
+ e whole street.\n\n#Plano #PlanoTX #Roofing #Community #NorthTexas #Family
+ Owned #LocalBusiness #DFW #Neighbors #Rooftops
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-nd-frisco-helpful@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261005T100000
+DTEND;TZID=America/Chicago:20261005T101500
+SUMMARY:[Nextdoor] trust
+DESCRIPTION:For the Frisco crowd deciding between roofers: ask whoever you
+  call how long they have worked this area and whether the same people will
+  be on your job start to finish. We are family-run\, owned by Chris Jackso
+ n\, and have answered yes to both since 2000. Glad to be a second opinion 
+ for anyone comparing quotes.
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-gbp-allen-inspection@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261006T100000
+DTEND;TZID=America/Chicago:20261006T101500
+SUMMARY:[Google Business Profile] storm-response
+DESCRIPTION:Allen homeowners\, free roof inspections are open this week. I
+ f the last round of North Texas weather worries you\, let a family-run tea
+ m that has roofed here since 2000 take a look before it costs you more.
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-fb-education-warranty@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261007T120000
+DTEND;TZID=America/Chicago:20261007T121500
+SUMMARY:[Facebook] education
+DESCRIPTION:Here is what a lot of North Texas homeowners miss: most storm 
+ damage is invisible from your driveway. Insurers usually want it documente
+ d soon after the weather event\, so waiting can quietly cost you the claim
+ . A free inspection gives you photos and a straight answer either way. We 
+ have walked Plano families through this since 2000. Questions welcome belo
+ w.\n\n#Plano #NorthTexas
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-ig-before-after-three@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261008T110000
+DTEND;TZID=America/Chicago:20261008T111500
+SUMMARY:[Instagram] before-after
+DESCRIPTION:Old and tired on the left\, fresh and ready on the right. This
+  Wylie roof was overdue and the homeowners felt the difference the first s
+ torm after.\n\n#Wylie #WylieTX #Roofing #RoofReplacement #BeforeAndAfter #
+ NorthTexas #PlanoRoofing #CurbAppeal #DFW #NewRoof
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-nd-mckinney-seasonal@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261009T090000
+DTEND;TZID=America/Chicago:20261009T091500
+SUMMARY:[Nextdoor] seasonal
+DESCRIPTION:McKinney neighbors\, as the weather cools it is worth checking
+  that your attic vents are clear so moisture does not build up over winter
+ . If you are not sure what to look for\, ask away. We are a family-run Pla
+ no roofer and happy to point folks in the right direction.
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-gbp-reviews-community@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261010T100000
+DTEND;TZID=America/Chicago:20261010T101500
+SUMMARY:[Google Business Profile] reviews
+DESCRIPTION:Word of mouth built this business. Plano families keep sending
+  neighbors our way because we treat every roof like it is over our own kid
+ s. Family-run since 2000.
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-ig-seasonal-hook@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261011T170000
+DTEND;TZID=America/Chicago:20261011T171500
+SUMMARY:[Instagram] seasonal
+DESCRIPTION:Hail season is not over until it is over in North Texas. A lit
+ tle prep now beats a scramble later. Get your roof looked at while the wea
+ ther is calm.\n\n#Plano #PlanoTX #Roofing #HailSeason #NorthTexas #FallHom
+ ePrep #RoofInspection #DFW #Shingles #HomeCare
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-fb-trust-closeout@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261012T180000
+DTEND;TZID=America/Chicago:20261012T181500
+SUMMARY:[Facebook] trust
+DESCRIPTION:A roof is one of the biggest things protecting your family\, s
+ o it should come from people you can actually reach. Jackson Roofing is fa
+ mily-run\, owned by Chris Jackson\, serving Plano\, Allen\, McKinney\, Fri
+ sco\, Wylie\, and Richardson since 2000. When you are ready for a free ins
+ pection\, we are a message away. Thanks for having us in the neighborhood.
+ \n\n#Plano #FamilyOwned
+END:VEVENT
+END:VCALENDAR

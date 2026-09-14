@@ -1,4 +1,4 @@
-# Jackson Roofing — Social System
+# Jackson Roofing · Social System
 
 A Wing-owned, **draft-only** social media system for Jackson Roofing (family-run
 Plano roofer, North Texas since 2000). This is a portfolio / win-back asset.

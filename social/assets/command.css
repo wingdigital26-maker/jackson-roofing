@@ -1,5 +1,5 @@
 /* =========================================================================
-   Jackson Roofing — Social Command Center
+   Jackson Roofing · Social Command Center
    Wing-owned draft system. Brand tokens matched to the live site exactly.
    ========================================================================= */
 
@@ -69,6 +69,34 @@ h1,h2,h3,h4{font-family:var(--font-head);color:var(--ink);line-height:1.08;lette
   letter-spacing:.06em;text-transform:uppercase;padding:.42rem .8rem;border-radius:var(--r-pill)}
 .chip-draft{background:rgba(27,192,255,.14);color:var(--cyan);border:1px solid rgba(27,192,255,.34)}
 .chip-draft::before{content:"";width:7px;height:7px;border-radius:2px;background:var(--cyan)}
+.dl-btn{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font-body);font-weight:700;
+  font-size:.82rem;letter-spacing:.01em;text-decoration:none;color:var(--ink);
+  background:var(--cyan);border:1px solid var(--cyan);border-radius:var(--r-pill);
+  padding:.46rem .95rem;transition:background .18s var(--ease),transform .18s var(--ease),box-shadow .18s var(--ease)}
+.dl-btn svg{width:15px;height:15px}
+.dl-btn:hover{background:var(--cyan-deep);border-color:var(--cyan-deep);transform:translateY(-1px);box-shadow:0 8px 20px -12px rgba(27,192,255,.7)}
+.dl-btn:focus-visible{outline:2px solid var(--white);outline-offset:2px}
+
+/* ---------- STRATEGY ACCORDION ---------- */
+.strategy{margin:clamp(1.1rem,2.5vw,1.5rem) 0 0}
+.acc{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);overflow:hidden}
+.acc>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.75rem;
+  padding:clamp(1rem,2vw,1.25rem) clamp(1.2rem,2.5vw,1.6rem);user-select:none}
+.acc>summary::-webkit-details-marker{display:none}
+.acc>summary:focus-visible{outline:2px solid var(--cyan-deep);outline-offset:-2px}
+.acc-title{font-family:var(--font-head);font-weight:800;color:var(--ink);font-size:1.05rem;letter-spacing:-.01em}
+.acc-hint{color:var(--muted);font-size:.85rem;font-weight:600}
+.acc-chev{width:20px;height:20px;color:var(--muted);margin-left:auto;flex:none;transition:transform .22s var(--ease)}
+.acc[open]>summary .acc-chev{transform:rotate(180deg)}
+.acc-lead{margin:0;padding:0 clamp(1.2rem,2.5vw,1.6rem);color:var(--muted);font-size:.9rem;max-width:78ch}
+.pillar-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem;
+  padding:.95rem clamp(1.2rem,2.5vw,1.6rem) clamp(1.2rem,2.5vw,1.5rem)}
+.pl-item{border:1px solid var(--line);border-left:4px solid var(--acc,var(--cyan));border-radius:var(--r-md);
+  padding:.75rem .85rem;background:var(--paper)}
+.pl-top{display:flex;align-items:baseline;gap:.5rem}
+.pl-name{font-family:var(--font-head);font-weight:800;color:var(--ink);font-size:.92rem;letter-spacing:-.01em}
+.pl-count{margin-left:auto;font-family:var(--font-head);font-weight:900;color:var(--acc,var(--cyan));font-size:.95rem}
+.pl-desc{margin:.3rem 0 0;font-size:.8rem;line-height:1.5;color:var(--muted)}
 
 /* ---------- STRIP ---------- */
 .strip{margin:clamp(1.8rem,4vw,2.8rem) 0 0;padding:clamp(1.3rem,2.5vw,1.7rem);
@@ -169,6 +197,19 @@ h1,h2,h3,h4{font-family:var(--font-head);color:var(--ink);line-height:1.08;lette
 .pc-pillar{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:700;letter-spacing:.04em;
   text-transform:uppercase;color:var(--muted)}
 .pc-pillar i{width:8px;height:8px;border-radius:2px;background:var(--acc)}
+
+/* Copy caption action bar */
+.pc-actions{display:flex;align-items:center;gap:.6rem;border-top:1px solid var(--line);
+  padding:.5rem .9rem;background:var(--white)}
+.pc-copy{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-body);font-weight:700;
+  font-size:.8rem;cursor:pointer;color:var(--slate);background:var(--paper);
+  border:1px solid var(--line-strong);border-radius:var(--r-sm);padding:.42rem .75rem;
+  transition:border-color .18s var(--ease),color .18s var(--ease),background .18s var(--ease)}
+.pc-copy svg{width:15px;height:15px;flex:none}
+.pc-copy:hover{border-color:var(--cyan-deep);color:var(--ink)}
+.pc-copy:focus-visible{outline:2px solid var(--cyan-deep);outline-offset:2px}
+.pc-copy.done{color:var(--p-nextdoor);border-color:var(--p-nextdoor);background:rgba(11,125,92,.08)}
+.pc-copy-hint{font-size:.72rem;color:var(--muted);margin-left:auto}
 
 /* Instagram action row */
 .ig-actions{display:flex;gap:.9rem;padding:.55rem .9rem .2rem;color:var(--slate)}

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jackson Roofing — Social Command Center</title>
+<title>Jackson Roofing · Social Command Center</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Wing-owned draft social system for Jackson Roofing. Preview only, nothing posts live.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +24,10 @@
     <div class="hero-meta">
       <span class="chip chip-draft">Preview only</span>
       <span class="hero-scope" id="heroScope">Loading queue&hellip;</span>
+      <a class="dl-btn" id="dlSchedule" href="./data/exports/schedule.csv" download hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 19h16"/></svg>
+        Download schedule
+      </a>
     </div>
   </div>
 </header>
@@ -37,6 +41,19 @@
       <p class="muted" id="stripNote">The weekly rhythm across every channel.</p>
     </div>
     <div class="strip-grid" id="cadenceGrid" aria-live="polite"></div>
+  </section>
+
+  <!-- STRATEGY / PILLAR LEGEND -->
+  <section class="strategy" aria-label="Content strategy">
+    <details class="acc" id="strategyAcc">
+      <summary>
+        <span class="acc-title">Content strategy &middot; the seven pillars</span>
+        <span class="acc-hint" id="pillarHint"></span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p class="acc-lead">Every draft is tagged to one of these pillars so the feed stays balanced across the month instead of leaning on one kind of post. Counts reflect the current queue.</p>
+      <div class="pillar-grid" id="pillarLegendPanel"></div>
+    </details>
   </section>
 
   <!-- CONTROLS -->

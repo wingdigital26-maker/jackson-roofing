@@ -1,5 +1,5 @@
 /* =========================================================================
-   Jackson Roofing — Social Command Center
+   Jackson Roofing · Social Command Center
    Wing-owned draft system. Loads posts.json + schedule.json at runtime.
    Renders empty states honestly when data is missing. Nothing posts live.
    ========================================================================= */
@@ -15,6 +15,21 @@
   };
   var PILLAR_COLORS = ["#0aa7e6", "#c9337d", "#0b7d5c", "#e0821b", "#7c5cff", "#c8452f", "#1a73e8"];
 
+  // human labels + one-line intent for known pillars; unknown keys prettify gracefully
+  var PILLAR_META = {
+    "storm-response": { label: "Storm Response", desc: "Fast, calm guidance right after hail or wind so neighbors know the first steps and who to call." },
+    "before-after":   { label: "Before & After", desc: "Real project transformations that show workmanship and build trust at a glance." },
+    "education":      { label: "Education",       desc: "Plain-language answers to the questions homeowners actually ask about roofs and claims." },
+    "trust":          { label: "Trust & Credentials", desc: "Family-run since 2000, licensing, warranties, and the proof behind the promise." },
+    "reviews":        { label: "Reviews & Proof", desc: "Homeowner reviews and social proof from the North Texas cities Jackson serves." },
+    "community":      { label: "Community",       desc: "Local presence across Plano and the DFW suburbs, the neighborly side of the brand." },
+    "seasonal":       { label: "Seasonal & Maintenance", desc: "Timely upkeep and season-specific reminders tied to the North Texas weather calendar." }
+  };
+  function pillarLabel(key) {
+    if (PILLAR_META[key] && PILLAR_META[key].label) return PILLAR_META[key].label;
+    return String(key || "").replace(/[-_]+/g, " ").replace(/\b\w/g, function (m) { return m.toUpperCase(); });
+  }
+
   var els = {
     loading:   document.getElementById("loading"),
     heroScope: document.getElementById("heroScope"),
@@ -27,7 +42,10 @@
     calLegend: document.getElementById("calLegend"),
     calDow:    document.getElementById("calDow"),
     calGrid:   document.getElementById("calGrid"),
-    feed:      document.getElementById("feed")
+    feed:      document.getElementById("feed"),
+    pillarPanel: document.getElementById("pillarLegendPanel"),
+    pillarHint:  document.getElementById("pillarHint"),
+    dlSchedule:  document.getElementById("dlSchedule")
   };
 
   var state = { posts: [], schedule: null, pillars: [], pillarColor: {}, platform: "all", pillar: "all" };
@@ -75,6 +93,24 @@
     hideLoader();
   });
 
+  // ---------- schedule download (feature-detected; degrades if absent) ----------
+  // The export CSV is produced by a separate lane. If it is not present we hide
+  // the affordance rather than offer a link that 404s.
+  (function detectDownload() {
+    var a = els.dlSchedule;
+    if (!a) return;
+    var url = a.getAttribute("href");
+    fetch(url, { method: "HEAD", cache: "no-store" })
+      .then(function (r) {
+        // some static servers reject HEAD; fall back to a lightweight GET probe
+        if (r && r.ok) { a.hidden = false; return; }
+        if (r && (r.status === 405 || r.status === 501)) {
+          return fetch(url, { cache: "no-store" }).then(function (g) { if (g && g.ok) a.hidden = false; });
+        }
+      })
+      .catch(function () { /* absent or blocked: leave hidden */ });
+  })();
+
   function hideLoader() {
     if (!els.loading) return;
     els.loading.classList.add("gone");
@@ -86,8 +122,36 @@
     var n = state.posts.length;
     els.heroScope.textContent = n ? (n + " drafted post" + (n === 1 ? "" : "s") + " across " + platformsInPlay() + " channels") : "No drafts queued yet";
     renderCadence();
+    renderStrategy();
     renderFilters();
     apply();
+  }
+
+  // ---------- strategy / pillar legend ----------
+  function renderStrategy() {
+    var panel = els.pillarPanel;
+    if (!panel) return;
+    panel.innerHTML = "";
+    if (!state.pillars.length) {
+      if (els.pillarHint) els.pillarHint.textContent = "";
+      panel.innerHTML = '<p class="muted" style="margin:0;grid-column:1/-1">Pillars appear here once drafts are tagged.</p>';
+      return;
+    }
+    if (els.pillarHint) els.pillarHint.textContent = state.pillars.length + " pillars in play";
+    var counts = {};
+    state.posts.forEach(function (p) { if (p.pillar) counts[p.pillar] = (counts[p.pillar] || 0) + 1; });
+    state.pillars.forEach(function (key) {
+      var acc = state.pillarColor[key] || "#6a7889";
+      var desc = (PILLAR_META[key] && PILLAR_META[key].desc) || "Drafts tagged to this theme.";
+      var item = document.createElement("div");
+      item.className = "pl-item";
+      item.style.setProperty("--acc", acc);
+      item.innerHTML =
+        '<div class="pl-top"><span class="pl-name">' + esc(pillarLabel(key)) + "</span>" +
+        '<span class="pl-count">' + (counts[key] || 0) + "</span></div>" +
+        '<p class="pl-desc">' + esc(desc) + "</p>";
+      panel.appendChild(item);
+    });
   }
 
   function platformsInPlay() {
@@ -158,7 +222,7 @@
     if (state.pillars.length) {
       pl.appendChild(segBtn("all", "All", null, "pillar"));
       state.pillars.forEach(function (name) {
-        pl.appendChild(segBtn(name, name, state.pillarColor[name], "pillar"));
+        pl.appendChild(segBtn(name, pillarLabel(name), state.pillarColor[name], "pillar"));
       });
     } else {
       pl.innerHTML = '<span class="muted" style="font-size:.85rem">No pillars tagged</span>';
@@ -347,7 +411,7 @@
   }
   function pillarBlock(p) {
     if (!p.pillar) return "";
-    return '<span class="pc-pillar" style="--acc:' + (state.pillarColor[p.pillar] || "#6a7889") + '"><i></i>' + esc(p.pillar) + "</span>";
+    return '<span class="pc-pillar" style="--acc:' + (state.pillarColor[p.pillar] || "#6a7889") + '"><i></i>' + esc(pillarLabel(p.pillar)) + "</span>";
   }
   function geoBlock(p) {
     if (!p.geo) return "";
@@ -416,7 +480,70 @@
         mediaBlock(p.image, true) +
         '<div class="pc-cta"><button class="cta-btn" type="button">' + cta + "</button>" + pillarBlock(p) + "</div>";
     }
+    card.appendChild(copyBar(p));
     return card;
+  }
+
+  // ---------- per-post copy caption ----------
+  var ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>';
+  var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>';
+
+  function captionText(p) {
+    var out = String(p.caption || "");
+    if (p.hashtags && p.hashtags.length) {
+      var tags = p.hashtags.map(function (t) { return "#" + String(t).replace(/^#+/, ""); }).join(" ");
+      out += (out ? "\n\n" : "") + tags;
+    }
+    return out;
+  }
+
+  function copyBar(p) {
+    var bar = document.createElement("div");
+    bar.className = "pc-actions";
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pc-copy";
+    btn.innerHTML = ICON_COPY + "<span>Copy caption</span>";
+    var text = captionText(p);
+    var tagCount = (p.hashtags && p.hashtags.length) || 0;
+    var hint = document.createElement("span");
+    hint.className = "pc-copy-hint";
+    hint.textContent = tagCount ? (tagCount + " hashtag" + (tagCount === 1 ? "" : "s")) : "No hashtags";
+    var timer = null;
+    btn.addEventListener("click", function () {
+      copyToClipboard(text).then(function (ok) {
+        if (timer) clearTimeout(timer);
+        btn.classList.add("done");
+        btn.innerHTML = ICON_CHECK + "<span>" + (ok ? "Copied" : "Press Ctrl+C") + "</span>";
+        timer = setTimeout(function () {
+          btn.classList.remove("done");
+          btn.innerHTML = ICON_COPY + "<span>Copy caption</span>";
+        }, 1600);
+      });
+    });
+    bar.appendChild(btn);
+    bar.appendChild(hint);
+    return bar;
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return legacyCopy(text); });
+    }
+    return Promise.resolve(legacyCopy(text));
+  }
+  function legacyCopy(text) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "absolute"; ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) { return false; }
   }
 
   // ---------- empty states ----------
