@@ -406,3 +406,7 @@ opens and closes the same way. A few habits keep captions sounding handcrafted:
   screen-reader users get the same context sighted followers do, and accurate alt text
   also helps the post surface in search. Describe what is really in the frame (the
   roof, the home, the truck), not what the caption wishes were there.
+
+## Capture-driven content
+
+The strongest posts come off the job, not a stock library. The crew shoots the crew shot list (shot-list.html) on every job: damage close-ups, tear-off and underlayment in progress, before and after pairs, the crew and the truck, the magnet sweep, and short video clips. Weeks 9 to 11 of the plan are built around these exact shots: each post is written and waiting, tagged in images.json with the target_shot to capture. The moment a real photo or clip comes in, swap it into image.src and the post is ready. Shoot once, feed the calendar for a week.

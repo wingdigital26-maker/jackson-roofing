@@ -379,6 +379,139 @@
       "concept": "Wide rooftop-under-sky shot invites the tag-your-roof UGC prompt without implying a specific claim. A vibrant golden-hour swap would lift engagement.",
       "src": "../assets/img/g-vanalstyne.jpg",
       "source_hint": "Prefer wide Plano rooftops at golden hour; fallback Pexels: texas suburb rooftops sky"
+    },
+    {
+      "id": "w9-gbp-storm-damage",
+      "src": "../assets/img/home-storm.webp",
+      "concept": "A brown tile roof and stucco chimney under dark storm clouds",
+      "target_shot": "Hail bruise close-up on a shingle with a coin for scale",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w9-ig-hail-closeup",
+      "src": "../assets/img/home-repair.webp",
+      "concept": "A roofer kneeling on a gray shingle roof installing a skylight with a hammer in hand",
+      "target_shot": "Extreme close-up of a hail bruise on a shingle, coin next to it",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w9-fb-tearoff",
+      "src": "../assets/img/svc-replacement.webp",
+      "concept": "A home mid-replacement with white roofing underlayment and shingle bundles staged on the roof beside a ladder",
+      "target_shot": "Tear-off in action with old shingles coming off into the dumpster",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w9-ig-tearoff-reel",
+      "src": "../assets/img/svc-replacement.webp",
+      "concept": "A home mid-replacement with white roofing underlayment and shingle bundles staged on the roof beside a ladder",
+      "target_shot": "Tear-off to finished-roof time-lapse in one day",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w9-nd-cleanup",
+      "src": "../assets/img/g-vanalstyne.jpg",
+      "concept": "A cream farmhouse with a wraparound porch and a new gray shingle roof under a cloudy sky",
+      "target_shot": "Magnet sweep of the yard picking up stray nails",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w9-fb-beforeafter",
+      "src": "../assets/img/g-4998.jpg",
+      "concept": "A brick one-story home with a new roof on a clear winter day",
+      "target_shot": "Same house curb-appeal before and after a new roof",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w10-gbp-truck",
+      "src": "../assets/img/jackson-truck.jpg",
+      "concept": "A Jackson Roofing branded pickup with a ladder rack parked on a suburban street",
+      "target_shot": "The Jackson Roofing branded truck parked at a job site",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w10-ig-crew",
+      "src": "../assets/img/home-truck.jpg",
+      "concept": "A Jackson Roofing branded pickup parked in front of stone-accented North Texas homes",
+      "target_shot": "Crew on the roof, wide shot with the branded truck below",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w10-fb-underlayment",
+      "src": "../assets/img/home-repair.webp",
+      "concept": "A roofer kneeling on a gray shingle roof installing a skylight with a hammer in hand",
+      "target_shot": "Satisfying clip of fresh underlayment rolling down the roof",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w10-gbp-inspection",
+      "src": "../assets/img/home-inspection.webp",
+      "concept": "A brick two-story home with a new gray shingle roof under a bright summer sky",
+      "target_shot": "An inspector checking a roof with a clipboard in hand",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w10-ig-beforeafter-detail",
+      "src": "../assets/img/svc-storm.webp",
+      "concept": "A two-story brick and white home with a new roof beside a backyard pool on a clear day",
+      "target_shot": "Tight before-and-after of a roof valley cleaned up",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w10-fb-meetcrew",
+      "src": "../assets/img/crew-work.jpg",
+      "concept": "A brick two-story home with a new roof seen from below against a blue sky and trees",
+      "target_shot": "A brick two-story home with a new roof, crew job",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w10-nd-gutters",
+      "src": "../assets/img/g-0329.jpg",
+      "concept": "A brick home corner with fresh black garage doors, new gutters and a downspout",
+      "target_shot": "Fresh gutters and a downspout on a brick home corner",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w11-ig-magnet-reel",
+      "src": "../assets/img/home-repair.webp",
+      "concept": "A roofer kneeling on a gray shingle roof installing a skylight with a hammer in hand",
+      "target_shot": "Close-up clip of a magnet sweep picking up nails from the driveway",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w11-fb-winterprep",
+      "src": "../assets/img/home-storm.webp",
+      "concept": "A brown tile roof and stucco chimney under dark storm clouds",
+      "target_shot": "A tile roof and chimney under heavy clouds",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w11-gbp-beforeafter",
+      "src": "../assets/img/house-brick.jpg",
+      "concept": "A large brick home with multiple chimneys and a new roof above a manicured lawn",
+      "target_shot": "A large brick home with a new roof and manicured lawn",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w11-ig-drone",
+      "src": "../assets/img/g-9349.jpg",
+      "concept": "A pickup parked in front of a white ranch home with a new dark roof and bare oak trees",
+      "target_shot": "Drone flyover of a finished dark roof on a ranch home",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w11-nd-poststorm",
+      "src": "../assets/img/svc-inspection.jpg",
+      "concept": "A brick two-story home with a new roof and an arched window viewed from a low angle",
+      "target_shot": "A brick two-story home with a new roof and arched window",
+      "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w11-fb-review-invite",
+      "src": "../assets/img/house-brick.jpg",
+      "concept": "A large brick home with multiple chimneys and a new roof above a manicured lawn",
+      "target_shot": "A large brick home with a new roof, completed job",
+      "source": "crew capture (see shot-list.html)"
     }
   ]
 }

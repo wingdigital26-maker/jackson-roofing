@@ -1307,6 +1307,399 @@
         "credit": "Jackson Roofing"
       },
       "geo": "Plano TX"
+    },
+    {
+      "id": "w9-gbp-storm-damage",
+      "platform": "gbp",
+      "pillar": "storm-response",
+      "date": "2026-11-10",
+      "time": "10:00",
+      "caption": "After a North Texas storm rolls through, the damage is easier to see up close than from the driveway. We are booking free roof checks across Plano this week and will show you exactly what we find. Family-run since 2000.",
+      "hashtags": [],
+      "cta": "Contact Us via the site to book a free roof check",
+      "image": {
+        "src": "../assets/img/home-storm.webp",
+        "alt": "A brown tile roof and stucco chimney under dark storm clouds",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w9-ig-hail-closeup",
+      "platform": "instagram",
+      "pillar": "education",
+      "date": "2026-11-11",
+      "time": "11:00",
+      "caption": "This is what hail actually does to a shingle. Those soft dark bruises knock the granules loose and shorten the life of your roof, and most of them are invisible from the ground. Save this so you know what to look for after the next storm.",
+      "hashtags": [
+        "#Plano",
+        "#PlanoRoofing",
+        "#HailDamage",
+        "#RoofingTips",
+        "#NorthTexas",
+        "#HailSeason",
+        "#RoofRepair",
+        "#DFW",
+        "#HomeMaintenance",
+        "#PlanoTX"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/home-repair.webp",
+        "alt": "A roofer kneeling on a gray shingle roof installing a skylight with a hammer in hand",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w9-fb-tearoff",
+      "platform": "facebook",
+      "pillar": "education",
+      "date": "2026-11-12",
+      "time": "12:00",
+      "caption": "A good roof job starts with a clean tear-off, right down to the deck, so nothing rotten gets buried under the new shingles. It is messy for a day and worth it for decades. We have been doing it this way on Plano homes since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#Roofing"
+      ],
+      "cta": "Contact Us via the site to plan your replacement",
+      "image": {
+        "src": "../assets/img/svc-replacement.webp",
+        "alt": "A home mid-replacement with white roofing underlayment and shingle bundles staged on the roof beside a ladder",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w9-ig-tearoff-reel",
+      "platform": "instagram",
+      "pillar": "video",
+      "date": "2026-11-13",
+      "time": "11:00",
+      "caption": "A whole roof in a day, sped up to 20 seconds. Tear-off, fresh underlayment, new shingles, clean yard. Hit follow if you could watch this all day. Plano, family-run since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#RoofReplacement",
+        "#Timelapse",
+        "#Roofing",
+        "#SatisfyingVideo",
+        "#NorthTexas",
+        "#PlanoTX",
+        "#RoofingLife",
+        "#Reels",
+        "#DFW"
+      ],
+      "cta": "Contact Us via the site for a free estimate",
+      "image": {
+        "src": "../assets/img/svc-replacement.webp",
+        "alt": "A home mid-replacement with white roofing underlayment and shingle bundles staged on the roof beside a ladder",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w9-nd-cleanup",
+      "platform": "nextdoor",
+      "pillar": "community",
+      "date": "2026-11-15",
+      "time": "10:00",
+      "caption": "One thing our Plano neighbors always mention: we run a magnet over the whole yard before we leave, so no stray nails end up in a tire or a bare foot. Little things matter when it is your home. Happy to answer any roofing questions.",
+      "hashtags": [],
+      "cta": "Contact Us via the site anytime",
+      "image": {
+        "src": "../assets/img/g-vanalstyne.jpg",
+        "alt": "A cream farmhouse with a wraparound porch and a new gray shingle roof under a cloudy sky",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w9-fb-beforeafter",
+      "platform": "facebook",
+      "pillar": "before-after",
+      "date": "2026-11-16",
+      "time": "12:00",
+      "caption": "Same house, whole new look. A fresh roof does more for curb appeal than almost anything else you can do to a North Texas home. Which side of the reveal would you want to pull up to? Family-run in Plano since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#BeforeAndAfter",
+        "#Roofing"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/g-4998.jpg",
+        "alt": "A brick one-story home with a new roof on a clear winter day",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w10-gbp-truck",
+      "platform": "gbp",
+      "pillar": "trust",
+      "date": "2026-11-17",
+      "time": "09:00",
+      "caption": "If you see our truck in your Plano neighborhood this week, we are out running free roof inspections. Family-owned and roofing North Texas homes since 2000. Wave us down or reach out for your own free look.",
+      "hashtags": [],
+      "cta": "Contact Us via the site to schedule",
+      "image": {
+        "src": "../assets/img/jackson-truck.jpg",
+        "alt": "A Jackson Roofing branded pickup with a ladder rack parked on a suburban street",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w10-ig-crew",
+      "platform": "instagram",
+      "pillar": "trust",
+      "date": "2026-11-17",
+      "time": "17:00",
+      "caption": "The same crew, on the roof, every job. No subs you have never met, no surprises. That is how a family-run shop has kept Plano roofs solid since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#RoofingCrew",
+        "#FamilyOwned",
+        "#PlanoTX",
+        "#Roofing",
+        "#NorthTexas",
+        "#LocalBusiness",
+        "#DFW",
+        "#RoofingLife",
+        "#Since2000"
+      ],
+      "cta": "Contact Us via the site to meet the team",
+      "image": {
+        "src": "../assets/img/home-truck.jpg",
+        "alt": "A Jackson Roofing branded pickup parked in front of stone-accented North Texas homes",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w10-fb-underlayment",
+      "platform": "facebook",
+      "pillar": "video",
+      "date": "2026-11-18",
+      "time": "11:00",
+      "caption": "There is something oddly satisfying about fresh underlayment going down clean and tight. It is also the layer that keeps water out if a shingle ever fails, so we never rush it. Plano, family-run since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#Roofing",
+        "#SatisfyingVideo"
+      ],
+      "cta": "Contact Us via the site for a free estimate",
+      "image": {
+        "src": "../assets/img/home-repair.webp",
+        "alt": "A roofer kneeling on a gray shingle roof installing a skylight with a hammer in hand",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w10-gbp-inspection",
+      "platform": "gbp",
+      "pillar": "education",
+      "date": "2026-11-19",
+      "time": "10:00",
+      "caption": "A real inspection is more than a glance from the curb. We check the shingles, the flashing, the valleys, and the vents, then show you photos of anything we find. Free for Plano homeowners, no pressure. Since 2000.",
+      "hashtags": [],
+      "cta": "Contact Us via the site to book your free inspection",
+      "image": {
+        "src": "../assets/img/home-inspection.webp",
+        "alt": "A brick two-story home with a new gray shingle roof under a bright summer sky",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w10-ig-beforeafter-detail",
+      "platform": "instagram",
+      "pillar": "before-after",
+      "date": "2026-11-20",
+      "time": "11:00",
+      "caption": "The reveal is in the details. A crisp valley and clean lines are the difference between a roof that looks fine and one that looks finished. Swipe if you love a good glow-up. Plano, since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#BeforeAndAfter",
+        "#RoofReplacement",
+        "#CurbAppeal",
+        "#NorthTexas",
+        "#PlanoTX",
+        "#Roofing",
+        "#DFW",
+        "#HomeImprovement",
+        "#RoofingLife"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/svc-storm.webp",
+        "alt": "A two-story brick and white home with a new roof beside a backyard pool on a clear day",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w10-fb-meetcrew",
+      "platform": "facebook",
+      "pillar": "trust",
+      "date": "2026-11-21",
+      "time": "12:00",
+      "caption": "Behind every Jackson roof is a small, local crew that treats your home like their own. We are family-run in Plano and have been at this since 2000. Have a roof question you have been putting off? Ask us below.",
+      "hashtags": [
+        "#Plano",
+        "#FamilyOwned",
+        "#Roofing"
+      ],
+      "cta": "Contact Us via the site anytime",
+      "image": {
+        "src": "../assets/img/crew-work.jpg",
+        "alt": "A brick two-story home with a new roof seen from below against a blue sky and trees",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w10-nd-gutters",
+      "platform": "nextdoor",
+      "pillar": "seasonal",
+      "date": "2026-11-22",
+      "time": "10:00",
+      "caption": "Neighborly reminder before the leaves finish falling: clear gutters give winter rain somewhere to go instead of backing up under your shingles. If yours are sagging or pulling away, that is worth a look. We are a family-run Plano roofer, happy to help.",
+      "hashtags": [],
+      "cta": "Contact Us via the site for a free look",
+      "image": {
+        "src": "../assets/img/g-0329.jpg",
+        "alt": "A brick home corner with fresh black garage doors, new gutters and a downspout",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w11-ig-magnet-reel",
+      "platform": "instagram",
+      "pillar": "video",
+      "date": "2026-11-24",
+      "time": "11:00",
+      "caption": "The most satisfying part of the whole job: the magnet sweep. Every stray nail off your driveway and lawn before we leave. Follow along for more from a family-run Plano crew. Since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#SatisfyingVideo",
+        "#Roofing",
+        "#CleanUp",
+        "#PlanoTX",
+        "#NorthTexas",
+        "#RoofingLife",
+        "#Reels",
+        "#DFW",
+        "#FamilyOwned"
+      ],
+      "cta": "Contact Us via the site for a free estimate",
+      "image": {
+        "src": "../assets/img/home-repair.webp",
+        "alt": "A roofer kneeling on a gray shingle roof installing a skylight with a hammer in hand",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w11-fb-winterprep",
+      "platform": "facebook",
+      "pillar": "seasonal",
+      "date": "2026-11-25",
+      "time": "12:00",
+      "caption": "Before the first hard cold front, it is worth knowing your roof is ready. Lifted shingles and worn flashing let cold rain find its way in. A free inspection now beats a leak in January. Plano, family-run since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#WinterPrep",
+        "#Roofing"
+      ],
+      "cta": "Contact Us via the site to schedule a free check",
+      "image": {
+        "src": "../assets/img/home-storm.webp",
+        "alt": "A brown tile roof and stucco chimney under dark storm clouds",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w11-gbp-beforeafter",
+      "platform": "gbp",
+      "pillar": "before-after",
+      "date": "2026-11-26",
+      "time": "10:00",
+      "caption": "Another North Texas home wrapped up before the holidays. A new roof is one of the few upgrades you see from the street and feel every storm after. Booking free inspections around Plano now. Family-run since 2000.",
+      "hashtags": [],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/house-brick.jpg",
+        "alt": "A large brick home with multiple chimneys and a new roof above a manicured lawn",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w11-ig-drone",
+      "platform": "instagram",
+      "pillar": "video",
+      "date": "2026-11-28",
+      "time": "11:00",
+      "caption": "Nothing shows off a fresh roof like a view from above. Drone pass over a finished Plano job. Save this for when it is your turn. Family-run since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#DroneVideo",
+        "#RoofReplacement",
+        "#Roofing",
+        "#NorthTexas",
+        "#PlanoTX",
+        "#Aerial",
+        "#RoofingLife",
+        "#DFW",
+        "#Reels"
+      ],
+      "cta": "Contact Us via the site for a free estimate",
+      "image": {
+        "src": "../assets/img/g-9349.jpg",
+        "alt": "A pickup parked in front of a white ranch home with a new dark roof and bare oak trees",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w11-nd-poststorm",
+      "platform": "nextdoor",
+      "pillar": "education",
+      "date": "2026-11-29",
+      "time": "09:00",
+      "caption": "If an earlier storm this fall left you unsure whether your roof took a hit, you are not alone. A quick check of your gutters for granules and your ceilings for faint stains tells you a lot. Any questions, we are a family-run Plano roofer and glad to help.",
+      "hashtags": [],
+      "cta": "Contact Us via the site for a free look",
+      "image": {
+        "src": "../assets/img/svc-inspection.jpg",
+        "alt": "A brick two-story home with a new roof and an arched window viewed from a low angle",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w11-fb-review-invite",
+      "platform": "facebook",
+      "pillar": "reviews",
+      "date": "2026-11-30",
+      "time": "11:00",
+      "caption": "To every Plano family who trusted us with your roof this year, thank you. If we did right by you, a quick word about your experience helps a neighbor find a roofer they can count on. Family-run since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#ThankYou",
+        "#Roofing"
+      ],
+      "cta": "Contact Us via the site",
+      "image": {
+        "src": "../assets/img/house-brick.jpg",
+        "alt": "A large brick home with multiple chimneys and a new roof above a manicured lawn",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
     }
   ]
 }
