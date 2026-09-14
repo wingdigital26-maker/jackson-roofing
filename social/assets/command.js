@@ -79,7 +79,7 @@
   };
 
   var state = {
-    posts: [], schedule: null, pillars: [], pillarColor: {},
+    posts: [], schedule: null, summary: null, pillars: [], pillarColor: {},
     platform: "all", pillar: "all",
     calView: (["month", "week", "list"].indexOf(readPref("jr_calview", "month")) >= 0 ? readPref("jr_calview", "month") : "month"),
     weekIndex: 0, weeks: []
@@ -154,9 +154,10 @@
   }
 
   // ---------- load ----------
-  Promise.all([fetchJSON("data/posts.json"), fetchJSON("data/schedule.json")]).then(function (res) {
+  Promise.all([fetchJSON("data/posts.json"), fetchJSON("data/schedule.json"), fetchJSON("data/exports/summary.json")]).then(function (res) {
     var rawPosts = res[0];
     state.schedule = res[1];
+    state.summary = res[2] || null; // optional convenience; counts are always derived from posts
 
     // posts.json may be an array or {posts:[...]}
     var arr = Array.isArray(rawPosts) ? rawPosts : (rawPosts && Array.isArray(rawPosts.posts) ? rawPosts.posts : []);
@@ -200,6 +201,7 @@
   function render() {
     var n = state.posts.length;
     els.heroScope.textContent = n ? (n + " drafted post" + (n === 1 ? "" : "s") + " across " + platformsInPlay() + " channels") : "No drafts queued yet";
+    renderGlance();
     renderCadence();
     renderStrategy();
     renderFilters();
@@ -239,6 +241,107 @@
     var set = {};
     state.posts.forEach(function (p) { set[platMeta(p.platform).key] = 1; });
     return Object.keys(set).length || 0;
+  }
+
+  // ---------- plan at a glance (analytics-style mix header) ----------
+  // Honest snapshot of the DRAFTED queue. Every count is derived from the loaded
+  // posts so the mix always equals the real per-platform / per-pillar totals;
+  // summary.json (if present) is convenience only and never overrides a count.
+  function fmtDayShort(dObj) {
+    var dt = new Date(dObj.y, dObj.m - 1, dObj.day);
+    return dt.toLocaleString("en-US", { month: "short", day: "numeric" });
+  }
+  // Weeks of runway = calendar span from first to last drafted post, in whole
+  // weeks (matches build_summary.py so the panel agrees with summary.json).
+  function planWeeks(sortedDates) {
+    if (!sortedDates.length) return 0;
+    var a = sortedDates[0], b = sortedDates[sortedDates.length - 1];
+    var days = Math.round((new Date(b.y, b.m - 1, b.day) - new Date(a.y, a.m - 1, a.day)) / DAY_MS) + 1;
+    return Math.max(1, Math.ceil(days / 7));
+  }
+  function countBy(fn) {
+    var c = {};
+    state.posts.forEach(function (p) { var k = fn(p); if (k) c[k] = (c[k] || 0) + 1; });
+    return c;
+  }
+  // Render one stacked proportion bar + its text legend. Not conveyed by colour
+  // alone: each segment has a title, the bar carries a full aria-label, and the
+  // legend lists every entry with its count and rounded percentage.
+  function buildMixBar(barId, legendId, totalId, entries, total, kindLabel) {
+    var bar = document.getElementById(barId);
+    var legend = document.getElementById(legendId);
+    var totalEl = document.getElementById(totalId);
+    if (!bar || !legend) return;
+    bar.innerHTML = "";
+    legend.innerHTML = "";
+    if (totalEl) totalEl.textContent = total + " post" + (total === 1 ? "" : "s");
+    if (!entries.length || !total) {
+      bar.setAttribute("aria-label", kindLabel + ": no drafts yet");
+      return;
+    }
+    var ariaParts = [];
+    entries.forEach(function (e) {
+      var pct = Math.round(e.count / total * 100);
+      var seg = document.createElement("span");
+      seg.className = "gseg";
+      seg.style.width = (e.count / total * 100) + "%";
+      seg.style.background = e.color;
+      seg.title = e.label + ": " + e.count + " (" + pct + "%)";
+      bar.appendChild(seg);
+      ariaParts.push(e.label + " " + e.count + " posts " + pct + " percent");
+      var li = document.createElement("li");
+      li.className = "gleg";
+      li.style.setProperty("--acc", e.color);
+      li.innerHTML =
+        '<span class="gleg-sw"></span>' +
+        '<span class="gleg-lab">' + esc(e.label) + "</span>" +
+        '<span class="gleg-val">' + e.count + " <em>" + pct + "%</em></span>";
+      legend.appendChild(li);
+    });
+    bar.setAttribute("aria-label", kindLabel + ": " + ariaParts.join(", "));
+  }
+  function renderGlance() {
+    var statsEl = document.getElementById("glanceStats");
+    if (!statsEl) return;
+    var n = state.posts.length;
+    if (!n) {
+      statsEl.innerHTML = '<p class="muted" style="margin:0;grid-column:1/-1">The snapshot appears here once the content engine drafts the first posts.</p>';
+      buildMixBar("chBar", "chLegend", "chTotal", [], 0, "Channel mix");
+      buildMixBar("plBar", "plLegend", "plTotal", [], 0, "Content pillar mix");
+      return;
+    }
+
+    // stat readout (all counts of DRAFTED posts, never performance)
+    var dts = state.posts.map(function (p) { return normDate(p.date); }).filter(Boolean)
+      .sort(function (a, b) { return a.key < b.key ? -1 : 1; });
+    var weeks = planWeeks(dts);
+    var perWk = weeks ? Math.round(n / weeks * 10) / 10 : n;
+    var rangeText = dts.length ? (fmtDayShort(dts[0]) + " to " + fmtDayShort(dts[dts.length - 1])) : "Not dated";
+    var stats = [
+      { v: n, l: "Drafted posts" },
+      { v: perWk, l: "Posts / week" },
+      { v: weeks, l: weeks === 1 ? "Week planned" : "Weeks planned" },
+      { v: rangeText, l: "Date range" }
+    ];
+    statsEl.innerHTML = stats.map(function (s) {
+      return '<div class="gstat"><span class="gstat-v">' + esc(String(s.v)) + "</span>" +
+        '<span class="gstat-l">' + esc(s.l) + "</span></div>";
+    }).join("");
+
+    // channel mix (derived) sorted by share
+    var pc = countBy(function (p) { return platMeta(p.platform).key; });
+    var chEntries = Object.keys(pc).map(function (k) {
+      return { label: (PLATFORMS[k] && PLATFORMS[k].label) || k, count: pc[k], color: (PLATFORMS[k] && PLATFORMS[k].acc) || "#6a7889" };
+    }).sort(function (a, b) { return b.count - a.count; });
+    buildMixBar("chBar", "chLegend", "chTotal", chEntries, n, "Channel mix");
+
+    // pillar mix (derived) sorted by share
+    var lc = countBy(function (p) { return p.pillar; });
+    var plTotal = 0; Object.keys(lc).forEach(function (k) { plTotal += lc[k]; });
+    var plEntries = Object.keys(lc).map(function (k) {
+      return { label: pillarLabel(k), count: lc[k], color: state.pillarColor[k] || "#6a7889" };
+    }).sort(function (a, b) { return b.count - a.count; });
+    buildMixBar("plBar", "plLegend", "plTotal", plEntries, plTotal, "Content pillar mix");
   }
 
   // ---------- cadence strip ----------

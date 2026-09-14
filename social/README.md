@@ -4,6 +4,25 @@ A Wing-owned, **draft-only** social media system for Jackson Roofing (family-run
 Plano roofer, North Texas since 2000). This is a portfolio / win-back asset.
 Chris Jackson is not an active client.
 
+## Operator quickstart
+
+```bash
+# 1. Gate the queue, then (only on 0 FAIL) refresh exports + summary. Fail closed.
+python social/engine/run_pipeline.py --all
+
+# 2. Build the shareable one-file plan you can EMAIL a client (no server needed).
+python social/engine/build_plan_html.py
+```
+
+- **Outputs land in `social/data/exports/`:** `schedule.csv` + `calendar.ics`
+  (import into any scheduler / calendar), `index.json` + `summary.json` (counts),
+  and `plan.html` (the self-contained, emailable content plan).
+- **`plan.html` opens with a double-click** in any browser on any machine: no dev
+  server, no external requests, no scripts. Hand it to Jack or a client as-is.
+- **Draft-only boundary:** every command here only reads and writes local files.
+  Nothing posts, sends, or touches a live account. Run `build_plan_html.py` any time
+  after a pipeline run to refresh the shareable plan from the current queue.
+
 ## Draft-only boundary (non-negotiable)
 
 - **Nothing here posts or sends.** The engine only reads and writes local files.
@@ -114,6 +133,10 @@ python social/engine/export.py
 # SUMMARY: plan stats (counts, not metrics) -> data/exports/summary.json
 python social/engine/build_summary.py
 python social/engine/build_summary.py --json
+
+# PLAN: shareable one-file HTML plan (emailable, no server) -> data/exports/plan.html
+python social/engine/build_plan_html.py
+python social/engine/build_plan_html.py --json
 ```
 
 Notes on the pieces:
@@ -137,6 +160,16 @@ Notes on the pieces:
   posts**, never performance data (no reach, leads, or engagement). Runnable
   standalone and importable (`build_summary.build()`); an empty queue yields a valid
   zero-count file.
+- **build_plan_html.py** reads `posts.json` (plus `summary.json` if present) and writes
+  `data/exports/plan.html`: a single, self-contained deliverable a client can open with
+  a double-click, print, or receive by email. Styles are inlined, fonts are a system
+  stack, and there are **no** `<script>`, `<link>`, or `<img>` tags, so it makes zero
+  external requests and stays small (imagery is referenced by concept + filename in
+  text). It opens with a Wing Digital title block (date range, total posts, channel mix)
+  and a draft-only note, then lists every post grouped by week as a card (date, weekday,
+  platform, pillar, full caption, hashtags, CTA, image concept). Runnable standalone and
+  importable (`build_plan_html.build()`); an empty queue yields a valid empty-state plan.
+  It does not touch `run_pipeline.py`; run it after a pipeline run to refresh the plan.
 
 ## Where outputs land
 
@@ -149,6 +182,7 @@ Notes on the pieces:
 | `calendar.ics` | One VEVENT per post. Import into Google Calendar or Apple Calendar.   |
 | `index.json`   | Manifest: counts, date range, platform mix, and the file list.        |
 | `summary.json` | Plan stats for the UI header / client reports (counts, not metrics). Written by `build_summary.py`. |
+| `plan.html`    | Self-contained, emailable content plan (no server, no external requests). Written by `build_plan_html.py`. Hand it to a client as-is. |
 
 These are a **handoff for a human** to load into a scheduler. Producing them is not
 posting; the system still sends nothing on its own.

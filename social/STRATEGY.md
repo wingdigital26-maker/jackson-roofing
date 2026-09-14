@@ -402,3 +402,7 @@ opens and closes the same way. A few habits keep captions sounding handcrafted:
 - Invite participation. UGC prompts (tag your roof, shout out good local work) cost
   nothing to make and pull neighbors into the feed, which is how a following actually
   grows rather than just an audience that scrolls past.
+- Write alt text that describes the actual photo. Every image carries an alt line so
+  screen-reader users get the same context sighted followers do, and accurate alt text
+  also helps the post surface in search. Describe what is really in the frame (the
+  roof, the home, the truck), not what the caption wishes were there.

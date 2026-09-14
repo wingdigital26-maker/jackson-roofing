@@ -38,6 +38,27 @@
 
 <main id="board" class="wrap">
 
+  <!-- PLAN AT A GLANCE (analytics-style mix header) -->
+  <section class="glance" aria-label="Plan at a glance">
+    <div class="glance-head">
+      <h2>Plan at a glance</h2>
+      <p class="muted">A snapshot of the drafted queue. Every figure counts planned drafts, not live performance.</p>
+    </div>
+    <div class="glance-stats" id="glanceStats" aria-live="polite"></div>
+    <div class="glance-bars">
+      <div class="gbar-block">
+        <div class="gbar-head"><h3>Channel mix</h3><span class="gbar-total" id="chTotal"></span></div>
+        <div class="gbar" id="chBar" role="img" aria-label="Channel mix"></div>
+        <ul class="gbar-legend" id="chLegend"></ul>
+      </div>
+      <div class="gbar-block">
+        <div class="gbar-head"><h3>Pillar mix</h3><span class="gbar-total" id="plTotal"></span></div>
+        <div class="gbar" id="plBar" role="img" aria-label="Content pillar mix"></div>
+        <ul class="gbar-legend" id="plLegend"></ul>
+      </div>
+    </div>
+  </section>
+
   <!-- CADENCE / STRATEGY STRIP -->
   <section class="strip" aria-label="Platform mix and weekly rhythm">
     <div class="strip-head">
