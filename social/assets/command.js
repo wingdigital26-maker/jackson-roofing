@@ -471,6 +471,12 @@
 
   // ---------- calendar ----------
   var DAY_MS = 86400000;
+  // DST-safe day stepping: build the target date by calendar fields, not by
+  // adding milliseconds (a ms increment drifts an hour across the Nov DST
+  // fall-back and can drop the final day from the grid).
+  function addDays(dt, n) {
+    return new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + n);
+  }
   function keyOf(dt) {
     return dt.getFullYear() + "-" + String(dt.getMonth() + 1).padStart(2, "0") + "-" + String(dt.getDate()).padStart(2, "0");
   }
@@ -516,15 +522,15 @@
       var diff = Math.round((lastDt - start) / DAY_MS) + 1;
       span = Math.max(30, diff);
     }
-    return { start: start, span: span, last: new Date(start.getTime() + (span - 1) * DAY_MS) };
+    return { start: start, span: span, last: addDays(start, span - 1) };
   }
   // weeks (Sunday-aligned) spanning the full window; each is a Date for its Sunday
   function buildWeeks() {
     var sp = calSpan();
-    var wkStart = new Date(sp.start.getTime() - sp.start.getDay() * DAY_MS);
+    var wkStart = addDays(sp.start, -sp.start.getDay());
     var weeks = [];
     var cur = wkStart;
-    while (cur <= sp.last) { weeks.push(new Date(cur.getTime())); cur = new Date(cur.getTime() + 7 * DAY_MS); }
+    while (cur <= sp.last) { weeks.push(new Date(cur.getTime())); cur = addDays(cur, 7); }
     return weeks;
   }
 
@@ -564,7 +570,7 @@
     var grid = els.calGrid; grid.className = "cal-grid"; grid.innerHTML = "";
     var sp = calSpan(), start = sp.start, span = sp.span;
     var opt = { month: "short", day: "numeric" };
-    els.calTitle.textContent = "Content calendar · " + start.toLocaleString("en-US", opt) + " – " + sp.last.toLocaleString("en-US", opt) + ", " + sp.last.getFullYear();
+    els.calTitle.textContent = "Content calendar · " + start.toLocaleString("en-US", opt) + " to " + sp.last.toLocaleString("en-US", opt) + ", " + sp.last.getFullYear();
 
     var todayKey = keyOf(new Date());
     var firstDow = start.getDay();
@@ -572,7 +578,7 @@
       var pad = document.createElement("div"); pad.className = "cell pad"; grid.appendChild(pad);
     }
     for (var n = 0; n < span; n++) {
-      var dt = new Date(start.getTime() + n * DAY_MS);
+      var dt = addDays(start, n);
       var key = keyOf(dt);
       var cell = document.createElement("div");
       cell.className = "cell" + (todayKey === key ? " today" : "");
@@ -601,7 +607,7 @@
     if (state.weekIndex < 0) state.weekIndex = 0;
 
     var wkStart = state.weeks[state.weekIndex];
-    var wkEnd = new Date(wkStart.getTime() + 6 * DAY_MS);
+    var wkEnd = addDays(wkStart, 6);
     var opt = { month: "short", day: "numeric" };
     els.calTitle.textContent = "Week of " + wkStart.toLocaleString("en-US", opt);
     if (els.calRange) els.calRange.textContent = "Week " + (state.weekIndex + 1) + " of " + state.weeks.length;
@@ -611,7 +617,7 @@
     var grid = els.calGrid; grid.className = "cal-grid week"; grid.innerHTML = "";
     var todayKey = keyOf(new Date());
     for (var d = 0; d < 7; d++) {
-      var dt = new Date(wkStart.getTime() + d * DAY_MS);
+      var dt = addDays(wkStart, d);
       var key = keyOf(dt);
       var cell = document.createElement("div");
       cell.className = "wcell" + (todayKey === key ? " today" : "");
@@ -636,7 +642,7 @@
     var grid = els.calGrid; grid.className = "cal-grid agenda"; grid.innerHTML = "";
     var sp = calSpan();
     var opt = { month: "short", day: "numeric" };
-    els.calTitle.textContent = "Agenda · " + sp.start.toLocaleString("en-US", opt) + " – " + sp.last.toLocaleString("en-US", opt);
+    els.calTitle.textContent = "Agenda · " + sp.start.toLocaleString("en-US", opt) + " to " + sp.last.toLocaleString("en-US", opt);
 
     if (!list.length) {
       grid.innerHTML = '<p class="muted" style="margin:0">No posts match this filter.</p>';
@@ -656,7 +662,7 @@
         var pm = platMeta(p.platform);
         var cap = String(p.caption || "").slice(0, 96);
         return '<button class="li-row" style="--acc:' + pm.meta.acc + '" data-id="' + esc(cardId(p)) + '">' +
-          '<span class="li-time">' + esc(p.time ? fmtTime(p.time) : "—") + '</span>' +
+          '<span class="li-time">' + esc(p.time ? fmtTime(p.time) : "") + '</span>' +
           '<span class="li-plat">' + esc(pm.meta.short) + '</span>' +
           '<span class="li-cap">' + esc(cap) + (String(p.caption || "").length > 96 ? "…" : "") + "</span></button>";
       }).join("");
@@ -1027,10 +1033,10 @@
     var weeks = buildWeeks();
     var body = "";
     weeks.forEach(function (wkStart, i) {
-      var wkEnd = new Date(wkStart.getTime() + 6 * DAY_MS);
+      var wkEnd = addDays(wkStart, 6);
       var rows = "";
       for (var d = 0; d < 7; d++) {
-        var dt = new Date(wkStart.getTime() + d * DAY_MS);
+        var dt = addDays(wkStart, d);
         var key = keyOf(dt);
         var dayPosts = byDate[key] || [];
         dayPosts.forEach(function (p) {
