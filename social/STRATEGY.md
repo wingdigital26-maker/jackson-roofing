@@ -215,6 +215,27 @@ open with. Storm events always override the theme in the moment.
 Roughly a third of a month's posts should carry the lead theme; the rest keep the
 pillar rotation balanced so the feed still shows proof, trust and education.
 
+### Seasonal note: Oct/Nov runway (mid-October to early November)
+
+This is the fall pre-winter stretch, not hail peak. Spring is when North Texas
+hail drives urgency; October and November are the calm, get-ahead season, so the
+hooks change:
+
+- Lead with getting ahead of winter, not chasing a storm. "Book before the cold
+  sets in" outperforms "storm just hit" this time of year.
+- Gutter and valley season is real content: leaves pile up fast, trapped water
+  is how slow leaks start, so clear valleys and check flashing before the wet
+  months. Great fit for education posts and a fall-prep Reel.
+- Fall is the easiest season to install a roof (mild weather, clean install, done
+  before winter), so "beat the winter rush" is an honest before/after angle.
+- End-of-year and pre-winter inspection give GBP posts a natural reason to open
+  slots without inventing a storm.
+- Keep storm-response in the mix at a low simmer (post-storm cleanup, "if an
+  earlier storm left you unsure"), and let the real storm playbook override
+  everything the moment an actual event hits.
+- Community stays seasonal: Halloween-evening neighborly reminders, first
+  cold-front check-ins. Warm, local, no hard sell.
+
 ---
 
 ## Storm-response playbook

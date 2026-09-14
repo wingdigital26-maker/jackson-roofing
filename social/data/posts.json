@@ -728,6 +728,495 @@
         "credit": "Jackson Roofing"
       },
       "geo": "Plano TX"
+    },
+    {
+      "id": "w5-gbp-winter-prep",
+      "platform": "gbp",
+      "pillar": "seasonal",
+      "date": "2026-10-15",
+      "time": "10:00",
+      "caption": "Get ahead of winter while the weather is calm. A quick roof check now catches loose shingles and worn flashing before the first cold snap turns a small gap into a leak. Booking free inspections across Plano this week. Family-run since 2000.",
+      "hashtags": [],
+      "cta": "Contact Us via the site to book your free inspection",
+      "image": {
+        "src": "../assets/img/home-repair.webp",
+        "alt": "Home roofline framed by autumn trees",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w5-ig-fall-education",
+      "platform": "instagram",
+      "pillar": "education",
+      "date": "2026-10-16",
+      "time": "11:00",
+      "caption": "Fall to-do that saves you money: clear the leaves out of your valleys and gutters. Trapped debris holds water against your shingles, and standing water is how slow leaks start. Five minutes now beats a repair later.",
+      "hashtags": [
+        "#Plano",
+        "#PlanoTX",
+        "#Roofing",
+        "#FallHomePrep",
+        "#RoofMaintenance",
+        "#NorthTexas",
+        "#Gutters",
+        "#DFW",
+        "#Homeowner",
+        "#RoofCare"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/svc-inspection.jpg",
+        "alt": "Leaves and debris collected in a roof valley near the gutter",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w5-fb-video-gutter",
+      "platform": "facebook",
+      "pillar": "video",
+      "date": "2026-10-16",
+      "time": "12:00",
+      "caption": "Video: a quick fall gutter and valley walkthrough, filmed on a real North Texas roof. We show where leaves pile up, why that traps water against your shingles, and the two spots most homeowners forget to clear before winter. If climbing up there is not your idea of a good weekend, we are family-run and happy to take a free look. What is your least favorite fall chore?",
+      "hashtags": [
+        "#Plano",
+        "#NorthTexas",
+        "#FallHomePrep"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/roof-detail.webp",
+        "alt": "Roofer clearing leaves from a roof valley for the camera",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w5-nd-weekend-leaves",
+      "platform": "nextdoor",
+      "pillar": "seasonal",
+      "date": "2026-10-18",
+      "time": "10:00",
+      "caption": "Happy weekend, Plano. As the leaves really start dropping, a quick reminder to keep them out of your roof valleys and gutters so water can drain. If you would rather not get on a ladder, we are a family-run local roofer and glad to take a free look while we are up there. No hard sell.",
+      "hashtags": [],
+      "cta": "Contact Us via the site if you want a hand",
+      "image": {
+        "src": "../assets/img/roof-4.webp",
+        "alt": "Autumn leaves collecting on a residential roof",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w5-ig-before-after",
+      "platform": "instagram",
+      "pillar": "before-after",
+      "date": "2026-10-19",
+      "time": "17:00",
+      "caption": "Just in time for winter. This Plano roof went from tired and worn to solid and sealed, so the family underneath it can stop thinking about it when the cold weather rolls in. Same house, whole new peace of mind.",
+      "hashtags": [
+        "#Plano",
+        "#PlanoTX",
+        "#PlanoRoofing",
+        "#RoofReplacement",
+        "#BeforeAndAfter",
+        "#NorthTexas",
+        "#CurbAppeal",
+        "#NewRoof",
+        "#DFW",
+        "#WinterReady"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/siding-after.jpg",
+        "alt": "Before and after of a Plano roof replacement",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w5-fb-trust-local",
+      "platform": "facebook",
+      "pillar": "trust",
+      "date": "2026-10-20",
+      "time": "12:00",
+      "caption": "When you hire a family-run roofer, the person who looks at your roof is the same person who stands behind the work. No call center, no crew you never met. Jackson Roofing has been roofing Plano, Allen, McKinney, Frisco, Wylie, and Richardson since 2000. Heading into winter is a great time to get on the schedule for a free check. Who else prefers doing business with local folks?",
+      "hashtags": [
+        "#Plano",
+        "#FamilyOwned",
+        "#Roofing"
+      ],
+      "cta": "Contact Us via the site anytime",
+      "image": {
+        "src": "../assets/img/jackson-truck.jpg",
+        "alt": "Jackson Roofing work truck parked in a North Texas neighborhood",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w5-gbp-reviews",
+      "platform": "gbp",
+      "pillar": "reviews",
+      "date": "2026-10-21",
+      "time": "10:00",
+      "caption": "The nicest part of this work is when a neighbor tells another neighbor to call us. Plano families keep sending folks our way because we show up when we say we will and explain the roof in plain terms. Family-run since 2000.",
+      "hashtags": [],
+      "cta": "Contact Us via the site to see how we work",
+      "image": {
+        "src": "../assets/img/about-crew.jpg",
+        "alt": "Roofing crew standing together in a driveway",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w6-gbp-inspection-frisco",
+      "platform": "gbp",
+      "pillar": "storm-response",
+      "date": "2026-10-22",
+      "time": "10:00",
+      "caption": "Frisco and McKinney homeowners, we have free inspection slots open this week. If an earlier storm left you wondering about your roof, fall is the right time to sort it out before winter weather arrives. Family-run team on North Texas roofs since 2000.",
+      "hashtags": [],
+      "cta": "Contact Us via the site to grab a slot",
+      "image": {
+        "src": "../assets/img/svc-storm.webp",
+        "alt": "Roofer climbing a ladder to inspect a home",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w6-ig-reel-gutter-cleanout",
+      "platform": "instagram",
+      "pillar": "video",
+      "date": "2026-10-23",
+      "time": "17:00",
+      "caption": "Reel: fall roof prep in about 20 seconds. Clear the valleys, check the gutters, eyeball the flashing around vents and chimneys. Sped up so you can see the whole routine before you head up your own ladder, or before you call someone who does it for a living. Family-run and doing this across Plano since 2000. Save it for the weekend.",
+      "hashtags": [
+        "#Plano",
+        "#PlanoTX",
+        "#Roofing",
+        "#FallHomePrep",
+        "#Reels",
+        "#RoofMaintenance",
+        "#NorthTexas",
+        "#Gutters",
+        "#DFW",
+        "#HomeCare"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/crew-work.jpg",
+        "alt": "Crew clearing and checking a roof before winter on camera",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w6-fb-question-age",
+      "platform": "facebook",
+      "pillar": "community",
+      "date": "2026-10-24",
+      "time": "12:00",
+      "caption": "North Texas neighbors, honest question: when was the last time anyone actually looked at your roof? Not from the driveway, up close. A lot of us go years without knowing, and that is completely normal. Fall is a smart time for a free check so you head into winter without any surprises. How long has your current roof been up there?",
+      "hashtags": [
+        "#Plano",
+        "#NorthTexas",
+        "#Roofing"
+      ],
+      "cta": "Contact Us via the site to book a free check",
+      "image": {
+        "src": "../assets/img/house-brick.jpg",
+        "alt": "Brick North Texas home with a shingle roof",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w6-nd-richardson-tip",
+      "platform": "nextdoor",
+      "pillar": "education",
+      "date": "2026-10-25",
+      "time": "09:00",
+      "caption": "Richardson neighbors, one cold-weather tip: before the first freeze, make sure your gutters and downspouts are draining clear. Water that sits and freezes can work its way under the shingle edge and back into the house. Happy to answer questions, we are a family-run Plano roofer and glad to take a free look if anything seems off.",
+      "hashtags": [],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/roof-detail.webp",
+        "alt": "Close up of a gutter and roof edge on a home",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w6-ig-detail-flashing",
+      "platform": "instagram",
+      "pillar": "education",
+      "date": "2026-10-26",
+      "time": "11:00",
+      "caption": "The leaks that surprise people usually do not start in the middle of the roof. They start at the edges, the flashing around vents, chimneys, and valleys. That is the first place we look, and it is worth a glance before winter.",
+      "hashtags": [
+        "#Plano",
+        "#PlanoTX",
+        "#Roofing",
+        "#RoofLeak",
+        "#Flashing",
+        "#NorthTexas",
+        "#RoofRepair",
+        "#DFW",
+        "#HomeMaintenance",
+        "#RoofCare"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/svc-inspection.jpg",
+        "alt": "Close up of roof flashing around a vent",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w6-fb-before-after",
+      "platform": "facebook",
+      "pillar": "before-after",
+      "date": "2026-10-27",
+      "time": "18:00",
+      "caption": "This McKinney roof had quietly worn down over years of North Texas sun and storms. The homeowners wanted it buttoned up before winter, so we walked them through the photos, let them decide, and got it done. Here is the after. Which look would you rather have heading into the cold months?",
+      "hashtags": [
+        "#McKinney",
+        "#Roofing",
+        "#BeforeAndAfter"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/g-4998.jpg",
+        "alt": "Completed roof replacement on a McKinney home",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w6-gbp-endofyear",
+      "platform": "gbp",
+      "pillar": "seasonal",
+      "date": "2026-10-28",
+      "time": "10:00",
+      "caption": "Thinking about a roof before year end? Fall is the easiest season to get one done in Plano, with mild weather for a clean install and time to handle it before winter. Book a free inspection with a family-run team that has roofed here since 2000.",
+      "hashtags": [],
+      "cta": "Contact Us via the site to schedule",
+      "image": {
+        "src": "../assets/img/home-repair.webp",
+        "alt": "Home with a new roof on a clear fall day",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w7-ig-reel-winter-checklist",
+      "platform": "instagram",
+      "pillar": "video",
+      "date": "2026-10-29",
+      "time": "17:00",
+      "caption": "Reel: the five-point pre-winter roof check, filmed close up. Shingles lying flat, flashing sealed, valleys clear, gutters draining, attic dry. Sixty seconds that tell you whether your roof is ready for the cold or needs a look first. Send it to the neighbor who keeps putting it off. Family-run since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#PlanoTX",
+        "#Roofing",
+        "#WinterReady",
+        "#RoofInspection",
+        "#NorthTexas",
+        "#Reels",
+        "#HomeMaintenance",
+        "#DFW",
+        "#RoofCare"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/svc-inspection.jpg",
+        "alt": "Roofer running through a pre-winter roof checklist on camera",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w7-fb-family-story",
+      "platform": "facebook",
+      "pillar": "trust",
+      "date": "2026-10-30",
+      "time": "12:00",
+      "caption": "Twenty-six years of North Texas winters and we are still the same family answering the phone. Jackson Roofing is owned by Chris Jackson and has been putting good roofs over Plano families since 2000. When you reach out, you get people who will still be right here next season, and the one after that. Heading into winter, a free inspection is the simplest way to know where your roof stands.",
+      "hashtags": [
+        "#Plano",
+        "#FamilyOwned",
+        "#Roofing"
+      ],
+      "cta": "Contact Us via the site anytime",
+      "image": {
+        "src": "../assets/img/about-crew.jpg",
+        "alt": "Jackson Roofing crew standing in front of a work truck",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w7-nd-halloween-community",
+      "platform": "nextdoor",
+      "pillar": "community",
+      "date": "2026-10-31",
+      "time": "10:00",
+      "caption": "Happy Halloween, Plano. If you are out on the porch handing out candy tonight, glance up at your gutters and roofline while you are at it, fall is the season leaves and debris pile up fast. Any little thing looks off, we are a family-run local roofer and always glad to take a free look. Stay safe out there tonight.",
+      "hashtags": [],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/g-vanalstyne.jpg",
+        "alt": "Row of suburban Plano homes on a quiet fall evening",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w7-gbp-november-slots",
+      "platform": "gbp",
+      "pillar": "storm-response",
+      "date": "2026-11-02",
+      "time": "10:00",
+      "caption": "November inspection slots are open across Plano and Allen. If an earlier storm left you unsure about your roof, a free check now gives you a straight answer and photos before winter weather sets in. Family-run team on these roofs since 2000.",
+      "hashtags": [],
+      "cta": "Contact Us via the site to book",
+      "image": {
+        "src": "../assets/img/g-9349.jpg",
+        "alt": "Roofer noting findings on a rooftop",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w7-ig-before-after",
+      "platform": "instagram",
+      "pillar": "before-after",
+      "date": "2026-11-03",
+      "time": "11:00",
+      "caption": "Beat the winter rush. This Allen roof was overdue, so the homeowners got it replaced while the weather was still mild. Worn and weathered on one side, fresh and ready on the other. That is the difference a fall install makes.",
+      "hashtags": [
+        "#Allen",
+        "#AllenTX",
+        "#Roofing",
+        "#RoofReplacement",
+        "#BeforeAndAfter",
+        "#NorthTexas",
+        "#PlanoRoofing",
+        "#CurbAppeal",
+        "#DFW",
+        "#NewRoof"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/roof-4.webp",
+        "alt": "Home with a newly installed roof against a clear sky",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w7-fb-education-winter",
+      "platform": "facebook",
+      "pillar": "education",
+      "date": "2026-11-04",
+      "time": "12:00",
+      "caption": "Here is something a lot of North Texas homeowners miss: winter does not create roof problems so much as expose the ones already there. A cracked shingle or a bit of worn flashing can hold up fine in mild weather, then leak the first cold rain. A free fall inspection catches those spots while they are still cheap to fix. We have walked Plano families through this since 2000. Questions welcome below.",
+      "hashtags": [
+        "#Plano",
+        "#NorthTexas",
+        "#Roofing"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/home-inspection.webp",
+        "alt": "Roofer documenting worn flashing on a shingle roof",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w8-ig-community",
+      "platform": "instagram",
+      "pillar": "community",
+      "date": "2026-11-05",
+      "time": "17:00",
+      "caption": "We live under these same North Texas skies. When your roof holds through the first cold front of the season, that is a good night for the whole street. Family-run and looking out for Plano roofs since 2000.",
+      "hashtags": [
+        "#Plano",
+        "#PlanoTX",
+        "#Roofing",
+        "#Community",
+        "#NorthTexas",
+        "#FamilyOwned",
+        "#LocalBusiness",
+        "#DFW",
+        "#Neighbors",
+        "#Rooftops"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/home-commercial.jpg",
+        "alt": "Plano rooftops under a wide Texas sky at dusk",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w8-fb-video-before-after",
+      "platform": "facebook",
+      "pillar": "video",
+      "date": "2026-11-06",
+      "time": "12:00",
+      "caption": "Video: a before-and-after reveal, just in time for winter. We start on the storm-worn roof, then cut to the finished job, same house, same angle. No music tricks, just the honest difference a new roof makes right before the cold sets in. These homeowners are glad they did not wait. Which side would you rather have over your family in January?",
+      "hashtags": [
+        "#Plano",
+        "#Roofing",
+        "#BeforeAndAfter"
+      ],
+      "cta": "Contact Us via the site for a free inspection",
+      "image": {
+        "src": "../assets/img/siding-after.jpg",
+        "alt": "Before and after reveal of a Plano roof in a short video",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w8-nd-weekend-winterready",
+      "platform": "nextdoor",
+      "pillar": "seasonal",
+      "date": "2026-11-07",
+      "time": "10:00",
+      "caption": "Weekend reminder for the neighborhood: before the next cold front, take a minute to make sure your gutters are clear and draining. Backed-up water freezing at the roof edge is a common winter headache around here. If you would rather have someone take a look, we are a family-run Plano roofer and free inspections are always no pressure.",
+      "hashtags": [],
+      "cta": "Contact Us via the site if you want a free look",
+      "image": {
+        "src": "../assets/img/svc-replacement.webp",
+        "alt": "Roof edge and gutter on a home before winter",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "w8-gbp-reviews-closeout",
+      "platform": "gbp",
+      "pillar": "reviews",
+      "date": "2026-11-08",
+      "time": "10:00",
+      "caption": "Word of mouth is what keeps a family-run shop going. Plano homeowners keep sending neighbors our way because we treat every roof like it is over our own family. Thanks for having us in the neighborhood. Roofing this community since 2000.",
+      "hashtags": [],
+      "cta": "Contact Us via the site to see how we work",
+      "image": {
+        "src": "../assets/img/crew-work.jpg",
+        "alt": "Roofing crew at work on a completed job",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
     }
   ]
 }

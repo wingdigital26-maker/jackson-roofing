@@ -84,6 +84,15 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
+  // Image error fallback used by card <img onerror>. First error swaps a missing
+  // thumb for the full-size original; a second error removes the img to reveal
+  // the placeholder behind it. Kept as a named handler so the inline attribute
+  // needs no nested quotes.
+  window.jrImgErr = function (el) {
+    var full = el.getAttribute("data-full");
+    if (full) { el.removeAttribute("data-full"); el.src = full; }
+    else { el.remove(); }
+  };
   function platMeta(p) {
     var key = String(p || "").toLowerCase().replace(/[^a-z]/g, "");
     if (key === "google" || key === "googlebusinessprofile" || key === "googlebusiness") key = "gbp";
@@ -580,14 +589,27 @@
     }).forEach(function (p) { f.appendChild(buildCard(p)); });
   }
 
+  // Map a full-size local photo (../assets/img/x.jpg) to its optimized thumb
+  // (assets/thumbs/x.webp). make_thumbs.py produces these; if a thumb is missing
+  // the runtime error handler falls back to the original photo, then the
+  // placeholder, so the page degrades gracefully whether or not thumbs exist.
+  function toThumb(src) {
+    var m = String(src).match(/([^\/]+)\.(?:jpe?g|png|webp)$/i);
+    return m ? "assets/thumbs/" + m[1] + ".webp" : null;
+  }
   function mediaBlock(img, wide) {
     var src = img && img.src ? String(img.src) : "";
     var alt = img && img.alt ? img.alt : "Jackson Roofing";
     // only trust http(s) or ../ relative asset paths; else placeholder
     var ok = src && /^(https?:\/\/|\.\.?\/|assets\/|img\/)/.test(src);
-    // placeholder always rendered as the layer behind; a broken img removes
-    // itself on error to reveal it (no fragile inline-HTML quote nesting).
-    var imgTag = ok ? '<img class="pc-img" loading="lazy" src="' + esc(src) + '" alt="' + esc(alt) + '" onerror="this.remove()">' : "";
+    var local = src && /^(\.\.?\/|assets\/|img\/)/.test(src);
+    var thumb = local ? toThumb(src) : null;
+    var primary = thumb || src;
+    // data-full lets jrImgErr fall back to the original photo if a thumb 404s.
+    var dataFull = thumb ? ' data-full="' + esc(src) + '"' : "";
+    // placeholder always rendered as the layer behind; a broken img falls back
+    // then removes itself (no fragile inline-HTML quote nesting via jrImgErr).
+    var imgTag = ok ? '<img class="pc-img" loading="lazy" decoding="async" src="' + esc(primary) + '" alt="' + esc(alt) + '"' + dataFull + ' onerror="jrImgErr(this)">' : "";
     return '<div class="pc-media' + (wide ? " wide" : "") + '">' + phMarkup(alt) + imgTag + "</div>";
   }
   function phMarkup(alt) {
@@ -635,7 +657,7 @@
           '<div class="pc-id"><span class="pc-brand">jacksonroofing</span><span class="pc-sub">' + esc(p.geo || "Plano, TX") + "</span></div>" +
           '<span class="pc-badge">Instagram</span></div>' +
         mediaBlock(p.image, false) +
-        '<div class="ig-actions">' +
+        '<div class="ig-actions" aria-hidden="true">' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.7l-1-1a5.5 5.5 0 10-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 000-7.8z"/></svg>' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a8 8 0 01-11.3 7.3L3 21l1.7-6.7A8 8 0 1121 12z"/></svg>' +
           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>' +
@@ -653,7 +675,7 @@
           '<span class="pc-badge">Google</span></div>' +
         '<div class="pc-body">' + geoBlock(p) + '<p class="pc-caption">' + caption + "</p>" + tagsBlock(p.hashtags) + "</div>" +
         mediaBlock(p.image, true) +
-        '<div class="pc-cta"><button class="cta-btn" type="button">' + cta + "</button>" +
+        '<div class="pc-cta"><span class="cta-btn" role="presentation">' + cta + "</span>" +
           '<span class="cta-meta">' + whenLabel(p) + "</span></div>" +
         '<div class="pc-body" style="padding-top:.55rem">' + pillarBlock(p) + "</div>";
     } else if (key === "nextdoor") {
@@ -663,7 +685,7 @@
           '<span class="pc-badge">Nextdoor</span></div>' +
         '<div class="pc-body"><p class="pc-caption">' + caption + "</p>" + tagsBlock(p.hashtags) + "</div>" +
         mediaBlock(p.image, true) +
-        '<div class="pc-cta"><button class="cta-btn" type="button">' + cta + "</button>" +
+        '<div class="pc-cta"><span class="cta-btn" role="presentation">' + cta + "</span>" +
           '<span class="cta-meta">' + whenLabel(p) + "</span></div>" +
         '<div class="pc-body" style="padding-top:.55rem">' + pillarBlock(p) + "</div>";
     } else {
@@ -674,7 +696,7 @@
           '<span class="pc-badge">Facebook</span></div>' +
         '<div class="pc-body"><p class="pc-caption">' + caption + "</p>" + tagsBlock(p.hashtags) + "</div>" +
         mediaBlock(p.image, true) +
-        '<div class="pc-cta"><button class="cta-btn" type="button">' + cta + "</button>" + pillarBlock(p) + "</div>";
+        '<div class="pc-cta"><span class="cta-btn" role="presentation">' + cta + "</span>" + pillarBlock(p) + "</div>";
     }
     card.appendChild(copyBar(p));
     return card;

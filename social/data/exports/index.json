@@ -2,31 +2,31 @@
   "generated_by": "social/engine/export.py",
   "source": "../data/posts.json",
   "draft_only": true,
-  "post_count": 35,
-  "csv_rows": 35,
-  "ics_events": 35,
+  "post_count": 59,
+  "csv_rows": 59,
+  "ics_events": 59,
   "date_range": {
     "start": "2026-09-15",
-    "end": "2026-10-12"
+    "end": "2026-11-08"
   },
   "platform_mix": {
-    "gbp": 8,
-    "facebook": 9,
-    "instagram": 12,
-    "nextdoor": 6
+    "gbp": 14,
+    "facebook": 16,
+    "instagram": 19,
+    "nextdoor": 10
   },
   "timezone": "America/Chicago",
   "files": [
     {
       "file": "schedule.csv",
       "kind": "csv",
-      "rows": 35,
+      "rows": 59,
       "use": "Import into any social scheduler (Buffer, Later, Metricool, Hootsuite)."
     },
     {
       "file": "calendar.ics",
       "kind": "ics",
-      "events": 35,
+      "events": 59,
       "use": "Import into Google Calendar or Apple Calendar to follow the posting plan."
     }
   ]
