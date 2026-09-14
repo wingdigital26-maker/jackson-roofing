@@ -252,6 +252,102 @@ takes over. This is the highest-intent window a roofer gets, and it closes fast.
 
 ---
 
+## Video / Reels
+
+Short vertical video is the single biggest reach lever a roofer has right now.
+Instagram Reels and Facebook video get pushed to people who do not follow the
+page yet, which is exactly the cold audience a local roofer needs to reach before
+the next storm. A still photo reaches the followers you already have; a good Reel
+reaches the neighborhood. Video also builds trust faster than any caption: seeing
+the actual crew, the actual roof, and the actual damage does the convincing that
+words cannot.
+
+**Why it wins for a roofer specifically**
+- Roofing is visual and a little dramatic. Tear-offs, drone passes and hail
+  damage are naturally watchable, so the work sells itself on camera.
+- It shows the people. A family-run shop's whole advantage is that you get the
+  same crew every time. Video is the only format that proves it.
+- The algorithm rewards it. Reels and short video are favored in reach right now,
+  so the same effort travels further than a photo post.
+- It answers the trust question. Watching a roofer calmly point at real damage
+  reads as honest in a way a sales caption never will.
+
+**Shot ideas (each is one shoot, phone quality is fine)**
+1. Drone or ladder flyover of a finished roof, ridge to gutters, sound on.
+2. Tear-off time-lapse: fixed phone on a tripod, a full replacement sped to 15s.
+3. "Spot hail damage in 30 seconds": point the camera at bruised shingles,
+   dented vents and lifted edges on a real roof.
+4. Meet-the-crew walk-and-talk: the actual team introducing themselves on site.
+5. Before-and-after reveal: same house, same angle, storm-worn cut to finished.
+6. "Three things we check first" close-up: granule loss, creased shingles,
+   flashing and vent metal.
+7. Attic reveal: daylight through the deck or a water stain, showing what a leak
+   looks like from the inside.
+8. Satisfying detail loop: clean nailing, straight courses, a crisp valley or a
+   fresh ridge cap, short and oddly satisfying.
+
+**Cadence**
+- One to two short videos a week is plenty. Consistency beats volume.
+- Post the same vertical video as an Instagram Reel and a Facebook video. It is
+  the same file and reaches two different audiences.
+- Keep clips 15 to 60 seconds, vertical (9:16), captioned on screen so it works
+  with the sound off, and hooked in the first two seconds.
+
+**Repurpose one shoot into many posts**
+A single job visit should feed a week of content. From one afternoon on a roof you
+can pull: the drone flyover Reel, the tear-off time-lapse, a before-and-after
+reveal, three or four still photos for GBP and the before/after carousel, and a
+handful of close-up detail clips. Film wide and film often; you can always cut a
+long clip into shorter ones, but you cannot go back and re-shoot a roof that is
+already finished. Shoot vertical by default so nothing needs reframing later.
+
+---
+
+## Evergreen content bank
+
+Reusable prompts that never go stale. When the calendar has a gap, a storm did
+not come, or a slot needs filling, pull one of these, ground it in a real Jackson
+photo or job, and it works any month of the year. Rotate them so the same idea
+does not repeat within a few weeks. None of these require a fresh news hook.
+
+1. "Signs your roof is trying to tell you something": a plain-language checklist
+   of early warning signs (granules in the gutter, a ceiling stain, daylight in
+   the attic).
+2. Repair vs. replace: how a family-run roofer thinks about which one your roof
+   actually needs, and why honest roofers will say repair when repair is enough.
+3. What a free inspection actually includes, start to finish, so homeowners know
+   there is no catch and no pressure.
+4. Anatomy of a roof: shingles, underlayment, flashing, valleys and vents
+   explained simply, one part per post.
+5. Why local and family-run matters: the same crew every time, versus out-of-town
+   storm-chasers who vanish after the season.
+6. A day in the life of the crew: photos or a clip of a normal work day, humanizing
+   the people behind the company.
+7. "How old is your roof, and why it matters": typical shingle lifespan in the
+   North Texas sun and how to find out your roof's age.
+8. Ventilation 101: why attic ventilation quietly decides how long a roof lasts,
+   especially through Texas summers.
+9. Gutters and valleys: how debris traps water and shortens a roof's life, and the
+   simple seasonal check that prevents it.
+10. Answering a real homeowner question you get asked a lot ("do I have to replace
+    the whole roof?", "will this raise my insurance?"), plainly and honestly.
+11. Meet the owner: the Chris Jackson family-run story, since 2000, and why the
+    business is still in the same community.
+12. A finished-job spotlight in one of the core cities (Plano, Allen, McKinney,
+    Frisco, Wylie, Richardson), with a photo and a one-line note on the work.
+13. Myth vs. fact: "a new roof means my insurance goes up," "hail always cracks a
+    shingle," "if it is not leaking, it is fine." Bust one per post.
+14. Seasonal maintenance reminder keyed to the month (spring storm prep, summer
+    heat, fall gutters, winter check) from the monthly theme calendar.
+15. A simple thank-you to the neighborhood and an open invitation to reach out for
+    a free look, no hard sell.
+
+Ground rules for the bank: still no invented numbers, still no phone-number CTAs,
+still no em dashes, and every post ties to a real photo, a real place, or a real
+job whenever possible.
+
+---
+
 ## What "good" looks like
 
 - Every post ties to a real place, a real job type, or a real season. No filler.

@@ -73,8 +73,20 @@
   <section class="cal-section" aria-label="30 day calendar">
     <div class="cal-head">
       <h2 id="calTitle">Content calendar</h2>
-      <div class="cal-legend" id="calLegend"></div>
+      <div class="cal-tools">
+        <div class="cal-nav" id="calNav" hidden>
+          <button type="button" id="calPrev" class="cal-navbtn" aria-label="Previous week">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <span id="calRangeLabel" class="cal-range"></span>
+          <button type="button" id="calNext" class="cal-navbtn" aria-label="Next week">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="seg cal-views" id="calViews" role="group" aria-label="Calendar view"></div>
+      </div>
     </div>
+    <div class="cal-legend" id="calLegend"></div>
     <div class="cal-dow" id="calDow" aria-hidden="true"></div>
     <div class="cal-grid" id="calGrid" role="list"></div>
   </section>

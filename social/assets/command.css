@@ -34,6 +34,7 @@
 }
 
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{
   margin:0;font-family:var(--font-body);color:var(--body);background:var(--paper);
@@ -136,9 +137,9 @@ h1,h2,h3,h4{font-family:var(--font-head);color:var(--ink);line-height:1.08;lette
 .cal-legend{display:flex;gap:.9rem;flex-wrap:wrap}
 .leg{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;color:var(--slate);font-weight:600}
 .leg i{width:11px;height:11px;border-radius:3px;background:var(--acc);flex:none}
-.cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem;margin-bottom:.5rem}
+.cal-dow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.5rem;margin-bottom:.5rem}
 .cal-dow span{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center}
-.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.5rem}
 .cell{position:relative;min-height:92px;border:1px solid var(--line);border-radius:var(--r-sm);
   background:var(--white);padding:.4rem .45rem;display:flex;flex-direction:column;gap:.3rem;transition:border-color .18s var(--ease),box-shadow .18s var(--ease)}
 .cell.pad{background:transparent;border:1px dashed var(--line);opacity:.5}
@@ -152,9 +153,62 @@ h1,h2,h3,h4{font-family:var(--font-head);color:var(--ink);line-height:1.08;lette
   border-radius:5px;padding:.2rem .34rem;cursor:pointer;text-align:left;width:100%;font-family:var(--font-body);transition:background .15s var(--ease)}
 .pdot:hover{background:var(--paper-2)}
 .pdot:focus-visible{outline:2px solid var(--cyan-deep);outline-offset:1px}
-.pdot .pd-time{font-weight:700;color:var(--ink);flex:none}
+.pdot{min-width:0}
+.pdot .pd-time{font-weight:700;color:var(--ink);flex:none;overflow:hidden;text-overflow:ellipsis}
 .pdot .pd-plat{color:var(--acc);font-weight:700;text-transform:uppercase;letter-spacing:.03em;flex:none;font-size:.6rem}
 .cell.dim{opacity:.32}
+
+/* calendar tools: view toggle + week nav */
+.cal-tools{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}
+.cal-views button{font-family:var(--font-body);font-weight:600;font-size:.82rem;cursor:pointer;
+  padding:.36rem .8rem;border:1px solid var(--line-strong);background:var(--white);color:var(--slate);
+  border-radius:0;transition:all .18s var(--ease)}
+.cal-views button:first-child{border-radius:var(--r-pill) 0 0 var(--r-pill)}
+.cal-views button:last-child{border-radius:0 var(--r-pill) var(--r-pill) 0}
+.cal-views button:not(:last-child){border-right:0}
+.cal-views button:hover{color:var(--ink);border-color:var(--cyan-deep)}
+.cal-views button[aria-pressed="true"]{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.cal-views button:focus-visible{outline:2px solid var(--cyan-deep);outline-offset:2px;z-index:1}
+.cal-nav{display:inline-flex;align-items:center;gap:.5rem}
+.cal-navbtn{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;
+  border:1px solid var(--line-strong);background:var(--white);color:var(--slate);border-radius:var(--r-sm);
+  cursor:pointer;transition:all .16s var(--ease)}
+.cal-navbtn svg{width:15px;height:15px}
+.cal-navbtn:hover:not(:disabled){border-color:var(--cyan-deep);color:var(--ink)}
+.cal-navbtn:disabled{opacity:.4;cursor:not-allowed}
+.cal-navbtn:focus-visible{outline:2px solid var(--cyan-deep);outline-offset:2px}
+.cal-range{font-size:.8rem;font-weight:700;color:var(--muted);min-width:8.5em;text-align:center}
+.cal-legend{margin-bottom:1rem}
+
+/* WEEK view: 7 day columns, each stacking all its posts (no truncation) */
+.cal-grid.week{grid-template-columns:repeat(7,minmax(0,1fr));align-items:stretch}
+.wcell{border:1px solid var(--line);border-radius:var(--r-sm);background:var(--white);
+  padding:.5rem .5rem .6rem;display:flex;flex-direction:column;gap:.4rem;min-height:130px}
+.wcell.today{border-color:var(--cyan-deep);box-shadow:0 0 0 2px rgba(27,192,255,.25)}
+.wcell-head{display:flex;flex-direction:column;line-height:1.1;padding-bottom:.35rem;border-bottom:1px solid var(--line)}
+.wcell-dow{font-size:.64rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.wcell-date{font-family:var(--font-head);font-weight:800;font-size:.9rem;color:var(--ink)}
+.wcell.today .wcell-date{color:var(--cyan-ink)}
+.wcell-posts{display:flex;flex-direction:column;gap:.28rem}
+.wcell-empty{font-size:.72rem;color:var(--line-strong);font-style:italic;margin-top:.15rem}
+
+/* LIST / agenda view */
+.cal-grid.agenda{display:block}
+.li-day{border:1px solid var(--line);border-radius:var(--r-md);background:var(--white);
+  padding:.75rem .9rem;margin-bottom:.7rem}
+.li-day.today{border-color:var(--cyan-deep);box-shadow:0 0 0 2px rgba(27,192,255,.2)}
+.li-date{display:flex;align-items:baseline;gap:.6rem;font-family:var(--font-head);font-weight:800;
+  color:var(--ink);font-size:.98rem;letter-spacing:-.01em;margin-bottom:.55rem}
+.li-n{margin-left:auto;font-family:var(--font-body);font-weight:600;font-size:.76rem;color:var(--muted)}
+.li-rows{display:flex;flex-direction:column;gap:.35rem}
+.li-row{display:flex;align-items:center;gap:.7rem;width:100%;text-align:left;cursor:pointer;
+  background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--acc);
+  border-radius:var(--r-sm);padding:.45rem .6rem;font-family:var(--font-body);transition:background .15s var(--ease)}
+.li-row:hover{background:var(--paper-2)}
+.li-row:focus-visible{outline:2px solid var(--cyan-deep);outline-offset:1px}
+.li-time{font-weight:800;color:var(--ink);font-size:.8rem;flex:none;min-width:4.8em;font-family:var(--font-head)}
+.li-plat{font-weight:700;color:var(--acc);font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;flex:none;min-width:5.5em}
+.li-cap{color:var(--slate);font-size:.82rem;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
 /* ---------- FEED ---------- */
 .feed-head{margin-bottom:1.2rem}
@@ -209,7 +263,14 @@ h1,h2,h3,h4{font-family:var(--font-head);color:var(--ink);line-height:1.08;lette
 .pc-copy:hover{border-color:var(--cyan-deep);color:var(--ink)}
 .pc-copy:focus-visible{outline:2px solid var(--cyan-deep);outline-offset:2px}
 .pc-copy.done{color:var(--p-nextdoor);border-color:var(--p-nextdoor);background:rgba(11,125,92,.08)}
-.pc-copy-hint{font-size:.72rem;color:var(--muted);margin-left:auto}
+.pc-metrics{display:flex;align-items:center;gap:.4rem;margin-left:auto}
+.pc-metric{font-family:var(--font-head);font-weight:700;font-size:.7rem;letter-spacing:.01em;
+  padding:.2rem .5rem;border-radius:var(--r-pill);border:1px solid var(--line);color:var(--muted);
+  background:var(--paper);white-space:nowrap;cursor:default}
+.pc-metric.ok{color:var(--muted)}
+.pc-metric.near{color:#8a5a12;background:rgba(224,130,27,.12);border-color:rgba(224,130,27,.4)}
+.pc-metric.over{color:#8a5a12;background:rgba(224,130,27,.2);border-color:rgba(224,130,27,.6)}
+.pc-metric.tag{color:var(--cyan-ink);background:rgba(27,192,255,.08);border-color:rgba(27,192,255,.32)}
 
 /* Instagram action row */
 .ig-actions{display:flex;gap:.9rem;padding:.55rem .9rem .2rem;color:var(--slate)}
@@ -251,6 +312,13 @@ h1,h2,h3,h4{font-family:var(--font-head);color:var(--ink);line-height:1.08;lette
   .feed{grid-template-columns:1fr}
   .controls{gap:.8rem}
   .filter-count{margin-left:0;width:100%}
+  /* week view: stack the 7 day columns so nothing overflows on a phone */
+  .cal-grid.week{grid-template-columns:1fr;gap:.55rem}
+  .wcell{min-height:0}
+  .wcell-head{flex-direction:row;align-items:baseline;gap:.5rem}
+  .cal-tools{width:100%}
+  .cal-range{min-width:0;flex:1}
+  .li-cap{white-space:normal}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;transition-duration:.001ms!important}

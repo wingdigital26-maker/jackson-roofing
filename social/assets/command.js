@@ -15,6 +15,24 @@
   };
   var PILLAR_COLORS = ["#0aa7e6", "#c9337d", "#0b7d5c", "#e0821b", "#7c5cff", "#c8452f", "#1a73e8"];
 
+  // Practical caption limits per platform. GBP/Instagram are hard caps; Facebook
+  // and Nextdoor numbers are the "keep it concise" sweet spot, not a hard limit.
+  var LIMITS = {
+    gbp:       { max: 1500, hard: true,  note: "1500 character limit" },
+    facebook:  { max: 500,  hard: false, note: "concise reads best (about 500)" },
+    instagram: { max: 2200, hard: true,  note: "2200 character limit" },
+    nextdoor:  { max: 500,  hard: false, note: "neighbors prefer short and concise" }
+  };
+  var WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  // localStorage view preference, fully guarded (private mode / blocked storage)
+  function readPref(k, dflt) {
+    try { var v = window.localStorage.getItem(k); return v == null ? dflt : v; } catch (e) { return dflt; }
+  }
+  function writePref(k, v) {
+    try { window.localStorage.setItem(k, v); } catch (e) { /* ignore */ }
+  }
+
   // human labels + one-line intent for known pillars; unknown keys prettify gracefully
   var PILLAR_META = {
     "storm-response": { label: "Storm Response", desc: "Fast, calm guidance right after hail or wind so neighbors know the first steps and who to call." },
@@ -45,10 +63,20 @@
     feed:      document.getElementById("feed"),
     pillarPanel: document.getElementById("pillarLegendPanel"),
     pillarHint:  document.getElementById("pillarHint"),
-    dlSchedule:  document.getElementById("dlSchedule")
+    dlSchedule:  document.getElementById("dlSchedule"),
+    calViews:  document.getElementById("calViews"),
+    calNav:    document.getElementById("calNav"),
+    calPrev:   document.getElementById("calPrev"),
+    calNext:   document.getElementById("calNext"),
+    calRange:  document.getElementById("calRangeLabel")
   };
 
-  var state = { posts: [], schedule: null, pillars: [], pillarColor: {}, platform: "all", pillar: "all" };
+  var state = {
+    posts: [], schedule: null, pillars: [], pillarColor: {},
+    platform: "all", pillar: "all",
+    calView: (["month", "week", "list"].indexOf(readPref("jr_calview", "month")) >= 0 ? readPref("jr_calview", "month") : "month"),
+    weekIndex: 0, weeks: []
+  };
 
   // ---------- helpers ----------
   function esc(s) {
@@ -72,6 +100,41 @@
     var m = String(d).match(/^(\d{4})-(\d{2})-(\d{2})/);
     if (!m) return null;
     return { y: +m[1], m: +m[2], day: +m[3], key: m[1] + "-" + m[2] + "-" + m[3] };
+  }
+
+  function fmtTime(t) {
+    // "16:00" -> "4:00 PM"; passes through anything that is not HH:MM
+    var m = String(t || "").match(/^(\d{1,2}):(\d{2})$/);
+    if (!m) return String(t || "");
+    var h = +m[1], mm = m[2], ap = h >= 12 ? "PM" : "AM";
+    h = h % 12; if (h === 0) h = 12;
+    return h + ":" + mm + " " + ap;
+  }
+
+  // Build a real "Mon, Wed, Fri mornings" style rhythm per platform from the
+  // schedule.json cadence[] slots. Honest: reads only what the plan declares.
+  function cadenceByPlatform() {
+    var out = {};
+    var sched = state.schedule || {};
+    var slots = Array.isArray(sched.cadence) ? sched.cadence : [];
+    var byKey = {};
+    slots.forEach(function (s) {
+      if (!s || !s.platform) return;
+      var k = platMeta(s.platform).key;
+      (byKey[k] = byKey[k] || []).push(s);
+    });
+    Object.keys(byKey).forEach(function (k) {
+      var rows = byKey[k];
+      var days = [];
+      rows.forEach(function (r) { if (r.weekday && days.indexOf(r.weekday) < 0) days.push(r.weekday); });
+      // order weekdays Mon..Sun for readability
+      var order = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+      days.sort(function (a, b) { return order.indexOf(a) - order.indexOf(b); });
+      var perWeek = rows.length;
+      var label = days.join(", ");
+      out[k] = label + " · " + perWeek + "x / week";
+    });
+    return out;
   }
 
   // ---------- load ----------
@@ -124,6 +187,7 @@
     renderCadence();
     renderStrategy();
     renderFilters();
+    setupCalViews();
     apply();
   }
 
@@ -169,16 +233,18 @@
     var counts = {};
     state.posts.forEach(function (p) { var k = platMeta(p.platform).key; counts[k] = (counts[k] || 0) + 1; });
 
-    // cadence text from schedule.json if present (flexible shape), else honest fallback
+    // cadence text: prefer a real per-platform rhythm derived from the
+    // schedule.json cadence[] slots (weekday + time), else honest fallback.
     var sched = state.schedule || {};
-    var schedByKey = {};
+    var schedByKey = cadenceByPlatform();
+    // legacy flat shapes still supported if a future schedule uses them
     var schedList = Array.isArray(sched.platforms) ? sched.platforms : (Array.isArray(sched) ? sched : []);
     schedList.forEach(function (row) {
       if (!row) return;
       var pk = platMeta(row.platform || row.name || "").key;
-      schedByKey[pk] = row.cadence || row.rhythm || row.frequency || row.note || "";
+      if (!schedByKey[pk]) schedByKey[pk] = row.cadence || row.rhythm || row.frequency || row.note || "";
     });
-    if (sched.note || sched.rhythm) els.stripNote.textContent = sched.note || sched.rhythm;
+    if (sched.note || sched.rhythm) els.stripNote.textContent = "Best-time cadence pulled from the plan, per channel.";
 
     var order = ["gbp", "facebook", "instagram", "nextdoor"];
     // include any extra platforms actually present
@@ -292,19 +358,28 @@
     var t = new Date(); return new Date(t.getFullYear(), t.getMonth(), t.getDate());
   }
 
-  function renderCalendar(list) {
-    // dow header
+  function ensureDow() {
     if (!els.calDow.childElementCount) {
-      ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].forEach(function (d) {
+      WEEKDAYS.forEach(function (d) {
         var s = document.createElement("span"); s.textContent = d; els.calDow.appendChild(s);
       });
     }
-
-    var grid = els.calGrid; grid.innerHTML = "";
+  }
+  function groupByDate(list) {
+    var byDate = {};
+    list.forEach(function (p) {
+      var d = normDate(p.date); if (!d) return;
+      (byDate[d.key] = byDate[d.key] || []).push(p);
+    });
+    // stable per-day order by time
+    Object.keys(byDate).forEach(function (k) {
+      byDate[k].sort(function (a, b) { return (a.time || "") < (b.time || "") ? -1 : 1; });
+    });
+    return byDate;
+  }
+  // full span [start, last] covering all posts, min 30 days
+  function calSpan() {
     var start = calStart();
-
-    // window is at least 30 days, expanding to cover the full post span so
-    // every post always lands on the grid even across a month boundary.
     var span = 30;
     var allDates = state.posts.map(function (p) { return normDate(p.date); }).filter(Boolean);
     if (allDates.length) {
@@ -313,21 +388,57 @@
       var diff = Math.round((lastDt - start) / DAY_MS) + 1;
       span = Math.max(30, diff);
     }
-    var last = new Date(start.getTime() + (span - 1) * DAY_MS);
-    var opt = { month: "short", day: "numeric" };
-    var range = start.toLocaleString("en-US", opt) + " – " + last.toLocaleString("en-US", opt) + ", " + last.getFullYear();
-    els.calTitle.textContent = "Content calendar · " + range;
+    return { start: start, span: span, last: new Date(start.getTime() + (span - 1) * DAY_MS) };
+  }
+  // weeks (Sunday-aligned) spanning the full window; each is a Date for its Sunday
+  function buildWeeks() {
+    var sp = calSpan();
+    var wkStart = new Date(sp.start.getTime() - sp.start.getDay() * DAY_MS);
+    var weeks = [];
+    var cur = wkStart;
+    while (cur <= sp.last) { weeks.push(new Date(cur.getTime())); cur = new Date(cur.getTime() + 7 * DAY_MS); }
+    return weeks;
+  }
 
-    // map posts by date key (filtered set drives placement)
-    var byDate = {};
-    list.forEach(function (p) {
-      var d = normDate(p.date); if (!d) return;
-      (byDate[d.key] = byDate[d.key] || []).push(p);
+  function jumpToCard(btn) {
+    var target = document.getElementById(btn.getAttribute("data-id"));
+    if (!target) return;
+    target.scrollIntoView({ behavior: "smooth", block: "center" });
+    target.classList.add("flash");
+    setTimeout(function () { target.classList.remove("flash"); }, 1400);
+  }
+  function wireJumps(scope) {
+    Array.prototype.forEach.call(scope.querySelectorAll(".pdot[data-id],.li-row[data-id]"), function (btn) {
+      btn.addEventListener("click", function () { jumpToCard(btn); });
     });
+  }
+  function dotHTML(p, withTime, use12) {
+    var pm = platMeta(p.platform);
+    // month cells are dense: keep the short 24h time so it never outgrows the
+    // cell on mobile. Week/list have room for the friendlier 12h format.
+    var shown = p.time ? esc(use12 ? fmtTime(p.time) : p.time) : "";
+    return '<button class="pdot" style="--acc:' + pm.meta.acc + '" data-id="' + esc(cardId(p)) + '" title="' + esc(pm.meta.label + (p.time ? " · " + fmtTime(p.time) : "")) + '">' +
+      (withTime && shown ? '<span class="pd-time">' + shown + "</span>" : "") +
+      '<span class="pd-plat">' + esc(pm.meta.short) + "</span></button>";
+  }
+
+  function renderCalendar(list) {
+    var byDate = groupByDate(list);
+    els.calDow.hidden = (state.calView !== "month");
+    if (els.calNav) els.calNav.hidden = (state.calView !== "week");
+    if (state.calView === "week") return renderWeek(list, byDate);
+    if (state.calView === "list") return renderList(list);
+    return renderMonth(byDate);
+  }
+
+  function renderMonth(byDate) {
+    ensureDow();
+    var grid = els.calGrid; grid.className = "cal-grid"; grid.innerHTML = "";
+    var sp = calSpan(), start = sp.start, span = sp.span;
+    var opt = { month: "short", day: "numeric" };
+    els.calTitle.textContent = "Content calendar · " + start.toLocaleString("en-US", opt) + " – " + sp.last.toLocaleString("en-US", opt) + ", " + sp.last.getFullYear();
 
     var todayKey = keyOf(new Date());
-
-    // leading pad so the first day lands under its real weekday column
     var firstDow = start.getDay();
     for (var i = 0; i < firstDow; i++) {
       var pad = document.createElement("div"); pad.className = "cell pad"; grid.appendChild(pad);
@@ -338,7 +449,6 @@
       var cell = document.createElement("div");
       cell.className = "cell" + (todayKey === key ? " today" : "");
       cell.setAttribute("role", "listitem");
-      // show month abbrev on day 1 or the very first cell for context
       var showMon = dt.getDate() === 1 || n === 0;
       var label = showMon ? dt.toLocaleString("en-US", { month: "short" }) + " " + dt.getDate() : String(dt.getDate());
       var head = '<div class="date">' + esc(label) + "</div>";
@@ -346,28 +456,110 @@
       var body = "";
       if (posts.length) {
         cell.classList.add("has");
-        body = '<div class="cell-posts">' + posts.slice(0, 3).map(function (p) {
-          var pm = platMeta(p.platform);
-          var time = p.time ? esc(p.time) : "";
-          return '<button class="pdot" style="--acc:' + pm.meta.acc + '" data-id="' + esc(cardId(p)) + '" title="' + esc(pm.meta.label + (time ? " · " + p.time : "")) + '">' +
-            (time ? '<span class="pd-time">' + time + "</span>" : "") +
-            '<span class="pd-plat">' + esc(pm.meta.short) + "</span></button>";
-        }).join("") + (posts.length > 3 ? '<span class="pdot" style="--acc:#6a7889">+' + (posts.length - 3) + " more</span>" : "") + "</div>";
+        body = '<div class="cell-posts">' + posts.slice(0, 3).map(function (p) { return dotHTML(p, true, false); }).join("") +
+          (posts.length > 3 ? '<span class="pdot" style="--acc:#6a7889">+' + (posts.length - 3) + " more</span>" : "") + "</div>";
       }
       cell.innerHTML = head + body;
       grid.appendChild(cell);
     }
+    wireJumps(grid);
+  }
 
-    // day -> feed jump
-    Array.prototype.forEach.call(grid.querySelectorAll(".pdot[data-id]"), function (btn) {
-      btn.addEventListener("click", function () {
-        var target = document.getElementById(btn.getAttribute("data-id"));
-        if (!target) return;
-        target.scrollIntoView({ behavior: "smooth", block: "center" });
-        target.classList.add("flash");
-        setTimeout(function () { target.classList.remove("flash"); }, 1400);
-      });
+  function renderWeek(list, byDate) {
+    ensureDow();
+    state.weeks = buildWeeks();
+    if (!state.weeks.length) { renderMonth(byDate); return; }
+    if (state.weekIndex >= state.weeks.length) state.weekIndex = state.weeks.length - 1;
+    if (state.weekIndex < 0) state.weekIndex = 0;
+
+    var wkStart = state.weeks[state.weekIndex];
+    var wkEnd = new Date(wkStart.getTime() + 6 * DAY_MS);
+    var opt = { month: "short", day: "numeric" };
+    els.calTitle.textContent = "Week of " + wkStart.toLocaleString("en-US", opt);
+    if (els.calRange) els.calRange.textContent = "Week " + (state.weekIndex + 1) + " of " + state.weeks.length;
+    if (els.calPrev) els.calPrev.disabled = state.weekIndex === 0;
+    if (els.calNext) els.calNext.disabled = state.weekIndex === state.weeks.length - 1;
+
+    var grid = els.calGrid; grid.className = "cal-grid week"; grid.innerHTML = "";
+    var todayKey = keyOf(new Date());
+    for (var d = 0; d < 7; d++) {
+      var dt = new Date(wkStart.getTime() + d * DAY_MS);
+      var key = keyOf(dt);
+      var cell = document.createElement("div");
+      cell.className = "wcell" + (todayKey === key ? " today" : "");
+      cell.setAttribute("role", "listitem");
+      var posts = byDate[key] || [];
+      var head = '<div class="wcell-head"><span class="wcell-dow">' + WEEKDAYS[dt.getDay()] +
+        '</span><span class="wcell-date">' + dt.toLocaleString("en-US", opt) + "</span></div>";
+      var body;
+      if (posts.length) {
+        cell.classList.add("has");
+        body = '<div class="wcell-posts">' + posts.map(function (p) { return dotHTML(p, true, true); }).join("") + "</div>";
+      } else {
+        body = '<div class="wcell-empty">No posts</div>';
+      }
+      cell.innerHTML = head + body;
+      grid.appendChild(cell);
+    }
+    wireJumps(grid);
+  }
+
+  function renderList(list) {
+    var grid = els.calGrid; grid.className = "cal-grid agenda"; grid.innerHTML = "";
+    var sp = calSpan();
+    var opt = { month: "short", day: "numeric" };
+    els.calTitle.textContent = "Agenda · " + sp.start.toLocaleString("en-US", opt) + " – " + sp.last.toLocaleString("en-US", opt);
+
+    if (!list.length) {
+      grid.innerHTML = '<p class="muted" style="margin:0">No posts match this filter.</p>';
+      return;
+    }
+    var byDate = groupByDate(list);
+    var keys = Object.keys(byDate).sort();
+    var todayKey = keyOf(new Date());
+    keys.forEach(function (key) {
+      var m = key.match(/^(\d{4})-(\d{2})-(\d{2})/);
+      var dt = new Date(+m[1], +m[2] - 1, +m[3]);
+      var day = document.createElement("div");
+      day.className = "li-day" + (key === todayKey ? " today" : "");
+      var head = '<div class="li-date">' + esc(WEEKDAYS[dt.getDay()] + ", " + dt.toLocaleString("en-US", opt)) +
+        '<span class="li-n">' + byDate[key].length + " post" + (byDate[key].length === 1 ? "" : "s") + "</span></div>";
+      var rows = byDate[key].map(function (p) {
+        var pm = platMeta(p.platform);
+        var cap = String(p.caption || "").slice(0, 96);
+        return '<button class="li-row" style="--acc:' + pm.meta.acc + '" data-id="' + esc(cardId(p)) + '">' +
+          '<span class="li-time">' + esc(p.time ? fmtTime(p.time) : "—") + '</span>' +
+          '<span class="li-plat">' + esc(pm.meta.short) + '</span>' +
+          '<span class="li-cap">' + esc(cap) + (String(p.caption || "").length > 96 ? "…" : "") + "</span></button>";
+      }).join("");
+      day.innerHTML = head + '<div class="li-rows">' + rows + "</div>";
+      grid.appendChild(day);
     });
+    wireJumps(grid);
+  }
+
+  // ---------- calendar view toggle (Month / Week / List) ----------
+  function setupCalViews() {
+    var host = els.calViews;
+    if (!host || host.childElementCount) return; // build once
+    [["month", "Month"], ["week", "Week"], ["list", "List"]].forEach(function (v) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("data-view", v[0]);
+      b.setAttribute("aria-pressed", state.calView === v[0] ? "true" : "false");
+      b.textContent = v[1];
+      b.addEventListener("click", function () {
+        if (state.calView === v[0]) return;
+        state.calView = v[0];
+        writePref("jr_calview", v[0]);
+        Array.prototype.forEach.call(host.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", "false"); });
+        b.setAttribute("aria-pressed", "true");
+        apply();
+      });
+      host.appendChild(b);
+    });
+    if (els.calPrev) els.calPrev.addEventListener("click", function () { if (state.weekIndex > 0) { state.weekIndex--; apply(); } });
+    if (els.calNext) els.calNext.addEventListener("click", function () { if (state.weekIndex < state.weeks.length - 1) { state.weekIndex++; apply(); } });
   }
 
   function cardId(p) {
@@ -419,8 +611,12 @@
   }
   function whenLabel(p) {
     var d = normDate(p.date);
-    var ds = d ? new Date(d.y, d.m - 1, d.day).toLocaleString("en-US", { month: "short", day: "numeric" }) : "Draft";
-    return ds + (p.time ? " · " + esc(p.time) : "");
+    var ds = "Draft";
+    if (d) {
+      var dt = new Date(d.y, d.m - 1, d.day);
+      ds = WEEKDAYS[dt.getDay()] + ", " + dt.toLocaleString("en-US", { month: "short", day: "numeric" });
+    }
+    return ds + (p.time ? " · " + esc(fmtTime(p.time)) : "");
   }
 
   function buildCard(p) {
@@ -505,10 +701,6 @@
     btn.className = "pc-copy";
     btn.innerHTML = ICON_COPY + "<span>Copy caption</span>";
     var text = captionText(p);
-    var tagCount = (p.hashtags && p.hashtags.length) || 0;
-    var hint = document.createElement("span");
-    hint.className = "pc-copy-hint";
-    hint.textContent = tagCount ? (tagCount + " hashtag" + (tagCount === 1 ? "" : "s")) : "No hashtags";
     var timer = null;
     btn.addEventListener("click", function () {
       copyToClipboard(text).then(function (ok) {
@@ -522,8 +714,42 @@
       });
     });
     bar.appendChild(btn);
-    bar.appendChild(hint);
+    bar.appendChild(metricChips(p));
     return bar;
+  }
+
+  // char-count vs platform limit + hashtag-count chip. Calm, no alarm dots.
+  function metricChips(p) {
+    var wrap = document.createElement("div");
+    wrap.className = "pc-metrics";
+
+    var lim = LIMITS[platMeta(p.platform).key];
+    var len = String(p.caption || "").length;
+    var chip = document.createElement("span");
+    chip.className = "pc-metric";
+    if (lim) {
+      var ratio = len / lim.max;
+      var over = len > lim.max;
+      var near = ratio >= 0.85;
+      if (over) chip.className += " over";
+      else if (near) chip.className += " near";
+      else chip.className += " ok";
+      chip.textContent = len + " / " + lim.max;
+      chip.title = "Caption length vs " + lim.note + (over ? " (over the sweet spot, consider trimming)" : "");
+    } else {
+      chip.className += " ok";
+      chip.textContent = len + " chars";
+      chip.title = "Caption length";
+    }
+    wrap.appendChild(chip);
+
+    var tagCount = (p.hashtags && p.hashtags.length) || 0;
+    var tag = document.createElement("span");
+    tag.className = "pc-metric tag";
+    tag.textContent = tagCount ? ("# " + tagCount) : "# 0";
+    tag.title = tagCount ? (tagCount + " hashtag" + (tagCount === 1 ? "" : "s")) : "No hashtags (native for this channel)";
+    wrap.appendChild(tag);
+    return wrap;
   }
 
   function copyToClipboard(text) {

@@ -62,6 +62,32 @@ DESCRIPTION:Proudly serving Plano\, Allen\, McKinney\, Frisco\, Wylie\, an
  every visit. That is how we have worked since 2000.
 END:VEVENT
 BEGIN:VEVENT
+UID:w1-ig-reel-drone-flyover@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260918T120000
+DTEND;TZID=America/Chicago:20260918T121500
+SUMMARY:[Instagram] video
+DESCRIPTION:Reel: a slow drone pass over a finished Plano roof\, ridge lin
+ e to gutters. Sound on. There is something about seeing a roof from above 
+ that a ground photo never captures\, every clean course of shingles\, ever
+ y straight valley. This is the work we have been doing here since 2000. Sa
+ ve this for when your own roof is due.\n\n#Plano #PlanoTX #Roofing #DroneF
+ ootage #RoofReplacement #NorthTexas #Reels #Shingles #DFW #CurbAppeal
+END:VEVENT
+BEGIN:VEVENT
+UID:w1-fb-video-hail-30sec@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260919T100000
+DTEND;TZID=America/Chicago:20260919T101500
+SUMMARY:[Facebook] video
+DESCRIPTION:Video: how to spot hail damage in about 30 seconds\, filmed ri
+ ght on a North Texas roof. We point the camera at the real thing\, bruised
+  shingles where the granules got knocked loose\, dented soft metal on the 
+ vents\, and the marks most homeowners walk right past from the driveway. I
+ f your street took a recent storm\, watch this before you decide your roof
+  is fine. Family-run and on these roofs since 2000.\n\n#Plano #NorthTexas
+END:VEVENT
+BEGIN:VEVENT
 UID:w1-ig-detail-shot@jackson-roofing.wing
 DTSTAMP:20260914T000000Z
 DTSTART;TZID=America/Chicago:20260919T170000
@@ -140,6 +166,20 @@ DESCRIPTION:For the Wylie and Richardson neighbors: after a windy stretch\
  ground. Those are easy signs something shifted up top. We are a family-run
   Plano roofer and glad to help you sort out whether it is worth a closer l
  ook.
+END:VEVENT
+BEGIN:VEVENT
+UID:w2-ig-reel-tearoff-timelapse@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20260925T170000
+DTEND;TZID=America/Chicago:20260925T171500
+SUMMARY:[Instagram] video
+DESCRIPTION:Reel: a full roof tear-off in about 15 seconds. Old shingles s
+ tripped to the deck\, fresh underlayment down\, new roof on\, all sped up 
+ so you can watch a day of work fly by. This one is in Allen. It is oddly s
+ atisfying\, and it is also exactly what a proper replacement looks like wh
+ en the same crew stays on the job start to finish.\n\n#Allen #AllenTX #Roo
+ fing #Timelapse #RoofReplacement #NorthTexas #Reels #Reroof #DFW #Satisfyi
+ ngVideo
 END:VEVENT
 BEGIN:VEVENT
 UID:w2-gbp-reviews-soft@jackson-roofing.wing
@@ -222,6 +262,19 @@ DESCRIPTION:When a storm blows through North Texas\, the phone lines fill
  thTexas
 END:VEVENT
 BEGIN:VEVENT
+UID:w3-ig-reel-crew-intro@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261002T170000
+DTEND;TZID=America/Chicago:20261002T171500
+SUMMARY:[Instagram] video
+DESCRIPTION:Reel: meet the crew. A quick walk-and-talk introducing the peo
+ ple who will actually be on your roof\, because with a family-run shop it 
+ is the same faces every time\, not a rotating cast. We have been roofing P
+ lano and the North Dallas suburbs since 2000. Put a name to the company be
+ fore you ever reach out.\n\n#Plano #PlanoTX #Roofing #FamilyOwned #MeetThe
+ Team #NorthTexas #Reels #LocalBusiness #DFW #Roofer
+END:VEVENT
+BEGIN:VEVENT
 UID:w3-gbp-before-after-local@jackson-roofing.wing
 DTSTAMP:20260914T000000Z
 DTSTART;TZID=America/Chicago:20261003T100000
@@ -252,6 +305,19 @@ DESCRIPTION:For the Frisco crowd deciding between roofers: ask whoever you
   be on your job start to finish. We are family-run\, owned by Chris Jackso
  n\, and have answered yes to both since 2000. Glad to be a second opinion 
  for anyone comparing quotes.
+END:VEVENT
+BEGIN:VEVENT
+UID:w3-fb-video-before-after-reveal@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261005T120000
+DTEND;TZID=America/Chicago:20261005T121500
+SUMMARY:[Facebook] video
+DESCRIPTION:Video: the before-and-after reveal\, McKinney edition. We star
+ t on the storm-worn roof\, then a quick cut to the finished job\, same hou
+ se\, same angle. No music tricks\, just the honest difference a new roof m
+ akes to a home. The homeowners were on the fence about timing until they s
+ aw the photos we took up top. Which side would you rather have over your f
+ amily?\n\n#McKinney #Roofing
 END:VEVENT
 BEGIN:VEVENT
 UID:w4-gbp-allen-inspection@jackson-roofing.wing
@@ -297,6 +363,19 @@ DESCRIPTION:McKinney neighbors\, as the weather cools it is worth checking
   that your attic vents are clear so moisture does not build up over winter
  . If you are not sure what to look for\, ask away. We are a family-run Pla
  no roofer and happy to point folks in the right direction.
+END:VEVENT
+BEGIN:VEVENT
+UID:w4-ig-reel-spot-damage@jackson-roofing.wing
+DTSTAMP:20260914T000000Z
+DTSTART;TZID=America/Chicago:20261009T170000
+DTEND;TZID=America/Chicago:20261009T171500
+SUMMARY:[Instagram] video
+DESCRIPTION:Reel: three things we check first on every roof\, filmed close
+  up. Granule loss in the valleys\, lifted or creased shingles\, and the so
+ ft metal around vents and flashing. Sixty seconds that could save you a cl
+ aim. Send this to the neighbor who keeps saying their roof is probably fin
+ e. Family-run since 2000.\n\n#Plano #PlanoTX #Roofing #RoofInspection #Hai
+ lDamage #NorthTexas #Reels #HomeMaintenance #DFW #RoofCare
 END:VEVENT
 BEGIN:VEVENT
 UID:w4-gbp-reviews-community@jackson-roofing.wing
