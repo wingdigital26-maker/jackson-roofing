@@ -263,6 +263,16 @@ def check_image(image, findings):
     if not os.path.isfile(resolved):
         findings.append(Finding("FAIL", "integrity.image_file",
                                 "image file not found on disk: %s" % src))
+    else:
+        # Guard against tiny/blank/broken image assets (a real 62x62 black
+        # placeholder shipped at ~1.4KB). Anything under 2KB is almost never a
+        # usable card photo, so surface it before it renders as a blank square.
+        try:
+            if os.path.getsize(resolved) < 2048:
+                findings.append(Finding("WARN", "integrity.image_tiny",
+                                        "image file suspiciously small (<2KB), may be blank/broken: %s" % src))
+        except OSError:
+            pass
     if not (image.get("alt") or "").strip():
         findings.append(Finding("WARN", "integrity.image_alt", "image.alt is empty"))
 

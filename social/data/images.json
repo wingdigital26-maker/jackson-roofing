@@ -2,64 +2,359 @@
   "generated": "2026-09-14T16:00:00-05:00",
   "note": "One entry per post id (1:1 with posts.json). src mirrors the real Jackson site photo assigned to each post in posts.json (files live at ../assets/img/* relative to social/index.html and all exist). concept explains why that photo fits the post and what to swap in later. Prefer a real Jackson job photo of the same subject before publishing; the source_hint is a fallback royalty-free search only if no owned photo exists.",
   "images": [
-    { "id": "w1-gbp-storm-inspection-window", "concept": "Roofer up on a Plano rooftop mid free-inspection. Reads as active, local storm-response work, which is exactly the intent this GBP post targets.", "src": "../assets/img/home-storm.webp", "source_hint": "Prefer a real Jackson inspection photo; fallback Pexels: roof inspection roofer" },
-    { "id": "w1-fb-hail-season-checkin", "concept": "Storm-mood roof shot that sets the hail-season tone for the Facebook question. Swap for a real North Texas storm sky or post-hail roof if available.", "src": "../assets/img/home-storm.webp", "source_hint": "Prefer real storm-day photo; fallback Pexels: storm clouds suburb texas" },
-    { "id": "w1-ig-before-after-hook", "concept": "Finished exterior standing in for the after half of the before/after hook. Ideal swap is a true side-by-side of one Jackson job.", "src": "../assets/img/siding-after.jpg", "source_hint": "Prefer a real Jackson before/after pair; fallback Pexels: roof before after new shingles" },
-    { "id": "w1-nd-neighborly-tip", "concept": "Inspection-detail photo that supports the granules-in-the-gutter tip without looking staged. Swap for a real gutter-granule close-up if on hand.", "src": "../assets/img/home-inspection.webp", "source_hint": "Prefer real gutter photo; fallback Pexels: gutter debris granules" },
-    { "id": "w1-gbp-service-area", "concept": "Crew photo grounds the family-run service-area message in real people. A clean in-house cyan service-area map is the stronger swap for GBP.", "src": "../assets/img/about-crew.jpg", "source_hint": "Prefer in-house map graphic (brand cyan #1bc0ff on paper); or keep crew photo" },
-    { "id": "w1-ig-detail-shot", "concept": "Close inspection shot pairs with the hail-vs-granule-loss education point. Swap for a macro of actual hail bruising if available.", "src": "../assets/img/svc-inspection.jpg", "source_hint": "Prefer real hail-bruise macro; fallback Pexels: hail damaged shingle close up" },
-    { "id": "w1-fb-family-story", "concept": "Branded Jackson truck shot is perfect for the family-since-2000 story. Real, owned, and recognizable.", "src": "../assets/img/jackson-truck.jpg", "source_hint": "Owned Jackson photo, keep as is" },
-    { "id": "w1-nd-weekend-community", "concept": "Quiet neighborhood street reinforces the neighborly Nextdoor tone. Swap for a recognizable local Plano-area street if available.", "src": "../assets/img/g-vanalstyne.jpg", "source_hint": "Prefer a real local street photo; fallback Pexels: texas suburban homes street" },
-    { "id": "w2-gbp-frisco-focus", "concept": "Storm-service photo signals active inspections for the Frisco and McKinney slot. On-message for storm-response intent.", "src": "../assets/img/svc-storm.webp", "source_hint": "Owned service photo, keep; or swap real Frisco job" },
-    { "id": "w2-ig-before-after-two", "concept": "Finished roof against clear sky carries the Allen curb-appeal after. Swap for a true Allen before/after pair when available.", "src": "../assets/img/roof-4.webp", "source_hint": "Prefer real Allen before/after; fallback Pexels: house new roof curb appeal" },
-    { "id": "w2-fb-question-engagement", "concept": "Brick home exterior fits the how-old-is-your-roof question without implying a specific claim. Swap for an aerial neighborhood shot for more scroll-stopping reach.", "src": "../assets/img/house-brick.jpg", "source_hint": "Prefer aerial rooftops; fallback Pexels: aerial rooftops suburb drone" },
-    { "id": "w2-nd-wylie-helpful", "concept": "Roof-detail close-up supports the after-wind checklist for Wylie and Richardson. Swap for real ground-level shingle debris if on hand.", "src": "../assets/img/roof-detail.webp", "source_hint": "Prefer real shingle-debris photo; fallback Pexels: shingle debris yard storm" },
-    { "id": "w2-gbp-reviews-soft", "concept": "Crew photo backs the word-of-mouth review message with real faces. A genuine homeowner-handshake photo is the stronger swap.", "src": "../assets/img/about-crew.jpg", "source_hint": "Prefer real handshake/homeowner photo; fallback Pexels: contractor homeowner handshake" },
-    { "id": "w2-ig-process-punch", "concept": "On-site crew-at-work photo matches the no-pressure, we-show-you-the-photos process message. Swap for a roofer-with-tablet shot for literal fit.", "src": "../assets/img/crew-work.jpg", "source_hint": "Prefer real roofer-with-tablet; fallback Pexels: roofer tablet inspection photos" },
-    { "id": "w2-fb-before-after-story", "concept": "Real gallery job photo (g-4998) anchors the McKinney before/after story. Ideal swap is the actual paired before shot of the same home.", "src": "../assets/img/g-4998.jpg", "source_hint": "Owned gallery photo; pair with its real before shot if found" },
-    { "id": "w3-gbp-fall-prep", "concept": "Home-repair roofline works for the fall get-ahead reminder. Swap for a roofline framed by autumn trees for stronger seasonal cue.", "src": "../assets/img/home-repair.webp", "source_hint": "Prefer autumn-framed roofline; fallback Pexels: house roof autumn trees" },
-    { "id": "w3-ig-hook-attic", "concept": "Repair-context photo supports the attic-tells-on-your-roof education hook. Swap for a real attic-daylight or interior-leak shot for literal punch.", "src": "../assets/img/home-repair.webp", "source_hint": "Prefer real attic-daylight photo; fallback Pexels: attic roof leak daylight" },
-    { "id": "w3-nd-richardson-seasonal", "concept": "Roof shot supports the clear-your-valleys seasonal note for Richardson. Swap for leaves collected in a real roof valley if available.", "src": "../assets/img/roof-4.webp", "source_hint": "Prefer real roof-valley-with-leaves photo; fallback Pexels: leaves roof valley gutter" },
-    { "id": "w3-fb-storm-response", "concept": "Roof-detail photo grounds the local-not-a-storm-chaser message. Swap for a real post-storm yard or roof shot for immediacy.", "src": "../assets/img/roof-detail.webp", "source_hint": "Prefer real storm-aftermath photo; fallback Pexels: storm damage yard branches" },
-    { "id": "w3-gbp-before-after-local", "concept": "Real completed-roof gallery photo (g-0329) fits the another-Plano-roof-done GBP post. Owned and specific.", "src": "../assets/img/g-0329.jpg", "source_hint": "Owned gallery photo, keep as is" },
-    { "id": "w3-ig-community-punch", "concept": "Wide rooftop-under-sky shot matches the we-live-under-these-same-skies community line. Golden-hour swap would lift it further.", "src": "../assets/img/home-commercial.jpg", "source_hint": "Prefer wide Plano rooftops at golden hour; fallback Pexels: texas suburb rooftops sky" },
-    { "id": "w3-nd-frisco-helpful", "concept": "Roofer-with-homeowner truck scene fits the second-opinion Frisco message and the ask-these-questions advice.", "src": "../assets/img/home-truck.jpg", "source_hint": "Prefer real roofer-explaining-homeowner shot; fallback Pexels: roofer explaining homeowner" },
-    { "id": "w4-gbp-allen-inspection", "concept": "Real gallery rooftop photo (g-9349) reads as an inspection in progress for the Allen slot. Owned and on-message.", "src": "../assets/img/g-9349.jpg", "source_hint": "Owned gallery photo, keep as is" },
-    { "id": "w4-fb-education-warranty", "concept": "Inspection photo backs the document-damage-soon insurance education point. Swap for a real photo showing marked hail damage.", "src": "../assets/img/home-inspection.webp", "source_hint": "Prefer real documented-damage photo; fallback Pexels: hail damage roof documentation" },
-    { "id": "w4-ig-before-after-three", "concept": "Finished exterior stands in for the Wylie after. Ideal swap is a true before/after pair of one Wylie job.", "src": "../assets/img/siding-after.jpg", "source_hint": "Prefer real Wylie before/after; fallback Pexels: old roof new roof before after" },
-    { "id": "w4-nd-mckinney-seasonal", "concept": "Replacement photo supports the check-your-attic-vents seasonal note for McKinney. Swap for a clear exterior roof-vent detail if available.", "src": "../assets/img/svc-replacement.webp", "source_hint": "Prefer real roof-vent detail; fallback Pexels: roof attic vent exterior" },
-    { "id": "w4-gbp-reviews-community", "concept": "Crew-at-work photo backs the word-of-mouth-built-this message with real hands on real roofs. A homeowners-on-porch photo is a warmer swap.", "src": "../assets/img/crew-work.jpg", "source_hint": "Prefer real happy-homeowners photo; fallback Pexels: happy homeowners porch house" },
-    { "id": "w4-ig-seasonal-hook", "concept": "Calm-sky roofline fits the prep-while-the-weather-is-calm seasonal hook. On-message as is.", "src": "../assets/img/home-storm.webp", "source_hint": "Prefer a real calm-sky roofline; fallback Pexels: clear sky house roofline" },
-    { "id": "w4-fb-trust-closeout", "concept": "Crew photo closes the month on the family-run, reachable-people trust note. A branded truck-in-neighborhood shot is an equally strong swap.", "src": "../assets/img/about-crew.jpg", "source_hint": "Owned crew photo; or swap Jackson truck-in-neighborhood" },
-    { "id": "w1-ig-reel-drone-flyover", "concept": "Thumbnail for the drone-flyover Reel. Finished-roof shot stands in as the cover frame; the real deliverable is 15 to 20 seconds of aerial video (drone or phone from a ladder). Swap for a true top-down still pulled from the footage.", "src": "../assets/img/roof-4.webp", "source_hint": "Reel cover frame; capture real drone/aerial footage of a completed Jackson job" },
-    { "id": "w1-fb-video-hail-30sec", "concept": "Thumbnail for the 30-second spot-hail-damage explainer video. Inspection photo works as the cover; the real asset is a phone clip on a roof pointing at bruised shingles and dented vents. Swap for a still frame showing the actual damage on camera.", "src": "../assets/img/home-inspection.webp", "source_hint": "Video cover frame; film a real 30s hail-damage walkthrough on a job" },
-    { "id": "w2-ig-reel-tearoff-timelapse", "concept": "Thumbnail for the tear-off time-lapse Reel. Crew-at-work photo covers it; the real asset is a fixed-camera time-lapse of a full replacement sped to about 15s. Swap for a mid-timelapse frame once shot.", "src": "../assets/img/crew-work.jpg", "source_hint": "Reel cover frame; set a phone on a tripod and time-lapse one full tear-off/reroof" },
-    { "id": "w3-ig-reel-crew-intro", "concept": "Thumbnail for the meet-the-crew Reel. Crew photo is the natural cover; the real asset is a short walk-and-talk intro of the actual team. Swap for a friendly first-frame of the crew on site.", "src": "../assets/img/about-crew.jpg", "source_hint": "Reel cover frame; film a 20 to 30s crew walk-and-talk introduction" },
-    { "id": "w3-fb-video-before-after-reveal", "concept": "Thumbnail for the before/after reveal video. Finished-roof photo stands in; the real asset is a same-angle cut from storm-worn to finished. Swap for a split-frame still of the actual paired footage.", "src": "../assets/img/siding-after.jpg", "source_hint": "Video cover frame; shoot before and after clips of one job from the same spot" },
-    { "id": "w4-ig-reel-spot-damage", "concept": "Thumbnail for the three-things-we-check Reel. Close inspection photo covers it; the real asset is a 60s close-up walkthrough of granule loss, lifted shingles, and vent flashing. Swap for a macro first-frame from the clip.", "src": "../assets/img/svc-inspection.jpg", "source_hint": "Reel cover frame; film a real close-up inspection checklist walkthrough" },
-    { "id": "w5-gbp-winter-prep", "concept": "Autumn-framed roofline fits the get-ahead-of-winter GBP reminder. Swap for a real Plano roof on a crisp fall day if available.", "src": "../assets/img/home-repair.webp", "source_hint": "Prefer autumn-framed roofline; fallback Pexels: house roof autumn trees" },
-    { "id": "w5-ig-fall-education", "concept": "Inspection close-up supports the clear-your-valleys fall tip. Ideal swap is a real photo of leaves packed in a Jackson job's valley.", "src": "../assets/img/svc-inspection.jpg", "source_hint": "Prefer real leaves-in-valley photo; fallback Pexels: leaves roof valley gutter" },
-    { "id": "w5-fb-video-gutter", "concept": "Thumbnail for the fall gutter and valley walkthrough video. Roof-detail photo covers it; the real asset is a phone clip on a roof showing debris in the valleys. Swap for a still frame from the clip.", "src": "../assets/img/roof-detail.webp", "source_hint": "Video cover frame; film a real fall gutter/valley walkthrough on a job" },
-    { "id": "w5-nd-weekend-leaves", "concept": "Roof shot with fall context suits the neighborly leaves reminder. Swap for a recognizable local roof with autumn leaves if on hand.", "src": "../assets/img/roof-4.webp", "source_hint": "Prefer real roof-with-leaves photo; fallback Pexels: autumn leaves house roof" },
-    { "id": "w5-ig-before-after", "concept": "Finished exterior stands in for the winter-ready after. Ideal swap is a true side-by-side of one Plano job.", "src": "../assets/img/siding-after.jpg", "source_hint": "Prefer a real before/after pair; fallback Pexels: roof before after new shingles" },
-    { "id": "w5-fb-trust-local", "concept": "Branded Jackson truck grounds the hire-local trust message in real, owned imagery.", "src": "../assets/img/jackson-truck.jpg", "source_hint": "Owned Jackson photo, keep as is" },
-    { "id": "w5-gbp-reviews", "concept": "Crew photo backs the word-of-mouth review note with real faces. A homeowner-handshake photo is a warmer swap.", "src": "../assets/img/about-crew.jpg", "source_hint": "Prefer real handshake/homeowner photo; fallback Pexels: contractor homeowner handshake" },
-    { "id": "w6-gbp-inspection-frisco", "concept": "Storm-service photo signals active inspections for the Frisco and McKinney slot. On-message for storm-response intent.", "src": "../assets/img/svc-storm.webp", "source_hint": "Owned service photo, keep; or swap real Frisco job" },
-    { "id": "w6-ig-reel-gutter-cleanout", "concept": "Thumbnail for the fall roof-prep Reel. Crew-at-work photo covers it; the real asset is a sped-up clip of clearing valleys and checking flashing. Swap for a mid-clip frame once shot.", "src": "../assets/img/crew-work.jpg", "source_hint": "Reel cover frame; film a real fall prep routine on a job" },
-    { "id": "w6-fb-question-age", "concept": "Brick home exterior fits the how-old-is-your-roof question without implying a specific claim. Swap for an aerial neighborhood shot for more reach.", "src": "../assets/img/house-brick.jpg", "source_hint": "Prefer aerial rooftops; fallback Pexels: aerial rooftops suburb drone" },
-    { "id": "w6-nd-richardson-tip", "concept": "Gutter-and-edge detail supports the pre-freeze drainage tip for Richardson. Swap for a real gutter/downspout close-up if on hand.", "src": "../assets/img/roof-detail.webp", "source_hint": "Prefer real gutter/downspout photo; fallback Pexels: gutter downspout roof edge" },
-    { "id": "w6-ig-detail-flashing", "concept": "Inspection close-up pairs with the leaks-start-at-the-edges flashing education point. Swap for a macro of real vent flashing.", "src": "../assets/img/svc-inspection.jpg", "source_hint": "Prefer real flashing macro; fallback Pexels: roof flashing vent close up" },
-    { "id": "w6-fb-before-after", "concept": "Real gallery job photo (g-4998) anchors the McKinney before-winter before/after story. Ideal swap is the paired before shot of the same home.", "src": "../assets/img/g-4998.jpg", "source_hint": "Owned gallery photo; pair with its real before shot if found" },
-    { "id": "w6-gbp-endofyear", "concept": "Home-repair roofline works for the fall-is-the-easiest-season message. Swap for a clear fall-day install photo for stronger seasonal cue.", "src": "../assets/img/home-repair.webp", "source_hint": "Prefer fall-day install photo; fallback Pexels: new roof clear fall day" },
-    { "id": "w7-ig-reel-winter-checklist", "concept": "Thumbnail for the five-point pre-winter check Reel. Inspection photo covers it; the real asset is a 60s close-up run through the five points. Swap for a macro first-frame.", "src": "../assets/img/svc-inspection.jpg", "source_hint": "Reel cover frame; film a real pre-winter checklist walkthrough" },
-    { "id": "w7-fb-family-story", "concept": "Crew photo backs the 26-years-same-family trust story with real people. A branded truck shot is an equally strong swap.", "src": "../assets/img/about-crew.jpg", "source_hint": "Owned crew photo; or swap Jackson truck-in-neighborhood" },
-    { "id": "w7-nd-halloween-community", "concept": "Quiet neighborhood street reinforces the Halloween-evening neighborly tone. Swap for a recognizable local Plano-area street if available.", "src": "../assets/img/g-vanalstyne.jpg", "source_hint": "Prefer a real local street photo; fallback Pexels: suburban homes street evening" },
-    { "id": "w7-gbp-november-slots", "concept": "Real gallery rooftop photo (g-9349) reads as an inspection in progress for the November slot. Owned and on-message.", "src": "../assets/img/g-9349.jpg", "source_hint": "Owned gallery photo, keep as is" },
-    { "id": "w7-ig-before-after", "concept": "Finished roof against clear sky carries the beat-the-winter-rush Allen after. Swap for a true Allen before/after pair when available.", "src": "../assets/img/roof-4.webp", "source_hint": "Prefer real Allen before/after; fallback Pexels: house new roof curb appeal" },
-    { "id": "w7-fb-education-winter", "concept": "Inspection photo backs the winter-exposes-existing-problems education point. Swap for a real photo showing marked worn flashing.", "src": "../assets/img/home-inspection.webp", "source_hint": "Prefer real documented-wear photo; fallback Pexels: roof flashing wear inspection" },
-    { "id": "w8-ig-community", "concept": "Wide rooftop-under-sky shot matches the same-North-Texas-skies community line. Golden-hour or dusk swap would lift it further.", "src": "../assets/img/home-commercial.jpg", "source_hint": "Prefer wide Plano rooftops at dusk; fallback Pexels: texas suburb rooftops sky" },
-    { "id": "w8-fb-video-before-after", "concept": "Thumbnail for the winter before/after reveal video. Finished-roof photo stands in; the real asset is a same-angle cut from storm-worn to finished. Swap for a split-frame still.", "src": "../assets/img/siding-after.jpg", "source_hint": "Video cover frame; shoot before and after clips of one job from the same spot" },
-    { "id": "w8-nd-weekend-winterready", "concept": "Roof-edge and gutter photo supports the clear-your-gutters-before-the-cold-front note. Swap for a real gutter/roof-edge detail if available.", "src": "../assets/img/svc-replacement.webp", "source_hint": "Prefer real gutter/roof-edge photo; fallback Pexels: roof edge gutter winter" },
-    { "id": "w8-gbp-reviews-closeout", "concept": "Crew-at-work photo backs the word-of-mouth-keeps-us-going message with real hands on real roofs. A happy-homeowners photo is a warmer swap.", "src": "../assets/img/crew-work.jpg", "source_hint": "Prefer real happy-homeowners photo; fallback Pexels: happy homeowners porch house" }
+    {
+      "id": "w1-gbp-storm-inspection-window",
+      "concept": "Roofer up on a Plano rooftop mid free-inspection. Reads as active, local storm-response work, which is exactly the intent this GBP post targets.",
+      "src": "../assets/img/home-storm.webp",
+      "source_hint": "Prefer a real Jackson inspection photo; fallback Pexels: roof inspection roofer"
+    },
+    {
+      "id": "w1-fb-hail-season-checkin",
+      "concept": "Storm-mood roof shot that sets the hail-season tone for the Facebook question. Swap for a real North Texas storm sky or post-hail roof if available.",
+      "src": "../assets/img/home-storm.webp",
+      "source_hint": "Prefer real storm-day photo; fallback Pexels: storm clouds suburb texas"
+    },
+    {
+      "id": "w1-ig-before-after-hook",
+      "concept": "Finished exterior standing in for the after half of the before/after hook. Ideal swap is a true side-by-side of one Jackson job.",
+      "src": "../assets/img/siding-after.jpg",
+      "source_hint": "Prefer a real Jackson before/after pair; fallback Pexels: roof before after new shingles"
+    },
+    {
+      "id": "w1-nd-neighborly-tip",
+      "concept": "Inspection-detail photo that supports the granules-in-the-gutter tip without looking staged. Swap for a real gutter-granule close-up if on hand.",
+      "src": "../assets/img/home-inspection.webp",
+      "source_hint": "Prefer real gutter photo; fallback Pexels: gutter debris granules"
+    },
+    {
+      "id": "w1-gbp-service-area",
+      "concept": "Crew photo grounds the family-run service-area message in real people. A clean in-house cyan service-area map is the stronger swap for GBP.",
+      "src": "../assets/img/about-crew.jpg",
+      "source_hint": "Prefer in-house map graphic (brand cyan #1bc0ff on paper); or keep crew photo"
+    },
+    {
+      "id": "w1-ig-detail-shot",
+      "concept": "Close inspection shot pairs with the hail-vs-granule-loss education point. Swap for a macro of actual hail bruising if available.",
+      "src": "../assets/img/svc-inspection.jpg",
+      "source_hint": "Prefer real hail-bruise macro; fallback Pexels: hail damaged shingle close up"
+    },
+    {
+      "id": "w1-fb-family-story",
+      "concept": "Branded Jackson truck shot is perfect for the family-since-2000 story. Real, owned, and recognizable.",
+      "src": "../assets/img/jackson-truck.jpg",
+      "source_hint": "Owned Jackson photo, keep as is"
+    },
+    {
+      "id": "w1-nd-weekend-community",
+      "concept": "Quiet neighborhood street reinforces the neighborly Nextdoor tone. Swap for a recognizable local Plano-area street if available.",
+      "src": "../assets/img/g-vanalstyne.jpg",
+      "source_hint": "Prefer a real local street photo; fallback Pexels: texas suburban homes street"
+    },
+    {
+      "id": "w2-gbp-frisco-focus",
+      "concept": "Storm-service photo signals active inspections for the Frisco and McKinney slot. On-message for storm-response intent.",
+      "src": "../assets/img/svc-storm.webp",
+      "source_hint": "Owned service photo, keep; or swap real Frisco job"
+    },
+    {
+      "id": "w2-ig-before-after-two",
+      "concept": "Finished roof against clear sky carries the Allen curb-appeal after. Swap for a true Allen before/after pair when available.",
+      "src": "../assets/img/roof-detail.webp",
+      "source_hint": "Prefer real Allen before/after; fallback Pexels: house new roof curb appeal"
+    },
+    {
+      "id": "w2-fb-question-engagement",
+      "concept": "Brick home exterior fits the how-old-is-your-roof question without implying a specific claim. Swap for an aerial neighborhood shot for more scroll-stopping reach.",
+      "src": "../assets/img/house-brick.jpg",
+      "source_hint": "Prefer aerial rooftops; fallback Pexels: aerial rooftops suburb drone"
+    },
+    {
+      "id": "w2-nd-wylie-helpful",
+      "concept": "Roof-detail close-up supports the after-wind checklist for Wylie and Richardson. Swap for real ground-level shingle debris if on hand.",
+      "src": "../assets/img/roof-detail.webp",
+      "source_hint": "Prefer real shingle-debris photo; fallback Pexels: shingle debris yard storm"
+    },
+    {
+      "id": "w2-gbp-reviews-soft",
+      "concept": "Crew photo backs the word-of-mouth review message with real faces. A genuine homeowner-handshake photo is the stronger swap.",
+      "src": "../assets/img/about-crew.jpg",
+      "source_hint": "Prefer real handshake/homeowner photo; fallback Pexels: contractor homeowner handshake"
+    },
+    {
+      "id": "w2-ig-process-punch",
+      "concept": "On-site crew-at-work photo matches the no-pressure, we-show-you-the-photos process message. Swap for a roofer-with-tablet shot for literal fit.",
+      "src": "../assets/img/crew-work.jpg",
+      "source_hint": "Prefer real roofer-with-tablet; fallback Pexels: roofer tablet inspection photos"
+    },
+    {
+      "id": "w2-fb-before-after-story",
+      "concept": "Real gallery job photo (g-4998) anchors the McKinney before/after story. Ideal swap is the actual paired before shot of the same home.",
+      "src": "../assets/img/g-4998.jpg",
+      "source_hint": "Owned gallery photo; pair with its real before shot if found"
+    },
+    {
+      "id": "w3-gbp-fall-prep",
+      "concept": "Home-repair roofline works for the fall get-ahead reminder. Swap for a roofline framed by autumn trees for stronger seasonal cue.",
+      "src": "../assets/img/home-repair.webp",
+      "source_hint": "Prefer autumn-framed roofline; fallback Pexels: house roof autumn trees"
+    },
+    {
+      "id": "w3-ig-hook-attic",
+      "concept": "Repair-context photo supports the attic-tells-on-your-roof education hook. Swap for a real attic-daylight or interior-leak shot for literal punch.",
+      "src": "../assets/img/home-repair.webp",
+      "source_hint": "Prefer real attic-daylight photo; fallback Pexels: attic roof leak daylight"
+    },
+    {
+      "id": "w3-nd-richardson-seasonal",
+      "concept": "Roof shot supports the clear-your-valleys seasonal note for Richardson. Swap for leaves collected in a real roof valley if available.",
+      "src": "../assets/img/home-repair.webp",
+      "source_hint": "Prefer real roof-valley-with-leaves photo; fallback Pexels: leaves roof valley gutter"
+    },
+    {
+      "id": "w3-fb-storm-response",
+      "concept": "Roof-detail photo grounds the local-not-a-storm-chaser message. Swap for a real post-storm yard or roof shot for immediacy.",
+      "src": "../assets/img/roof-detail.webp",
+      "source_hint": "Prefer real storm-aftermath photo; fallback Pexels: storm damage yard branches"
+    },
+    {
+      "id": "w3-gbp-before-after-local",
+      "concept": "Real completed-roof gallery photo (g-0329) fits the another-Plano-roof-done GBP post. Owned and specific.",
+      "src": "../assets/img/g-0329.jpg",
+      "source_hint": "Owned gallery photo, keep as is"
+    },
+    {
+      "id": "w3-ig-community-punch",
+      "concept": "Wide rooftop-under-sky shot matches the we-live-under-these-same-skies community line. Golden-hour swap would lift it further.",
+      "src": "../assets/img/home-commercial.jpg",
+      "source_hint": "Prefer wide Plano rooftops at golden hour; fallback Pexels: texas suburb rooftops sky"
+    },
+    {
+      "id": "w3-nd-frisco-helpful",
+      "concept": "Roofer-with-homeowner truck scene fits the second-opinion Frisco message and the ask-these-questions advice.",
+      "src": "../assets/img/home-truck.jpg",
+      "source_hint": "Prefer real roofer-explaining-homeowner shot; fallback Pexels: roofer explaining homeowner"
+    },
+    {
+      "id": "w4-gbp-allen-inspection",
+      "concept": "Real gallery rooftop photo (g-9349) reads as an inspection in progress for the Allen slot. Owned and on-message.",
+      "src": "../assets/img/g-9349.jpg",
+      "source_hint": "Owned gallery photo, keep as is"
+    },
+    {
+      "id": "w4-fb-education-warranty",
+      "concept": "Inspection photo backs the document-damage-soon insurance education point. Swap for a real photo showing marked hail damage.",
+      "src": "../assets/img/home-inspection.webp",
+      "source_hint": "Prefer real documented-damage photo; fallback Pexels: hail damage roof documentation"
+    },
+    {
+      "id": "w4-ig-before-after-three",
+      "concept": "Finished exterior stands in for the Wylie after. Ideal swap is a true before/after pair of one Wylie job.",
+      "src": "../assets/img/siding-after.jpg",
+      "source_hint": "Prefer real Wylie before/after; fallback Pexels: old roof new roof before after"
+    },
+    {
+      "id": "w4-nd-mckinney-seasonal",
+      "concept": "Replacement photo supports the check-your-attic-vents seasonal note for McKinney. Swap for a clear exterior roof-vent detail if available.",
+      "src": "../assets/img/svc-replacement.webp",
+      "source_hint": "Prefer real roof-vent detail; fallback Pexels: roof attic vent exterior"
+    },
+    {
+      "id": "w4-gbp-reviews-community",
+      "concept": "Crew-at-work photo backs the word-of-mouth-built-this message with real hands on real roofs. A homeowners-on-porch photo is a warmer swap.",
+      "src": "../assets/img/crew-work.jpg",
+      "source_hint": "Prefer real happy-homeowners photo; fallback Pexels: happy homeowners porch house"
+    },
+    {
+      "id": "w4-ig-seasonal-hook",
+      "concept": "Calm-sky roofline fits the prep-while-the-weather-is-calm seasonal hook. On-message as is.",
+      "src": "../assets/img/home-storm.webp",
+      "source_hint": "Prefer a real calm-sky roofline; fallback Pexels: clear sky house roofline"
+    },
+    {
+      "id": "w4-fb-trust-closeout",
+      "concept": "Crew photo closes the month on the family-run, reachable-people trust note. A branded truck-in-neighborhood shot is an equally strong swap.",
+      "src": "../assets/img/about-crew.jpg",
+      "source_hint": "Owned crew photo; or swap Jackson truck-in-neighborhood"
+    },
+    {
+      "id": "w1-ig-reel-drone-flyover",
+      "concept": "Thumbnail for the drone-flyover Reel. Finished-roof shot stands in as the cover frame; the real deliverable is 15 to 20 seconds of aerial video (drone or phone from a ladder). Swap for a true top-down still pulled from the footage.",
+      "src": "../assets/img/roof-detail.webp",
+      "source_hint": "Reel cover frame; capture real drone/aerial footage of a completed Jackson job"
+    },
+    {
+      "id": "w1-fb-video-hail-30sec",
+      "concept": "Thumbnail for the 30-second spot-hail-damage explainer video. Inspection photo works as the cover; the real asset is a phone clip on a roof pointing at bruised shingles and dented vents. Swap for a still frame showing the actual damage on camera.",
+      "src": "../assets/img/home-inspection.webp",
+      "source_hint": "Video cover frame; film a real 30s hail-damage walkthrough on a job"
+    },
+    {
+      "id": "w2-ig-reel-tearoff-timelapse",
+      "concept": "Thumbnail for the tear-off time-lapse Reel. Crew-at-work photo covers it; the real asset is a fixed-camera time-lapse of a full replacement sped to about 15s. Swap for a mid-timelapse frame once shot.",
+      "src": "../assets/img/crew-work.jpg",
+      "source_hint": "Reel cover frame; set a phone on a tripod and time-lapse one full tear-off/reroof"
+    },
+    {
+      "id": "w3-ig-reel-crew-intro",
+      "concept": "Thumbnail for the meet-the-crew Reel. Crew photo is the natural cover; the real asset is a short walk-and-talk intro of the actual team. Swap for a friendly first-frame of the crew on site.",
+      "src": "../assets/img/about-crew.jpg",
+      "source_hint": "Reel cover frame; film a 20 to 30s crew walk-and-talk introduction"
+    },
+    {
+      "id": "w3-fb-video-before-after-reveal",
+      "concept": "Thumbnail for the before/after reveal video. Finished-roof photo stands in; the real asset is a same-angle cut from storm-worn to finished. Swap for a split-frame still of the actual paired footage.",
+      "src": "../assets/img/siding-after.jpg",
+      "source_hint": "Video cover frame; shoot before and after clips of one job from the same spot"
+    },
+    {
+      "id": "w4-ig-reel-spot-damage",
+      "concept": "Thumbnail for the three-things-we-check Reel. Close inspection photo covers it; the real asset is a 60s close-up walkthrough of granule loss, lifted shingles, and vent flashing. Swap for a macro first-frame from the clip.",
+      "src": "../assets/img/svc-inspection.jpg",
+      "source_hint": "Reel cover frame; film a real close-up inspection checklist walkthrough"
+    },
+    {
+      "id": "w5-gbp-winter-prep",
+      "concept": "Autumn-framed roofline fits the get-ahead-of-winter GBP reminder. Swap for a real Plano roof on a crisp fall day if available.",
+      "src": "../assets/img/home-repair.webp",
+      "source_hint": "Prefer autumn-framed roofline; fallback Pexels: house roof autumn trees"
+    },
+    {
+      "id": "w5-ig-fall-education",
+      "concept": "Inspection close-up supports the clear-your-valleys fall tip. Ideal swap is a real photo of leaves packed in a Jackson job's valley.",
+      "src": "../assets/img/svc-inspection.jpg",
+      "source_hint": "Prefer real leaves-in-valley photo; fallback Pexels: leaves roof valley gutter"
+    },
+    {
+      "id": "w5-fb-video-gutter",
+      "concept": "Thumbnail for the fall gutter and valley walkthrough video. Roof-detail photo covers it; the real asset is a phone clip on a roof showing debris in the valleys. Swap for a still frame from the clip.",
+      "src": "../assets/img/roof-detail.webp",
+      "source_hint": "Video cover frame; film a real fall gutter/valley walkthrough on a job"
+    },
+    {
+      "id": "w5-nd-weekend-leaves",
+      "concept": "Roof shot with fall context suits the neighborly leaves reminder. Swap for a recognizable local roof with autumn leaves if on hand.",
+      "src": "../assets/img/home-repair.webp",
+      "source_hint": "Prefer real roof-with-leaves photo; fallback Pexels: autumn leaves house roof"
+    },
+    {
+      "id": "w5-ig-before-after",
+      "concept": "Finished exterior stands in for the winter-ready after. Ideal swap is a true side-by-side of one Plano job.",
+      "src": "../assets/img/siding-after.jpg",
+      "source_hint": "Prefer a real before/after pair; fallback Pexels: roof before after new shingles"
+    },
+    {
+      "id": "w5-fb-trust-local",
+      "concept": "Branded Jackson truck grounds the hire-local trust message in real, owned imagery.",
+      "src": "../assets/img/jackson-truck.jpg",
+      "source_hint": "Owned Jackson photo, keep as is"
+    },
+    {
+      "id": "w5-gbp-reviews",
+      "concept": "Crew photo backs the word-of-mouth review note with real faces. A homeowner-handshake photo is a warmer swap.",
+      "src": "../assets/img/about-crew.jpg",
+      "source_hint": "Prefer real handshake/homeowner photo; fallback Pexels: contractor homeowner handshake"
+    },
+    {
+      "id": "w6-gbp-inspection-frisco",
+      "concept": "Storm-service photo signals active inspections for the Frisco and McKinney slot. On-message for storm-response intent.",
+      "src": "../assets/img/svc-storm.webp",
+      "source_hint": "Owned service photo, keep; or swap real Frisco job"
+    },
+    {
+      "id": "w6-ig-reel-gutter-cleanout",
+      "concept": "Thumbnail for the fall roof-prep Reel. Crew-at-work photo covers it; the real asset is a sped-up clip of clearing valleys and checking flashing. Swap for a mid-clip frame once shot.",
+      "src": "../assets/img/crew-work.jpg",
+      "source_hint": "Reel cover frame; film a real fall prep routine on a job"
+    },
+    {
+      "id": "w6-fb-question-age",
+      "concept": "Brick home exterior fits the how-old-is-your-roof question without implying a specific claim. Swap for an aerial neighborhood shot for more reach.",
+      "src": "../assets/img/house-brick.jpg",
+      "source_hint": "Prefer aerial rooftops; fallback Pexels: aerial rooftops suburb drone"
+    },
+    {
+      "id": "w6-nd-richardson-tip",
+      "concept": "Gutter-and-edge detail supports the pre-freeze drainage tip for Richardson. Swap for a real gutter/downspout close-up if on hand.",
+      "src": "../assets/img/roof-detail.webp",
+      "source_hint": "Prefer real gutter/downspout photo; fallback Pexels: gutter downspout roof edge"
+    },
+    {
+      "id": "w6-ig-detail-flashing",
+      "concept": "Inspection close-up pairs with the leaks-start-at-the-edges flashing education point. Swap for a macro of real vent flashing.",
+      "src": "../assets/img/svc-inspection.jpg",
+      "source_hint": "Prefer real flashing macro; fallback Pexels: roof flashing vent close up"
+    },
+    {
+      "id": "w6-fb-before-after",
+      "concept": "Real gallery job photo (g-4998) anchors the McKinney before-winter before/after story. Ideal swap is the paired before shot of the same home.",
+      "src": "../assets/img/g-4998.jpg",
+      "source_hint": "Owned gallery photo; pair with its real before shot if found"
+    },
+    {
+      "id": "w6-gbp-endofyear",
+      "concept": "Home-repair roofline works for the fall-is-the-easiest-season message. Swap for a clear fall-day install photo for stronger seasonal cue.",
+      "src": "../assets/img/home-repair.webp",
+      "source_hint": "Prefer fall-day install photo; fallback Pexels: new roof clear fall day"
+    },
+    {
+      "id": "w7-ig-reel-winter-checklist",
+      "concept": "Thumbnail for the five-point pre-winter check Reel. Inspection photo covers it; the real asset is a 60s close-up run through the five points. Swap for a macro first-frame.",
+      "src": "../assets/img/svc-inspection.jpg",
+      "source_hint": "Reel cover frame; film a real pre-winter checklist walkthrough"
+    },
+    {
+      "id": "w7-fb-family-story",
+      "concept": "Crew photo backs the 26-years-same-family trust story with real people. A branded truck shot is an equally strong swap.",
+      "src": "../assets/img/about-crew.jpg",
+      "source_hint": "Owned crew photo; or swap Jackson truck-in-neighborhood"
+    },
+    {
+      "id": "w7-nd-halloween-community",
+      "concept": "Quiet neighborhood street reinforces the Halloween-evening neighborly tone. Swap for a recognizable local Plano-area street if available.",
+      "src": "../assets/img/g-vanalstyne.jpg",
+      "source_hint": "Prefer a real local street photo; fallback Pexels: suburban homes street evening"
+    },
+    {
+      "id": "w7-gbp-november-slots",
+      "concept": "Real gallery rooftop photo (g-9349) reads as an inspection in progress for the November slot. Owned and on-message.",
+      "src": "../assets/img/g-9349.jpg",
+      "source_hint": "Owned gallery photo, keep as is"
+    },
+    {
+      "id": "w7-ig-before-after",
+      "concept": "Finished roof against clear sky carries the beat-the-winter-rush Allen after. Swap for a true Allen before/after pair when available.",
+      "src": "../assets/img/roof-detail.webp",
+      "source_hint": "Prefer real Allen before/after; fallback Pexels: house new roof curb appeal"
+    },
+    {
+      "id": "w7-fb-education-winter",
+      "concept": "Inspection photo backs the winter-exposes-existing-problems education point. Swap for a real photo showing marked worn flashing.",
+      "src": "../assets/img/home-inspection.webp",
+      "source_hint": "Prefer real documented-wear photo; fallback Pexels: roof flashing wear inspection"
+    },
+    {
+      "id": "w8-ig-community",
+      "concept": "Wide rooftop-under-sky shot matches the same-North-Texas-skies community line. Golden-hour or dusk swap would lift it further.",
+      "src": "../assets/img/home-commercial.jpg",
+      "source_hint": "Prefer wide Plano rooftops at dusk; fallback Pexels: texas suburb rooftops sky"
+    },
+    {
+      "id": "w8-fb-video-before-after",
+      "concept": "Thumbnail for the winter before/after reveal video. Finished-roof photo stands in; the real asset is a same-angle cut from storm-worn to finished. Swap for a split-frame still.",
+      "src": "../assets/img/siding-after.jpg",
+      "source_hint": "Video cover frame; shoot before and after clips of one job from the same spot"
+    },
+    {
+      "id": "w8-nd-weekend-winterready",
+      "concept": "Roof-edge and gutter photo supports the clear-your-gutters-before-the-cold-front note. Swap for a real gutter/roof-edge detail if available.",
+      "src": "../assets/img/svc-replacement.webp",
+      "source_hint": "Prefer real gutter/roof-edge photo; fallback Pexels: roof edge gutter winter"
+    },
+    {
+      "id": "w8-gbp-reviews-closeout",
+      "concept": "Crew-at-work photo backs the word-of-mouth-keeps-us-going message with real hands on real roofs. A happy-homeowners photo is a warmer swap.",
+      "src": "../assets/img/crew-work.jpg",
+      "source_hint": "Prefer real happy-homeowners photo; fallback Pexels: happy homeowners porch house"
+    }
   ]
 }
