@@ -1,0 +1,33 @@
+{
+  "generated": "2026-09-14T00:00:00-05:00",
+  "timezone": "America/Chicago",
+  "note": "Cadence + 4-week pillar rotation config for the Jackson Roofing draft engine. Wing-owned, draft-only. Storm content overrides this calendar the day a real North Texas hail/wind event hits.",
+  "pillars": [
+    { "key": "storm", "label": "Storm & hail response", "desc": "Timely posts around North Texas hail and wind events; highest intent." },
+    { "key": "beforeafter", "label": "Before & after jobs", "desc": "Real project photos, the problem and the fix." },
+    { "key": "trust", "label": "Crew & family since 2000", "desc": "The people and two decades in the same community." },
+    { "key": "education", "label": "Homeowner education", "desc": "No-jargon answers on damage, repair vs replace, maintenance." },
+    { "key": "community", "label": "Local & community", "desc": "Plano, Allen, McKinney, Frisco, Wylie neighborhoods and seasons." },
+    { "key": "reviews", "label": "Reviews & social proof", "desc": "Real homeowner quotes and ratings, never fabricated." },
+    { "key": "seasonal", "label": "Seasonal & maintenance", "desc": "Storm prep, ventilation, gutter and flashing checks by season." }
+  ],
+  "geo": ["Plano TX", "Allen TX", "McKinney TX", "Frisco TX", "Wylie TX"],
+  "rotation_weeks": 4,
+  "cadence": [
+    { "platform": "gbp",       "weekday": "Mon", "time": "08:30", "pillar": "seasonal",    "notes": "Short maintenance reminder tied to the current season. Learn-more to site." },
+    { "platform": "facebook",  "weekday": "Mon", "time": "12:00", "pillar": "education",   "notes": "One practical homeowner tip, plain language." },
+    { "platform": "instagram", "weekday": "Tue", "time": "11:00", "pillar": "beforeafter", "notes": "Before/after carousel, image leads. Link in bio." },
+    { "platform": "facebook",  "weekday": "Wed", "time": "12:30", "pillar": "trust",       "notes": "Crew or family-since-2000 story." },
+    { "platform": "gbp",       "weekday": "Wed", "time": "16:00", "pillar": "beforeafter", "notes": "Completed job with photo, name the city." },
+    { "platform": "instagram", "weekday": "Thu", "time": "11:30", "pillar": "education",   "notes": "Process or education visual." },
+    { "platform": "nextdoor",  "weekday": "Thu", "time": "17:00", "pillar": "community",   "notes": "Helpful, low-key neighborhood note. No hard sell, no hashtags." },
+    { "platform": "facebook",  "weekday": "Fri", "time": "12:00", "pillar": "reviews",     "notes": "Real review highlight or a before/after." },
+    { "platform": "gbp",       "weekday": "Fri", "time": "15:30", "pillar": "reviews",     "notes": "Review highlight, real quote only." },
+    { "platform": "instagram", "weekday": "Sat", "time": "10:00", "pillar": "community",   "notes": "Local / community moment, keep weekends light." }
+  ],
+  "storm_override": {
+    "pillar": "storm",
+    "platforms": ["gbp", "facebook", "nextdoor"],
+    "notes": "When a real North Texas hail/wind event hits, same-day storm posts jump to the top across these platforms."
+  }
+}

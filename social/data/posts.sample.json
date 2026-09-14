@@ -1,0 +1,741 @@
+{
+  "generated": "2026-09-14T13:54:37.676921-05:00",
+  "posts": [
+    {
+      "id": "jr-2026-09-14-gbp-seasonal",
+      "platform": "gbp",
+      "pillar": "seasonal",
+      "date": "2026-09-14",
+      "time": "08:30",
+      "caption": "Seasonal reminder for Plano TX homeowners: a quick roof check now can save you a headache when the next North Texas storm rolls in. Loose flashing and lifted shingles are easy to miss. We are happy to take a look, contact us on the site.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/gutter-check.jpg",
+        "alt": "Seasonal roof and gutter maintenance check",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "jr-2026-09-14-facebook-education",
+      "platform": "facebook",
+      "pillar": "education",
+      "date": "2026-09-14",
+      "time": "12:00",
+      "caption": "Repair or replace? In Allen TX it usually comes down to the age of the roof and how widespread the damage is. A roof under ten years old with isolated damage is often a repair. We will give you a straight answer, not a sales pitch.",
+      "hashtags": [
+        "#AllenTX",
+        "#RoofReplacement"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/inspection.jpg",
+        "alt": "Close inspection of shingles for hail damage",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Allen TX"
+    },
+    {
+      "id": "jr-2026-09-15-instagram-beforeafter",
+      "platform": "instagram",
+      "pillar": "beforeafter",
+      "date": "2026-09-15",
+      "time": "11:00",
+      "caption": "Another McKinney TX roof, done right. Worn shingles and tired flashing on the way in, a clean, sealed roof on the way out. Family run since 2000 and still proud of every job. See more of our work and contact us on the site.",
+      "hashtags": [
+        "#McKinneyTX",
+        "#RoofingContractor",
+        "#RoofRepair",
+        "#Since2000"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/before-after.jpg",
+        "alt": "Before and after of a completed roof replacement",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "McKinney TX"
+    },
+    {
+      "id": "jr-2026-09-16-facebook-trust",
+      "platform": "facebook",
+      "pillar": "trust",
+      "date": "2026-09-16",
+      "time": "12:30",
+      "caption": "Roofing is a trust business. In Frisco TX and across North Texas, our name has been on the work since 2000. No pressure, no surprises, just honest answers about your roof.",
+      "hashtags": [
+        "#FriscoTX",
+        "#RoofReplacement"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/crew.jpg",
+        "alt": "Jackson Roofing crew on a residential job",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Frisco TX"
+    },
+    {
+      "id": "jr-2026-09-16-gbp-beforeafter",
+      "platform": "gbp",
+      "pillar": "beforeafter",
+      "date": "2026-09-16",
+      "time": "16:00",
+      "caption": "Another Wylie TX roof, done right. Worn shingles and tired flashing on the way in, a clean, sealed roof on the way out. Family run since 2000 and still proud of every job. See more of our work and contact us on the site.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/before-after.jpg",
+        "alt": "Before and after of a completed roof replacement",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Wylie TX"
+    },
+    {
+      "id": "jr-2026-09-17-instagram-education",
+      "platform": "instagram",
+      "pillar": "education",
+      "date": "2026-09-17",
+      "time": "11:30",
+      "caption": "Repair or replace? In Plano TX it usually comes down to the age of the roof and how widespread the damage is. A roof under ten years old with isolated damage is often a repair. We will give you a straight answer, not a sales pitch.",
+      "hashtags": [
+        "#PlanoTX",
+        "#RoofReplacement",
+        "#StormDamage",
+        "#LocalBusiness"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/inspection.jpg",
+        "alt": "Close inspection of shingles for hail damage",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "jr-2026-09-17-nextdoor-community",
+      "platform": "nextdoor",
+      "pillar": "community",
+      "date": "2026-09-17",
+      "time": "17:00",
+      "caption": "Proud to work in Allen TX and the neighborhoods around it. Family run, North Texas since 2000. If a neighbor ever asks who to trust with a roof, we would be glad to help. Contact us on the site.",
+      "hashtags": [],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/neighborhood.jpg",
+        "alt": "Residential North Texas neighborhood street",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Allen TX"
+    },
+    {
+      "id": "jr-2026-09-18-facebook-reviews",
+      "platform": "facebook",
+      "pillar": "reviews",
+      "date": "2026-09-18",
+      "time": "12:00",
+      "caption": "A recent note from a McKinney TX customer reminded us why we do this. Honest work, clear communication, and a roof that holds up. If you want that experience, contact us on the site.",
+      "hashtags": [
+        "#McKinneyTX",
+        "#RoofingContractor"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/review-card.jpg",
+        "alt": "Homeowner review highlight card",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "McKinney TX"
+    },
+    {
+      "id": "jr-2026-09-18-gbp-reviews",
+      "platform": "gbp",
+      "pillar": "reviews",
+      "date": "2026-09-18",
+      "time": "15:30",
+      "caption": "Nothing means more than hearing a Frisco TX homeowner felt taken care of. Reviews like that are why we have kept at this since 2000. Thank you for trusting us with your roof.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/review-card.jpg",
+        "alt": "Homeowner review highlight card",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Frisco TX"
+    },
+    {
+      "id": "jr-2026-09-19-instagram-community",
+      "platform": "instagram",
+      "pillar": "community",
+      "date": "2026-09-19",
+      "time": "10:00",
+      "caption": "Wylie TX has been part of our story for years. We like being the roofer your neighbors already know. Say hello or ask a question through our site anytime.",
+      "hashtags": [
+        "#WylieTX",
+        "#RoofRepair",
+        "#HailDamage",
+        "#Since2000"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/neighborhood.jpg",
+        "alt": "Residential North Texas neighborhood street",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Wylie TX"
+    },
+    {
+      "id": "jr-2026-09-21-gbp-seasonal",
+      "platform": "gbp",
+      "pillar": "seasonal",
+      "date": "2026-09-21",
+      "time": "08:30",
+      "caption": "This is a good time of year in Allen TX to clear gutters and check for any lifted or missing shingles before the weather turns. Small fixes now beat big repairs later. Questions? Reach us through the site.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/gutter-check.jpg",
+        "alt": "Seasonal roof and gutter maintenance check",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Allen TX"
+    },
+    {
+      "id": "jr-2026-09-21-facebook-education",
+      "platform": "facebook",
+      "pillar": "education",
+      "date": "2026-09-21",
+      "time": "12:00",
+      "caption": "Homeowner tip: after a McKinney TX hail storm, check your gutters and downspouts for shingle granules that look like coarse sand. A lot of buildup can be an early sign of hail damage. Not sure what you are seeing? Contact us on the site.",
+      "hashtags": [
+        "#McKinneyTX",
+        "#RoofReplacement"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/inspection.jpg",
+        "alt": "Close inspection of shingles for hail damage",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "McKinney TX"
+    },
+    {
+      "id": "jr-2026-09-22-instagram-beforeafter",
+      "platform": "instagram",
+      "pillar": "beforeafter",
+      "date": "2026-09-22",
+      "time": "11:00",
+      "caption": "Before and after from a recent Frisco TX replacement. Same house, very different roof. This is the kind of work two decades in North Texas teaches you to do right the first time.",
+      "hashtags": [
+        "#FriscoTX",
+        "#RoofingContractor",
+        "#RoofRepair",
+        "#Since2000"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/before-after.jpg",
+        "alt": "Before and after of a completed roof replacement",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Frisco TX"
+    },
+    {
+      "id": "jr-2026-09-23-facebook-trust",
+      "platform": "facebook",
+      "pillar": "trust",
+      "date": "2026-09-23",
+      "time": "12:30",
+      "caption": "We have been on North Texas roofs since 2000, and we are still a family business in Wylie TX. That means the person who looks at your roof is the person who stands behind the work. Contact us on the site anytime.",
+      "hashtags": [
+        "#WylieTX",
+        "#RoofReplacement"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/crew.jpg",
+        "alt": "Jackson Roofing crew on a residential job",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Wylie TX"
+    },
+    {
+      "id": "jr-2026-09-23-gbp-beforeafter",
+      "platform": "gbp",
+      "pillar": "beforeafter",
+      "date": "2026-09-23",
+      "time": "16:00",
+      "caption": "Before and after from a recent Plano TX replacement. Same house, very different roof. This is the kind of work two decades in North Texas teaches you to do right the first time.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/before-after.jpg",
+        "alt": "Before and after of a completed roof replacement",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "jr-2026-09-24-instagram-education",
+      "platform": "instagram",
+      "pillar": "education",
+      "date": "2026-09-24",
+      "time": "11:30",
+      "caption": "Homeowner tip: after a Allen TX hail storm, check your gutters and downspouts for shingle granules that look like coarse sand. A lot of buildup can be an early sign of hail damage. Not sure what you are seeing? Contact us on the site.",
+      "hashtags": [
+        "#AllenTX",
+        "#RoofReplacement",
+        "#StormDamage",
+        "#LocalBusiness"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/inspection.jpg",
+        "alt": "Close inspection of shingles for hail damage",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Allen TX"
+    },
+    {
+      "id": "jr-2026-09-24-nextdoor-community",
+      "platform": "nextdoor",
+      "pillar": "community",
+      "date": "2026-09-24",
+      "time": "17:00",
+      "caption": "McKinney TX has been part of our story for years. We like being the roofer your neighbors already know. Say hello or ask a question through our site anytime.",
+      "hashtags": [],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/neighborhood.jpg",
+        "alt": "Residential North Texas neighborhood street",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "McKinney TX"
+    },
+    {
+      "id": "jr-2026-09-25-facebook-reviews",
+      "platform": "facebook",
+      "pillar": "reviews",
+      "date": "2026-09-25",
+      "time": "12:00",
+      "caption": "Nothing means more than hearing a Frisco TX homeowner felt taken care of. Reviews like that are why we have kept at this since 2000. Thank you for trusting us with your roof.",
+      "hashtags": [
+        "#FriscoTX",
+        "#RoofingContractor"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/review-card.jpg",
+        "alt": "Homeowner review highlight card",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Frisco TX"
+    },
+    {
+      "id": "jr-2026-09-25-gbp-reviews",
+      "platform": "gbp",
+      "pillar": "reviews",
+      "date": "2026-09-25",
+      "time": "15:30",
+      "caption": "A recent note from a Wylie TX customer reminded us why we do this. Honest work, clear communication, and a roof that holds up. If you want that experience, contact us on the site.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/review-card.jpg",
+        "alt": "Homeowner review highlight card",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Wylie TX"
+    },
+    {
+      "id": "jr-2026-09-26-instagram-community",
+      "platform": "instagram",
+      "pillar": "community",
+      "date": "2026-09-26",
+      "time": "10:00",
+      "caption": "Proud to work in Plano TX and the neighborhoods around it. Family run, North Texas since 2000. If a neighbor ever asks who to trust with a roof, we would be glad to help. Contact us on the site.",
+      "hashtags": [
+        "#PlanoTX",
+        "#RoofRepair",
+        "#HailDamage",
+        "#Since2000"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/neighborhood.jpg",
+        "alt": "Residential North Texas neighborhood street",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "jr-2026-09-28-gbp-seasonal",
+      "platform": "gbp",
+      "pillar": "seasonal",
+      "date": "2026-09-28",
+      "time": "08:30",
+      "caption": "Seasonal reminder for McKinney TX homeowners: a quick roof check now can save you a headache when the next North Texas storm rolls in. Loose flashing and lifted shingles are easy to miss. We are happy to take a look, contact us on the site.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/gutter-check.jpg",
+        "alt": "Seasonal roof and gutter maintenance check",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "McKinney TX"
+    },
+    {
+      "id": "jr-2026-09-28-facebook-education",
+      "platform": "facebook",
+      "pillar": "education",
+      "date": "2026-09-28",
+      "time": "12:00",
+      "caption": "Repair or replace? In Frisco TX it usually comes down to the age of the roof and how widespread the damage is. A roof under ten years old with isolated damage is often a repair. We will give you a straight answer, not a sales pitch.",
+      "hashtags": [
+        "#FriscoTX",
+        "#RoofReplacement"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/inspection.jpg",
+        "alt": "Close inspection of shingles for hail damage",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Frisco TX"
+    },
+    {
+      "id": "jr-2026-09-29-instagram-beforeafter",
+      "platform": "instagram",
+      "pillar": "beforeafter",
+      "date": "2026-09-29",
+      "time": "11:00",
+      "caption": "Another Wylie TX roof, done right. Worn shingles and tired flashing on the way in, a clean, sealed roof on the way out. Family run since 2000 and still proud of every job. See more of our work and contact us on the site.",
+      "hashtags": [
+        "#WylieTX",
+        "#RoofingContractor",
+        "#RoofRepair",
+        "#Since2000"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/before-after.jpg",
+        "alt": "Before and after of a completed roof replacement",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Wylie TX"
+    },
+    {
+      "id": "jr-2026-09-30-facebook-trust",
+      "platform": "facebook",
+      "pillar": "trust",
+      "date": "2026-09-30",
+      "time": "12:30",
+      "caption": "Roofing is a trust business. In Plano TX and across North Texas, our name has been on the work since 2000. No pressure, no surprises, just honest answers about your roof.",
+      "hashtags": [
+        "#PlanoTX",
+        "#RoofReplacement"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/crew.jpg",
+        "alt": "Jackson Roofing crew on a residential job",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "jr-2026-09-30-gbp-beforeafter",
+      "platform": "gbp",
+      "pillar": "beforeafter",
+      "date": "2026-09-30",
+      "time": "16:00",
+      "caption": "Another Allen TX roof, done right. Worn shingles and tired flashing on the way in, a clean, sealed roof on the way out. Family run since 2000 and still proud of every job. See more of our work and contact us on the site.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/before-after.jpg",
+        "alt": "Before and after of a completed roof replacement",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Allen TX"
+    },
+    {
+      "id": "jr-2026-10-01-instagram-education",
+      "platform": "instagram",
+      "pillar": "education",
+      "date": "2026-10-01",
+      "time": "11:30",
+      "caption": "Repair or replace? In McKinney TX it usually comes down to the age of the roof and how widespread the damage is. A roof under ten years old with isolated damage is often a repair. We will give you a straight answer, not a sales pitch.",
+      "hashtags": [
+        "#McKinneyTX",
+        "#RoofReplacement",
+        "#StormDamage",
+        "#LocalBusiness"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/inspection.jpg",
+        "alt": "Close inspection of shingles for hail damage",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "McKinney TX"
+    },
+    {
+      "id": "jr-2026-10-01-nextdoor-community",
+      "platform": "nextdoor",
+      "pillar": "community",
+      "date": "2026-10-01",
+      "time": "17:00",
+      "caption": "Proud to work in Frisco TX and the neighborhoods around it. Family run, North Texas since 2000. If a neighbor ever asks who to trust with a roof, we would be glad to help. Contact us on the site.",
+      "hashtags": [],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/neighborhood.jpg",
+        "alt": "Residential North Texas neighborhood street",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Frisco TX"
+    },
+    {
+      "id": "jr-2026-10-02-facebook-reviews",
+      "platform": "facebook",
+      "pillar": "reviews",
+      "date": "2026-10-02",
+      "time": "12:00",
+      "caption": "A recent note from a Wylie TX customer reminded us why we do this. Honest work, clear communication, and a roof that holds up. If you want that experience, contact us on the site.",
+      "hashtags": [
+        "#WylieTX",
+        "#RoofingContractor"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/review-card.jpg",
+        "alt": "Homeowner review highlight card",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Wylie TX"
+    },
+    {
+      "id": "jr-2026-10-02-gbp-reviews",
+      "platform": "gbp",
+      "pillar": "reviews",
+      "date": "2026-10-02",
+      "time": "15:30",
+      "caption": "Nothing means more than hearing a Plano TX homeowner felt taken care of. Reviews like that are why we have kept at this since 2000. Thank you for trusting us with your roof.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/review-card.jpg",
+        "alt": "Homeowner review highlight card",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "jr-2026-10-03-instagram-community",
+      "platform": "instagram",
+      "pillar": "community",
+      "date": "2026-10-03",
+      "time": "10:00",
+      "caption": "Allen TX has been part of our story for years. We like being the roofer your neighbors already know. Say hello or ask a question through our site anytime.",
+      "hashtags": [
+        "#AllenTX",
+        "#RoofRepair",
+        "#HailDamage",
+        "#Since2000"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/neighborhood.jpg",
+        "alt": "Residential North Texas neighborhood street",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Allen TX"
+    },
+    {
+      "id": "jr-2026-10-05-gbp-seasonal",
+      "platform": "gbp",
+      "pillar": "seasonal",
+      "date": "2026-10-05",
+      "time": "08:30",
+      "caption": "This is a good time of year in Frisco TX to clear gutters and check for any lifted or missing shingles before the weather turns. Small fixes now beat big repairs later. Questions? Reach us through the site.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/gutter-check.jpg",
+        "alt": "Seasonal roof and gutter maintenance check",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Frisco TX"
+    },
+    {
+      "id": "jr-2026-10-05-facebook-education",
+      "platform": "facebook",
+      "pillar": "education",
+      "date": "2026-10-05",
+      "time": "12:00",
+      "caption": "Homeowner tip: after a Wylie TX hail storm, check your gutters and downspouts for shingle granules that look like coarse sand. A lot of buildup can be an early sign of hail damage. Not sure what you are seeing? Contact us on the site.",
+      "hashtags": [
+        "#WylieTX",
+        "#RoofReplacement"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/inspection.jpg",
+        "alt": "Close inspection of shingles for hail damage",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Wylie TX"
+    },
+    {
+      "id": "jr-2026-10-06-instagram-beforeafter",
+      "platform": "instagram",
+      "pillar": "beforeafter",
+      "date": "2026-10-06",
+      "time": "11:00",
+      "caption": "Before and after from a recent Plano TX replacement. Same house, very different roof. This is the kind of work two decades in North Texas teaches you to do right the first time.",
+      "hashtags": [
+        "#PlanoTX",
+        "#RoofingContractor",
+        "#RoofRepair",
+        "#Since2000"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/before-after.jpg",
+        "alt": "Before and after of a completed roof replacement",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "jr-2026-10-07-facebook-trust",
+      "platform": "facebook",
+      "pillar": "trust",
+      "date": "2026-10-07",
+      "time": "12:30",
+      "caption": "We have been on North Texas roofs since 2000, and we are still a family business in Allen TX. That means the person who looks at your roof is the person who stands behind the work. Contact us on the site anytime.",
+      "hashtags": [
+        "#AllenTX",
+        "#RoofReplacement"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/crew.jpg",
+        "alt": "Jackson Roofing crew on a residential job",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Allen TX"
+    },
+    {
+      "id": "jr-2026-10-07-gbp-beforeafter",
+      "platform": "gbp",
+      "pillar": "beforeafter",
+      "date": "2026-10-07",
+      "time": "16:00",
+      "caption": "Before and after from a recent McKinney TX replacement. Same house, very different roof. This is the kind of work two decades in North Texas teaches you to do right the first time.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/before-after.jpg",
+        "alt": "Before and after of a completed roof replacement",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "McKinney TX"
+    },
+    {
+      "id": "jr-2026-10-08-instagram-education",
+      "platform": "instagram",
+      "pillar": "education",
+      "date": "2026-10-08",
+      "time": "11:30",
+      "caption": "Homeowner tip: after a Frisco TX hail storm, check your gutters and downspouts for shingle granules that look like coarse sand. A lot of buildup can be an early sign of hail damage. Not sure what you are seeing? Contact us on the site.",
+      "hashtags": [
+        "#FriscoTX",
+        "#RoofReplacement",
+        "#StormDamage",
+        "#LocalBusiness"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/inspection.jpg",
+        "alt": "Close inspection of shingles for hail damage",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Frisco TX"
+    },
+    {
+      "id": "jr-2026-10-08-nextdoor-community",
+      "platform": "nextdoor",
+      "pillar": "community",
+      "date": "2026-10-08",
+      "time": "17:00",
+      "caption": "Wylie TX has been part of our story for years. We like being the roofer your neighbors already know. Say hello or ask a question through our site anytime.",
+      "hashtags": [],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/neighborhood.jpg",
+        "alt": "Residential North Texas neighborhood street",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Wylie TX"
+    },
+    {
+      "id": "jr-2026-10-09-facebook-reviews",
+      "platform": "facebook",
+      "pillar": "reviews",
+      "date": "2026-10-09",
+      "time": "12:00",
+      "caption": "Nothing means more than hearing a Plano TX homeowner felt taken care of. Reviews like that are why we have kept at this since 2000. Thank you for trusting us with your roof.",
+      "hashtags": [
+        "#PlanoTX",
+        "#RoofingContractor"
+      ],
+      "cta": "Contact Us on our site",
+      "image": {
+        "src": "assets/img/review-card.jpg",
+        "alt": "Homeowner review highlight card",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Plano TX"
+    },
+    {
+      "id": "jr-2026-10-09-gbp-reviews",
+      "platform": "gbp",
+      "pillar": "reviews",
+      "date": "2026-10-09",
+      "time": "15:30",
+      "caption": "A recent note from a Allen TX customer reminded us why we do this. Honest work, clear communication, and a roof that holds up. If you want that experience, contact us on the site.",
+      "hashtags": [],
+      "cta": "Learn more on our site",
+      "image": {
+        "src": "assets/img/review-card.jpg",
+        "alt": "Homeowner review highlight card",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "Allen TX"
+    },
+    {
+      "id": "jr-2026-10-10-instagram-community",
+      "platform": "instagram",
+      "pillar": "community",
+      "date": "2026-10-10",
+      "time": "10:00",
+      "caption": "Proud to work in McKinney TX and the neighborhoods around it. Family run, North Texas since 2000. If a neighbor ever asks who to trust with a roof, we would be glad to help. Contact us on the site.",
+      "hashtags": [
+        "#McKinneyTX",
+        "#RoofRepair",
+        "#HailDamage",
+        "#Since2000"
+      ],
+      "cta": "Contact Us via the link in bio",
+      "image": {
+        "src": "assets/img/neighborhood.jpg",
+        "alt": "Residential North Texas neighborhood street",
+        "credit": "Jackson Roofing"
+      },
+      "geo": "McKinney TX"
+    }
+  ]
+}

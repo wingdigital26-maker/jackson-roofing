@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jackson Roofing — Social Command Center</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Wing-owned draft social system for Jackson Roofing. Preview only, nothing posts live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/command.css">
+</head>
+<body>
+<a class="skip" href="#board">Skip to command board</a>
+
+<!-- HERO -->
+<header class="hero" role="banner">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow on-dark">Wing Digital &middot; Draft system</span>
+    <h1>Jackson Roofing<span class="hero-div"></span><em>Social Command Center</em></h1>
+    <p class="hero-sub">A working draft of the social presence a professional agency would run for a Plano, TX roofer building since 2000. Every post here is a preview. Nothing posts live.</p>
+    <div class="hero-meta">
+      <span class="chip chip-draft">Preview only</span>
+      <span class="hero-scope" id="heroScope">Loading queue&hellip;</span>
+    </div>
+  </div>
+</header>
+
+<main id="board" class="wrap">
+
+  <!-- CADENCE / STRATEGY STRIP -->
+  <section class="strip" aria-label="Platform mix and weekly rhythm">
+    <div class="strip-head">
+      <h2>Cadence &amp; platform mix</h2>
+      <p class="muted" id="stripNote">The weekly rhythm across every channel.</p>
+    </div>
+    <div class="strip-grid" id="cadenceGrid" aria-live="polite"></div>
+  </section>
+
+  <!-- CONTROLS -->
+  <section class="controls" aria-label="Filters">
+    <div class="filter-row">
+      <span class="filter-label">Platform</span>
+      <div class="seg" id="platformFilter" role="group" aria-label="Filter by platform"></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Pillar</span>
+      <div class="seg" id="pillarFilter" role="group" aria-label="Filter by content pillar"></div>
+    </div>
+    <div class="filter-count" id="filterCount" aria-live="polite"></div>
+  </section>
+
+  <!-- CALENDAR -->
+  <section class="cal-section" aria-label="30 day calendar">
+    <div class="cal-head">
+      <h2 id="calTitle">Content calendar</h2>
+      <div class="cal-legend" id="calLegend"></div>
+    </div>
+    <div class="cal-dow" id="calDow" aria-hidden="true"></div>
+    <div class="cal-grid" id="calGrid" role="list"></div>
+  </section>
+
+  <!-- PREVIEW FEED -->
+  <section class="feed-section" aria-label="Post previews">
+    <div class="feed-head">
+      <h2>Post previews</h2>
+      <p class="muted">Rendered exactly as each channel would show them.</p>
+    </div>
+    <div class="feed" id="feed" role="list"></div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Jackson Roofing Social Command Center &middot; built and owned by Wing Digital. Draft and preview only, no live accounts are connected.</p>
+  </div>
+</footer>
+
+<!-- LOADING OVERLAY -->
+<div class="loading" id="loading" aria-hidden="true">
+  <div class="spinner"></div>
+  <p>Loading the queue&hellip;</p>
+</div>
+
+<script src="assets/command.js" defer></script>
+</body>
+</html>
