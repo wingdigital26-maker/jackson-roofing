@@ -279,9 +279,17 @@
       bar.setAttribute("aria-label", kindLabel + ": no drafts yet");
       return;
     }
+    // Largest-remainder rounding so the displayed percentages sum to exactly 100.
+    var pcts = entries.map(function (e) { return e.count / total * 100; });
+    var floors = pcts.map(function (v) { return Math.floor(v); });
+    var remainder = 100 - floors.reduce(function (a, b) { return a + b; }, 0);
+    pcts.map(function (v, i) { return { i: i, frac: v - floors[i] }; })
+        .sort(function (a, b) { return b.frac - a.frac; })
+        .slice(0, Math.max(0, remainder))
+        .forEach(function (o) { floors[o.i] += 1; });
     var ariaParts = [];
-    entries.forEach(function (e) {
-      var pct = Math.round(e.count / total * 100);
+    entries.forEach(function (e, ei) {
+      var pct = floors[ei];
       var seg = document.createElement("span");
       seg.className = "gseg";
       seg.style.width = (e.count / total * 100) + "%";
