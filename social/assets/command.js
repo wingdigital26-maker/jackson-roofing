@@ -13,7 +13,7 @@
     instagram: { label: "Instagram",       short: "Instagram", acc: "#c9337d", kind: "post"   },
     nextdoor:  { label: "Nextdoor",         short: "Nextdoor",  acc: "#0b7d5c", kind: "post"   }
   };
-  var PILLAR_COLORS = ["#0aa7e6", "#c9337d", "#0b7d5c", "#e0821b", "#7c5cff", "#c8452f", "#1a73e8"];
+  var PILLAR_COLORS = ["#0aa7e6", "#c9337d", "#0b7d5c", "#e0821b", "#7c5cff", "#c8452f", "#1a73e8", "#8e2ea8"];
 
   // Practical caption limits per platform. GBP/Instagram are hard caps; Facebook
   // and Nextdoor numbers are the "keep it concise" sweet spot, not a hard limit.
