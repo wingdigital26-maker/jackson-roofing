@@ -512,6 +512,111 @@
       "concept": "A large brick home with multiple chimneys and a new roof above a manicured lawn",
       "target_shot": "A large brick home with a new roof, completed job",
       "source": "crew capture (see shot-list.html)"
+    },
+    {
+      "id": "w12-ig-story",
+      "src": "../assets/img/home-truck.jpg",
+      "concept": "A Jackson Roofing branded pickup parked in front of stone-accented North Texas homes",
+      "target_shot": "Slow b-roll of the truck and finished jobs, story told in text on screen (no face)",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-ig-didyouknow-granules",
+      "src": "../assets/img/home-repair.webp",
+      "concept": "A roofer kneeling on a gray shingle roof installing a skylight with a hammer in hand",
+      "target_shot": "Extreme close-up of granules in a hand, one line of text on screen (no face)",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-fb-top5-questions",
+      "src": "../assets/img/svc-inspection.jpg",
+      "concept": "A brick two-story home with a new roof and an arched window viewed from a low angle",
+      "target_shot": "Text-on-screen top 5 list over b-roll of a finished roof (no face)",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-ig-adjuster-explainer",
+      "src": "../assets/img/home-repair.webp",
+      "concept": "A roofer kneeling on a gray shingle roof installing a skylight with a hammer in hand",
+      "target_shot": "Hands pointing at hail hits on a shingle with text callouts, no face",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-fb-repair-replace",
+      "src": "../assets/img/g-4998.jpg",
+      "concept": "A brick one-story home with a new roof on a clear winter day",
+      "target_shot": "Text-on-screen decision guide over a finished roof, no face",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-ig-timelapse-service",
+      "src": "../assets/img/svc-replacement.webp",
+      "concept": "A home mid-replacement with white roofing underlayment and shingle bundles staged on the roof beside a ladder",
+      "target_shot": "Full-roof tear-off to finish time-lapse with text step labels, no face",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-nd-didyouknow-attic",
+      "src": "../assets/img/home-inspection.webp",
+      "concept": "A brick two-story home with a new gray shingle roof under a bright summer sky",
+      "target_shot": "N/A photo post, neighborly tip",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-fb-humor-texas-weather",
+      "src": "../assets/img/home-storm.webp",
+      "concept": "A brown tile roof and stucco chimney under dark storm clouds",
+      "target_shot": "Text-on-screen joke over dramatic storm-roof b-roll, no face",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-ig-satisfying-underlayment",
+      "src": "../assets/img/home-repair.webp",
+      "concept": "A roofer kneeling on a gray shingle roof installing a skylight with a hammer in hand",
+      "target_shot": "Close-up satisfying clip of underlayment rolling down, text label, no face",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-gbp-why-now",
+      "src": "../assets/img/g-vanalstyne.jpg",
+      "concept": "A cream farmhouse with a wraparound porch and a new gray shingle roof under a cloudy sky",
+      "target_shot": "N/A photo post",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-ig-qa-yard",
+      "src": "../assets/img/crew-work.jpg",
+      "concept": "A brick two-story home with a new roof seen from below against a blue sky and trees",
+      "target_shot": "Text question on screen answered over cleanup b-roll, no face",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w12-fb-shingle-vs-metal",
+      "src": "../assets/img/house-brick.jpg",
+      "concept": "A large brick home with multiple chimneys and a new roof above a manicured lawn",
+      "target_shot": "Text-on-screen comparison over two roof b-roll clips, no face",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w13-ig-roofoftheweek",
+      "src": "../assets/img/svc-storm.webp",
+      "concept": "A two-story brick and white home with a new roof beside a backyard pool on a clear day",
+      "target_shot": "Close-up walkthrough of a finished roof with text callouts, no face",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w13-fb-review-spotlight",
+      "src": "../assets/img/house-brick.jpg",
+      "concept": "A large brick home with multiple chimneys and a new roof above a manicured lawn",
+      "target_shot": "Text-on-screen review quote over a finished roof, no face",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
+    },
+    {
+      "id": "w13-nd-poststorm-checklist",
+      "src": "../assets/img/home-storm.webp",
+      "concept": "A brown tile roof and stucco chimney under dark storm clouds",
+      "target_shot": "N/A photo post",
+      "source": "crew capture, faceless (see film-and-post-sop.html)"
     }
   ]
 }

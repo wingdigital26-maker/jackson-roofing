@@ -410,3 +410,14 @@ opens and closes the same way. A few habits keep captions sounding handcrafted:
 ## Capture-driven content
 
 The strongest posts come off the job, not a stock library. The crew shoots the crew shot list (shot-list.html) on every job: damage close-ups, tear-off and underlayment in progress, before and after pairs, the crew and the truck, the magnet sweep, and short video clips. Weeks 9 to 11 of the plan are built around these exact shots: each post is written and waiting, tagged in images.json with the target_shot to capture. The moment a real photo or clip comes in, swap it into image.src and the post is ready. Shoot once, feed the calendar for a week.
+
+## The content rotation (what the top roofing creators actually run)
+
+Research across roofing YouTube and marketing pros (Roofing Insights, Hook Agency, Contractor Dynamics) points to a few hard rules, now baked into this plan:
+
+- **Video is the backbone, not a side pillar.** Short vertical video (Reels, Shorts, TikTok) is the single biggest lever. Roughly a quarter of the plan is now video, concentrated on Instagram and Facebook where it performs, while Google Business Profile and Nextdoor stay native (photo + text).
+- **Faceless by default.** Nobody has to be on camera. The work carries it: hands on the shingle, damage close-ups, before and after, time-lapse, drone, all with text on the screen and optional voiceover. Most viral roofing content is faceless.
+- **Rotate the 11 proven content types**, not just before/afters: your story, explain the service, product vs product, a top-5 comparison, a how-to, a "did you know" secret, a top-5 list, humor, a shoutout, a reaction/roof-of-the-week, and Q&A. The plan now spreads across these.
+- **Engagement and leads over views. Do not chase viral.** Optimize for the right five miles, not raw reach. Every post is geo-anchored to Plano and the nearby cities ("Five Mile Famous").
+- **Answer searched questions.** Make the videos homeowners actually type into Google: repair or replace, how long does a claim take, will my yard be a mess.
+- **Why this matters for a hail roofer (the retail point):** as insurance tightens, a storm-and-insurance-only roofer is exposed. Consistent local content builds retail demand that does not depend on a hailstorm plus an adjuster saying yes. That is the real job of this whole plan.
