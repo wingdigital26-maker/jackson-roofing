@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jackson Roofing · Social Command Center</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Wing-owned draft social system for Jackson Roofing. Preview only, nothing posts live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/command.css">
+</head>
+<body>
+<a class="skip" href="#board">Skip to command board</a>
+
+<!-- HERO -->
+<header class="hero" role="banner">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow on-dark">Wing Digital &middot; Draft system</span>
+    <h1>Jackson Roofing<span class="hero-div"></span><em>Social Command Center</em></h1>
+    <p class="hero-sub">A working draft of the social presence a professional agency would run for a Plano, TX roofer building since 2000. Every post here is a preview. Nothing posts live.</p>
+    <div class="hero-meta">
+      <span class="chip chip-draft">Preview only</span>
+      <span class="hero-scope" id="heroScope">Loading queue&hellip;</span>
+      <a class="dl-btn" id="dlSchedule" href="./data/exports/schedule.csv" download hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12"/><path d="M8 11l4 4 4-4"/><path d="M4 19h16"/></svg>
+        Download schedule
+      </a>
+      <button type="button" class="dl-btn ghost" id="printPlanBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 01-2-2v-4a2 2 0 012-2h16a2 2 0 012 2v4a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="7" rx="1"/></svg>
+        Print plan
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="board" class="wrap">
+
+  <!-- PLAN AT A GLANCE (analytics-style mix header) -->
+  <section class="glance" aria-label="Plan at a glance">
+    <div class="glance-head">
+      <h2>Plan at a glance</h2>
+      <p class="muted">A snapshot of the drafted queue. Every figure counts planned drafts, not live performance.</p>
+    </div>
+    <div class="glance-stats" id="glanceStats" aria-live="polite"></div>
+    <div class="glance-bars">
+      <div class="gbar-block">
+        <div class="gbar-head"><h3>Channel mix</h3><span class="gbar-total" id="chTotal"></span></div>
+        <div class="gbar" id="chBar" role="img" aria-label="Channel mix"></div>
+        <ul class="gbar-legend" id="chLegend"></ul>
+      </div>
+      <div class="gbar-block">
+        <div class="gbar-head"><h3>Pillar mix</h3><span class="gbar-total" id="plTotal"></span></div>
+        <div class="gbar" id="plBar" role="img" aria-label="Content pillar mix"></div>
+        <ul class="gbar-legend" id="plLegend"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CADENCE / STRATEGY STRIP -->
+  <section class="strip" aria-label="Platform mix and weekly rhythm">
+    <div class="strip-head">
+      <h2>Cadence &amp; platform mix</h2>
+      <p class="muted" id="stripNote">The weekly rhythm across every channel.</p>
+    </div>
+    <div class="strip-grid" id="cadenceGrid" aria-live="polite"></div>
+  </section>
+
+  <!-- STRATEGY / PILLAR LEGEND -->
+  <section class="strategy" aria-label="Content strategy">
+    <details class="acc" id="strategyAcc">
+      <summary>
+        <span class="acc-title">Content strategy &middot; the seven pillars</span>
+        <span class="acc-hint" id="pillarHint"></span>
+        <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </summary>
+      <p class="acc-lead">Every draft is tagged to one of these pillars so the feed stays balanced across the month instead of leaning on one kind of post. Counts reflect the current queue.</p>
+      <div class="pillar-grid" id="pillarLegendPanel"></div>
+    </details>
+  </section>
+
+  <!-- CONTROLS -->
+  <section class="controls" aria-label="Filters">
+    <div class="filter-row">
+      <span class="filter-label">Platform</span>
+      <div class="seg" id="platformFilter" role="group" aria-label="Filter by platform"></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Pillar</span>
+      <div class="seg" id="pillarFilter" role="group" aria-label="Filter by content pillar"></div>
+    </div>
+    <div class="filter-count" id="filterCount" aria-live="polite"></div>
+  </section>
+
+  <!-- CALENDAR -->
+  <section class="cal-section" aria-label="30 day calendar">
+    <div class="cal-head">
+      <h2 id="calTitle">Content calendar</h2>
+      <div class="cal-tools">
+        <div class="cal-nav" id="calNav" hidden>
+          <button type="button" id="calPrev" class="cal-navbtn" aria-label="Previous week">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <span id="calRangeLabel" class="cal-range"></span>
+          <button type="button" id="calNext" class="cal-navbtn" aria-label="Next week">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="seg cal-views" id="calViews" role="group" aria-label="Calendar view"></div>
+      </div>
+    </div>
+    <div class="cal-legend" id="calLegend"></div>
+    <div class="cal-dow" id="calDow" aria-hidden="true"></div>
+    <div class="cal-grid" id="calGrid" role="list"></div>
+  </section>
+
+  <!-- PREVIEW FEED -->
+  <section class="feed-section" aria-label="Post previews">
+    <div class="feed-head">
+      <h2>Post previews</h2>
+      <p class="muted">Rendered exactly as each channel would show them.</p>
+    </div>
+    <div class="feed" id="feed" role="list"></div>
+  </section>
+
+</main>
+
+<!-- CLIENT PRINT PLAN (screen-hidden, print-only deliverable) -->
+<section class="print-plan" id="printPlan" aria-hidden="true"></section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>Jackson Roofing Social Command Center &middot; built and owned by Wing Digital. Draft and preview only, no live accounts are connected.</p>
+  </div>
+</footer>
+
+<!-- IMAGE LIGHTBOX -->
+<div class="lb" id="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lbCap">
+  <div class="lb-backdrop" id="lbBackdrop"></div>
+  <figure class="lb-figure" role="document">
+    <button type="button" class="lb-close" id="lbClose" aria-label="Close photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+    </button>
+    <img class="lb-img" id="lbImg" alt="">
+    <figcaption class="lb-cap" id="lbCap"></figcaption>
+  </figure>
+</div>
+
+<!-- LOADING OVERLAY -->
+<div class="loading" id="loading" aria-hidden="true">
+  <div class="spinner"></div>
+  <p>Loading the queue&hellip;</p>
+</div>
+
+<script src="assets/command.js" defer></script>
+</body>
+</html>
