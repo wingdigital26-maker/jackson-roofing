@@ -115,7 +115,7 @@ nav.links a{padding:.55rem .95rem;font-size:.93rem;font-weight:600;color:#eaf2f8
 nav.links a:hover,nav.links a.active{background:rgba(27,192,255,.16);color:#fff}
 .nav-cta{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
 .nav-cta .btn{padding:.62rem 1.25rem;font-size:.88rem}
-.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.4rem;z-index:2}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:.7rem;z-index:2}
 .nav-toggle span{display:block;width:26px;height:2px;background:#fff;margin:6px 0;border-radius:2px;transition:.3s var(--ease)}
 
 @media (max-width:900px){
@@ -165,7 +165,7 @@ nav.links a:hover,nav.links a.active{background:rgba(27,192,255,.16);color:#fff}
 @media (max-width:700px),(max-height:700px){.scroll-hint{display:none}}
 
 /* ---------- reveal (single restrained pattern, Commerce) ---------- */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
@@ -334,7 +334,7 @@ form.enq textarea{min-height:130px;resize:vertical}
 
 /* social icon rows (shared) */
 .socials{display:flex;gap:.6rem;margin-top:1.4rem}
-.socials.light a{width:42px;height:42px;display:grid;place-items:center;border-radius:var(--r-md);
+.socials.light a{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--r-md);
   background:var(--paper-2);color:var(--cyan-ink);transition:background .2s,color .2s}
 .socials.light a:hover{background:var(--cyan);color:var(--ink)}
 .socials.light svg{width:18px;height:18px}
@@ -347,7 +347,7 @@ footer.site h4{color:#fff;font-size:.82rem;letter-spacing:.16em;text-transform:u
 footer.site a{display:block;padding:.28rem 0;color:#93a4b5;transition:color .2s}
 footer.site a:hover{color:var(--cyan)}
 footer.site .socials{display:flex;gap:.6rem;margin-top:1.1rem}
-footer.site .socials a{width:40px;height:40px;display:grid;place-items:center;border-radius:var(--r-md);
+footer.site .socials a{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--r-md);
   background:rgba(255,255,255,.06);padding:0}
 footer.site .socials a:hover{background:var(--cyan);color:var(--ink)}
 footer.site .socials svg{width:18px;height:18px}
