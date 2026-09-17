@@ -228,8 +228,7 @@
       var body = 'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\n\n' + (message || '(no message)');
       var href = 'mailto:admin@jacksonroofingco.us?subject=' + encodeURIComponent(subject) +
                  '&body=' + encodeURIComponent(body);
-      show('We have opened your email app with the details filled in. Press send there and it reaches us. ' +
-           'If nothing opened, call or text (469) 323-4626.', true);
+      show('Almost there. Your email app should open with the details filled in, and it only reaches us once you press send there. If nothing opened, call or text (469) 323-4626 and we will pick it up.', true);
       window.location.href = href;
     });
   })();
