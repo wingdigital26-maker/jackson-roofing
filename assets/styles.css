@@ -402,3 +402,21 @@ footer.site .base{margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid rgba
   border-radius:var(--r-md);padding:.95rem 1.15rem;color:var(--slate);
   text-decoration:none;font-weight:600;font-size:.97rem;transition:.2s var(--ease)}
 .city-list a:hover{border-color:var(--cyan);color:var(--cyan-ink);transform:translateY(-2px)}
+
+/* ---- storm / hail history table (city + service pages) ---- */
+.storm-table{border-collapse:collapse;width:100%;font-size:.94rem;margin:1.1rem 0 1.4rem;
+  display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:normal}
+.storm-table caption{caption-side:top;text-align:left;font-family:var(--font-head);
+  font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  padding:0 0 .7rem}
+.storm-table th,.storm-table td{border:1px solid var(--line);padding:.7rem .85rem;
+  text-align:left;vertical-align:top}
+.storm-table thead th{background:var(--paper-2);font-family:var(--font-head);
+  color:var(--ink);font-weight:600;white-space:nowrap}
+.storm-table tbody tr:nth-child(even){background:var(--paper)}
+.storm-table td:first-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.storm-table td:nth-child(2){white-space:nowrap;font-weight:600;color:var(--ink)}
+@media(max-width:640px){
+  .storm-table{font-size:.88rem}
+  .storm-table th,.storm-table td{padding:.55rem .6rem}
+}
