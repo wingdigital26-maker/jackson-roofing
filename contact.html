@@ -114,8 +114,9 @@
       <div class="info-card">
         <h3 style="margin-bottom:.4rem">Send Us a Message</h3>
         <p style="font-size:.9rem;color:var(--muted)"><span class="req">*</span> indicates required fields.</p>
-        <div class="form-ok" id="formOk">Thanks. Your message is ready to send, we'll be in touch shortly.</div>
-        <form class="enq" id="enq" action="mailto:admin@jacksonroofingco.us" method="post" enctype="text/plain">
+        <div class="form-ok" id="formOk" role="status" aria-live="polite"></div>
+        <!-- NOTE: set data-endpoint to a real form backend (Formspree/Web3Forms/serverless) and the form will POST there instead of opening the visitor’s email app. Until then it composes a prefilled email, which always works but needs the visitor to press send. -->
+        <form class="enq" id="enq" data-endpoint="" novalidate>
           <label for="name">Name <span class="req">*</span></label>
           <input id="name" name="name" type="text" required autocomplete="name">
           <label for="phone">Phone <span class="req">*</span></label>
@@ -172,8 +173,66 @@
 
 <script src="assets/app.js"></script>
 <script>
-  var f=document.getElementById('enq');
-  if(f){f.addEventListener('submit',function(){document.getElementById('formOk').classList.add('show');});}
+  (function(){
+    var f = document.getElementById('enq');
+    if (!f) return;
+    var ok = document.getElementById('formOk');
+    var btn = f.querySelector('button[type=submit]');
+
+    function show(msg, good){
+      ok.textContent = msg;
+      ok.classList.add('show');
+      ok.style.borderColor = good ? '' : '#b23b3b';
+    }
+    function val(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = val('name'), phone = val('phone'), email = val('email'), message = val('message');
+
+      if (!name || !phone || !email) {
+        show('Please add your name, phone and email so we can get back to you.', false);
+        return;
+      }
+
+      var endpoint = f.getAttribute('data-endpoint');
+
+      // Preferred path: a real backend. Only claims success on an actual OK response.
+      if (endpoint) {
+        btn.disabled = true;
+        var prev = btn.textContent;
+        btn.textContent = 'Sending...';
+        fetch(endpoint, {
+          method: 'POST',
+          headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+          body: JSON.stringify({name: name, phone: phone, email: email, message: message})
+        }).then(function(r){
+          if (r.ok) {
+            f.reset();
+            show('Thanks ' + name + '. Your message is on its way and we will be in touch shortly.', true);
+          } else {
+            show('Sorry, that did not go through. Please call or text (469) 323-4626 and we will sort it out.', false);
+          }
+        }).catch(function(){
+          show('Sorry, that did not go through. Please call or text (469) 323-4626 and we will sort it out.', false);
+        }).then(function(){
+          btn.disabled = false;
+          btn.textContent = prev;
+        });
+        return;
+      }
+
+      // Fallback with no backend configured: compose a prefilled email.
+      // This is honest about what it does, unlike the old silent mailto POST.
+      var subject = 'Roof enquiry from ' + name;
+      var body = 'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\n\n' + (message || '(no message)');
+      var href = 'mailto:admin@jacksonroofingco.us?subject=' + encodeURIComponent(subject) +
+                 '&body=' + encodeURIComponent(body);
+      show('We have opened your email app with the details filled in. Press send there and it reaches us. ' +
+           'If nothing opened, call or text (469) 323-4626.', true);
+      window.location.href = href;
+    });
+  })();
 </script>
 </body>
 </html>
