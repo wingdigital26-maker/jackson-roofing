@@ -10,12 +10,12 @@
 <meta property="og:title" content="Jackson Roofing | Expert Roofing for Homes and Businesses">
 <meta property="og:description" content="Top-notch residential and commercial roofing in North Texas since 2000, with free inspections. Led by Chris Jackson.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/img/hero-poster.jpg">
+<meta property="og:image" content="assets/img/hero-poster.webp">
 <meta property="og:url" content="https://wingdigital26-maker.github.io/jackson-roofing/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Jackson Roofing | Expert Roofing for Homes and Businesses">
 <meta name="twitter:description" content="Top-notch residential and commercial roofing in North Texas since 2000, with free inspections. Led by Chris Jackson.">
-<meta name="twitter:image" content="assets/img/hero-poster.jpg">
+<meta name="twitter:image" content="assets/img/hero-poster.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -72,9 +72,11 @@
 <!-- hero: full-width background video of a roofing crew working -->
 <section class="hero">
   <div class="hero-media">
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-poster.jpg">
-      <source src="assets/hero-drone.mp4" type="video/mp4">
-    </video>
+    <!-- The poster carries the hero on mobile and for reduced-motion users; the video
+         source is attached by script only on wider viewports, so phones never download it. -->
+    <video class="hero-video" muted loop playsinline preload="none"
+           poster="assets/img/hero-poster.webp" data-src="assets/hero-drone.mp4"
+           aria-label="Aerial view of a North Texas neighbourhood roofline"></video>
   </div>
   <div class="wrap">
     <div class="hero-inner">
@@ -142,7 +144,7 @@
 <section class="section tint">
   <div class="wrap split">
     <div class="media reveal">
-      <img src="assets/img/jackson-truck.jpg" alt="Jackson Roofing branded work truck at a North Texas home, residential and commercial roofing since 2000">
+      <img src="assets/img/jackson-truck.webp" alt="Jackson Roofing branded work truck at a North Texas home, residential and commercial roofing since 2000">
       <div class="badge"><b>25+</b><span>Years on<br>North Texas roofs</span></div>
     </div>
     <div class="reveal d1">
@@ -183,11 +185,11 @@
         <div class="svc-body"><h3>Free Roof Inspection</h3><p>We inspect the roof, photograph what we find, and hand you a written estimate. Free, with no obligation.</p><span class="more">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
       <a class="svc reveal d1" href="about-services.html#commercial">
-        <img src="assets/img/home-commercial.jpg" alt="Large commercial building with a metal roof serviced by Jackson Roofing">
+        <img src="assets/img/home-commercial.webp" alt="Large commercial building with a metal roof serviced by Jackson Roofing">
         <div class="svc-body"><h3>Commercial Roofing</h3><p>Reliable roofing for business properties, with the same care and quality checks as our homes.</p><span class="more">See details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
       </a>
       <div class="svc reveal d2" style="background:var(--cyan);color:var(--ink)">
-        <img src="assets/img/hero-poster.jpg" alt="Aerial view of a North Texas home during a roof replacement" style="opacity:.14">
+        <img src="assets/img/hero-poster.webp" alt="Aerial view of a North Texas home during a roof replacement" style="opacity:.14">
         <div class="svc-body">
           <h3 style="color:var(--ink)">Not sure what's wrong up there?</h3>
           <p style="color:var(--ink-2)">Most people aren't. That's what the free inspection is for. We'll look and show you the photos.</p>
@@ -303,5 +305,21 @@
 </footer>
 
 <script src="assets/app.js"></script>
+<script>
+  (function(){
+    var v=document.querySelector('.hero-video');
+    if(!v||!v.dataset.src) return;
+    var wide=window.matchMedia('(min-width:768px)').matches;
+    var still=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var slow=navigator.connection&&(navigator.connection.saveData||
+             /2g/.test(navigator.connection.effectiveType||''));
+    if(wide&&!still&&!slow){
+      var s=document.createElement('source');
+      s.src=v.dataset.src; s.type='video/mp4';
+      v.appendChild(s); v.autoplay=true; v.preload='metadata'; v.load();
+      var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    }
+  })();
+</script>
 </body>
 </html>
